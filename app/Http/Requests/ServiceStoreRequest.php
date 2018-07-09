@@ -24,11 +24,13 @@ class ServiceStoreRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'name'        => 'required',
-            'slug'        => 'required|unique:services,slug',
+            
             'user_id'     => 'required|integer',
             'category_id' => 'required|integer',
-            'body'        => 'required',
+            'name'        => 'required',
+            'excerpt'        => 'required',
+            'slug'        => 'unique:services,slug',
+            'filepdf'        => 'required',
             'status'      => 'required|in:DRAFT,PUBLISHED'
         ];
 
@@ -36,5 +38,11 @@ class ServiceStoreRequest extends FormRequest
             $rules = array_merge($rules, ['file' => 'mimes:jpg,jpeg,png']);
         }
         return $rules;
+    }
+
+    public function messages(){
+        return [
+            'name.required' => 'El campo "Nombre del servicio" es obligatorio'
+        ];
     }
 }

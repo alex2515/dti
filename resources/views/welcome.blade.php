@@ -881,8 +881,8 @@
           {{ csrf_field()}}
             <div class="form-row">
               <div class="form-group col-md-12">
-                <select name="oficina" id="" class="form-control">
-                  <option value="RobinCorreo">Unidad de Oferta Tecnológica</option>
+                <select name="emailoficina" id="" class="form-control">
+                  <option value="alexander-310@hotmail.com">Unidad de Oferta Tecnológica</option>
                   <option value="ManuelCorreo">Unidad de Emprendimiento e Incubadora de Empresas</option>
                   <option value="AbrahamCorreo">Unidad de Propiedad Intelectual, Patentes y Publicaciones</option>
                 </select>

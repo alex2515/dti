@@ -9,12 +9,11 @@
         <header class="section-header">
           <h3 class="section-title">PORTAFOLIO</h3>
         </header>
-        <div class="row">
+        {{-- <div class="row">
           <div class="col-md-4">
             <div class="embed-responsive embed-responsive-16by9">
               <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
             </div>
-            {{-- <iframe width="100%" height="360" src="https://www.youtube.com/embed/tgbNymZ7vqY"> </iframe> --}}
           </div>
           <div class="col-md-4">
             <div class="embed-responsive embed-responsive-16by9">
@@ -25,6 +24,32 @@
             <div class="embed-responsive embed-responsive-16by9">
               <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/U_dR6zkliNw" allowfullscreen></iframe>
             </div>
+          </div>
+        </div> --}}
+
+        <div class="row" style="background: #fff ">
+          <div class="col-md-12">
+            <p class="text-muted pull-right">
+              <em>
+                <small>Publicado: {{-- {{ $post->created_at }} --}}</small>
+              </em>
+            </p>
+          </div>
+
+          <div class="col-md-4">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/CSAbtLgK88I" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <h4>Nombre del evento</h4>
+            <p>Recursos:</p>
+
+            {{-- <p>{{ $post->excerpt }}<br> --}}
+          </div>
+          <div class="col-md-12">
+            <hr>
+            {{-- {!! $post->body !!} --}}
           </div>
         </div>
 

@@ -173,27 +173,6 @@
     </div>
   </section><!-- #intro -->
 
-{{--   <main id="main">
-    <section id="about">
-      <div class="container">
-        <header class="section-header">
-          <h3>Eventos</h3>
-        </header>
-        @foreach($posts as $post)
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title"><strong>{{$post->name}}</strong></h4>
-            <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
-            <a href="#" class="btn btn-primary">Leer mas</a>
-          </div>
-          <img class="img-thumbnail" src="{{$post->file}}" alt="Card image" style="width:100%" height="350px">
-        </div>
-        @endforeach
-        <br>
-        {{ $posts->links('vendor/pagination/bootstrap-4') }}
-      </div>
-    </section>
-  </main> --}}
   <main id="main">
 
     <!--==========================
@@ -205,25 +184,26 @@
         
           <div class="col-lg-4 box">
             <i class="ion-ios-bookmarks-outline"></i>
-            <h4 class="title"><a href="">Lorem Ipsum Delino</a></h4>
+            <h4 class="title"><a href="{{ route('eventos') }}">Eventos</a></h4>
             <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
           </div>
 
           <div class="col-lg-4 box box-bg">
             <i class="ion-ios-stopwatch-outline"></i>
-            <h4 class="title"><a href="">Dolor Sitema</a></h4>
+            <h4 class="title"><a href="{{ route('servicios') }}">Servicios</a></h4>
             <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
           </div>
 
           <div class="col-lg-4 box">
             <i class="ion-ios-heart-outline"></i>
-            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+            <h4 class="title"><a href="#">Portafolio</a></h4>
             <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
           </div>
 
         </div>
       </div>
-    </section><!-- #featured-services -->
+    </section>
+    <!-- #featured-services -->
 
     <!--==========================
       About Us Section
@@ -403,107 +383,10 @@
       </div>
     </section><!-- #services -->
 
-
-
-    <!--==========================
-      Call To Action Section
-    ============================-->
-{{--     <section id="call-to-action" class="wow fadeIn">
-      <div class="container text-center">
-        <h3>Call To Action</h3>
-        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <a class="cta-btn" href="#">Call To Action</a>
-      </div>
-    </section> --}}<!-- #call-to-action -->
-
-    <!--==========================
-      Skills Section
-    ============================-->
-    {{-- <section id="skills">
-      <div class="container">
-
-        <header class="section-header">
-          <h3>Our Skills</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
-        </header>
-
-        <div class="skills-content">
-
-          <div class="progress">
-            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-              <span class="skill">HTML <i class="val">100%</i></span>
-            </div>
-          </div>
-
-          <div class="progress">
-            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-              <span class="skill">CSS <i class="val">90%</i></span>
-            </div>
-          </div>
-
-          <div class="progress">
-            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-              <span class="skill">JavaScript <i class="val">75%</i></span>
-            </div>
-          </div>
-
-          <div class="progress">
-            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-              <span class="skill">Photoshop <i class="val">55%</i></span>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section> --}}
-
-    <!--==========================
-      Facts Section
-    ============================-->
-    {{-- <section id="facts"  class="wow fadeIn">
-      <div class="container">
-
-        <header class="section-header">
-          <h3>Facts</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-        </header>
-
-        <div class="row counters">
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">274</span>
-            <p>Clients</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">421</span>
-            <p>Projects</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">1,364</span>
-            <p>Hours Of Support</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">18</span>
-            <p>Hard Workers</p>
-          </div>
-
-        </div>
-
-        <div class="facts-img">
-          <img src="img/facts-img.png" alt="" class="img-fluid">
-        </div>
-
-      </div>
-    </section> --}}<!-- #facts -->
-
     <!--==========================
       Portfolio Section
     ============================-->
-    <section id="portfolio"  class="section-bg" >
+    {{-- <section id="portfolio"  class="section-bg" >
       <div class="container">
 
         <header class="section-header">
@@ -661,7 +544,8 @@
         </div>
 
       </div>
-    </section><!-- #portfolio -->
+    </section> --}}
+    <!-- #portfolio -->
 
     <!--==========================
       Clients Section
@@ -952,8 +836,8 @@
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                <select name="oficina" id="" class="form-control">
-                  <option value="RobinCorreo">Unidad de Oferta Tecnológica</option>
+                <select name="emailoficina" id="" class="form-control">
+                  <option value="alexander-310@hotmail.com">Unidad de Oferta Tecnológica</option>
                   <option value="ManuelCorreo">Unidad de Emprendimiento e Incubadora de Empresas</option>
                   <option value="AbrahamCorreo">Unidad de Propiedad Intelectual, Patentes y Publicaciones</option>
                 </select>
@@ -967,8 +851,8 @@
                 <div class="validation"></div>
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" name="phone" id="phone" placeholder="Escribe tu celular" data-rule="phone" data-msg="Please enter a valid email" />
-                <div class="validation"></div>
+                <input type="email" class="form-control" name="phone" id="phone" placeholder="Escribe tu celular"/>
+
               </div>
             <div class="form-group">
               <input type="text" class="form-control" name="subject" id="subject" placeholder="Escribe tu asunto" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />

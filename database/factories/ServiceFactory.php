@@ -10,8 +10,8 @@ $factory->define(App\Service::class, function (Faker $faker) {
         'category_id' => rand(1, 20),
         'name' => $title,
         'slug' => str_slug($title),
+        'filepdf' => $faker->text(100),
         'excerpt' => $faker->text(200),
-        'body' => $faker->text(500),
         'file' => $faker->imageUrl($width = 800, $height = 600),
         'status' => $faker->randomElement(['DRAFT', 'PUBLISHED']),
     ];

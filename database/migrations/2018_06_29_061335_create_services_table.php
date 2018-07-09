@@ -21,9 +21,10 @@ class CreateServicesTable extends Migration
 
             $table->string('name', 128);
             $table->string('slug', 128)->unique();
+            $table->string('filepdf', 128);
 
             $table->mediumText('excerpt')->nullable();
-            $table->text('body');
+            // $table->text('body');
             $table->enum('status', ['PUBLISHED', 'DRAFT'])->default('DRAFT');
 
             $table->string('file', 128)->nullable();

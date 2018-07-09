@@ -10,6 +10,7 @@ $factory->define(App\Category::class, function (Faker $faker) {
         'slug' => str_slug($title),
         'body' => $faker->text(500),
         'type' => $faker->randomElement(['EVENT', 'SERVICE']),
+        'icon' => $faker->randomElement(['fa-building','fa-database','fa-graduation-cap','fa-industry']),
         'file' => 'ion-ios-analytics-outline',
     ];
 });

@@ -34,8 +34,9 @@ Route::post('messages', function(){
 	if ($data['email'] != "") {
 		# code...
 		Mail::send("admin.emails.messages", $data, function($message) use ($data){
+			
 			$message->from($data['email'], $data['name']) // DE: 
-					->to('alexander-310@hotmail.com', 'Alexander') // PARA: 
+					->to($data['emailoficina'], 'Alexander') // PARA: 
 					->subject($data['subject']); // ASUNTO: 
 		});
 	}

@@ -13,9 +13,9 @@
 
         <div class="row">
           @foreach($servicios as $service)
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s" style="border: 1px dashed Tomato;">
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s" >
             {{-- <div class="icon"><i class="ion-checkmark-circled"></i></div> --}}
-            <div class="icon"><i class="fa fa-object-group"></i></div>
+            <div class="icon"><i class="fa {{ $service->icon }}"></i></div>
             <h4 class="title"><a href="{{ route('servicio', $service->slug) }}">{{ $service->name }}</a></h4>
             <p class="description">{{ substr($service->body, 0,150) }}...</p>
           </div>

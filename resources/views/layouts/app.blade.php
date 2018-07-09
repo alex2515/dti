@@ -34,6 +34,8 @@
   <link rel="stylesheet" href="{{ asset('admin/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="{{ asset('admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="{{ asset('admin/bower_components/select2/dist/css/select2.min.css') }}">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -367,10 +369,11 @@
             </ul>
         </li>
         <li><a href="{{ route('services.index') }}"><i class="glyphicon glyphicon-pushpin"></i><span>Servicios</span></a></li>
-      @can('products.index')
-        <li><a href="{{ route('products.index') }}"><i class="glyphicon glyphicon-pushpin"></i><span>Productos</span></a></li>
-      @endcan
         <li><a href="#"><i class="glyphicon glyphicon-briefcase"></i><span>Portafolio</span></a></li>
+      {{-- @can('products.index')
+        <li><a href="{{ route('products.index') }}"><i class="glyphicon glyphicon-pushpin"></i><span>Productos</span></a></li>
+      @endcan --}}
+        
       @can('users.index')
         <li><a href="{{ route('users.index') }}"><i class="glyphicon glyphicon-user"></i><span>Usuario</span></a></li>
       @endcan
@@ -638,11 +641,13 @@
 </script>
 <!-- Bootstrap 3.3.7 -->
 <script src=" {{ asset('admin/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<!-- Select2 -->
+<script src="{{ asset('admin/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
 <!-- Morris.js charts -->
 <script src=" {{ asset('admin/bower_components/raphael/raphael.min.js') }}"></script>
 <script src=" {{ asset('admin/bower_components/morris.js/morris.min.js') }}"></script>
 <!-- Sparkline -->
-<script src=" {{ asset('bower_components/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
+<script src=" {{ asset('admin/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
 <!-- jvectormap -->
 <script src=" {{ asset('admin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
 <script src=" {{ asset('admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>

@@ -8,6 +8,7 @@
         <header class="section-header">
           <h3>{{$post->name}}</h3>
         </header>
+        
         <div class="row" style="background: #fff ">
           <div class="col-md-12">
             <p class="text-muted pull-right">
@@ -36,6 +37,7 @@
             {!! $post->body !!}
           </div>
         </div>
+
       </div>
     </section>
 

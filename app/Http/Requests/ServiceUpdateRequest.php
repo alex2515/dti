@@ -24,11 +24,13 @@ class ServiceUpdateRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'name'        => 'required',
-            'slug'        => 'required|unique:services,slug,' . $this->service,
+
             'user_id'     => 'required|integer',
             'category_id' => 'required|integer',
-            'body'        => 'required',
+            'name'        => 'required',
+            'excerpt'        => 'required',
+            'slug'        => 'unique:services,slug,' . $this->service,
+            'filepdf'        => 'required',
             'status'      => 'required|in:DRAFT,PUBLISHED'
         ];
 
