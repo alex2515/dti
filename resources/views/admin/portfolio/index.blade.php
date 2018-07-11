@@ -8,7 +8,7 @@
 				<div class="panel-heading">
 					<h4>
 						<strong>
-							Lista de Eventos
+							Portafolios
 							@can('portfolios.create')
 							<a href="{{ route('portfolios.create') }}" class="btn btn-sm btn-primary pull-right">Crear</a>
 							@endcan

@@ -37,7 +37,6 @@
               <p>
                 La Unidad de Patentes, Propiedad Intelectual y Publicaciones, es la encargada de brindar servicios de asesoría integral con miras a la protección, promoción y difusión de las creaciones intelectuales desarrollados por los miembros de la comunidad universitaria.
               </p>
-              <br>
             </div>
           </div>
 

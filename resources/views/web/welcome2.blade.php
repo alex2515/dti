@@ -141,18 +141,18 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>Enlaces útiles</h4>
             <ul>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Inicio</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Nosotros</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Eventos</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Servicios</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Portafolio</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="{{ route('blog') }}">Inicio</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="{{ route('nosotros') }}">Nosotros</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="{{ route('eventos') }}">Eventos</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="{{ route('servicios') }}">Servicios</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="{{ route('portafolios') }}">Portafolio</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
+            <h4>Contáctenos</h4>
             <p>Av. Universitaría 601 - 607 <br>Huánuco <br> Pillco Marca <br> Cayhuayna <br>
               <strong>Phone:</strong> +1 5589 55488 55<br>
               <strong>Email:</strong> dtiunheval@gmail.com<br>
@@ -169,8 +169,8 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
+            <h4>Nuestro boletín</h4>
+            <p>&nbsp</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit"  value="Subscribe">
             </form>
