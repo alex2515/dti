@@ -3,7 +3,7 @@
     <!--==========================
       Portfolio Section
     ============================-->
-    <section id="portfolio"  class="section-bg" >
+    <section id="about"  class="section-bg" >
       <div class="container">
 
         <header class="section-header">
@@ -26,32 +26,38 @@
             </div>
           </div>
         </div> --}}
-
+        @foreach($portfolios as $portfolio)
         <div class="row" style="background: #fff ">
           <div class="col-md-12">
             <p class="text-muted pull-right">
               <em>
-                <small>Publicado: {{-- {{ $post->created_at }} --}}</small>
+                {{-- <small>Publicado: {{ $portfolio->created_at }}</small> --}}
               </em>
             </p>
           </div>
 
           <div class="col-md-4">
+            @if($portfolio->film != "")
             <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/CSAbtLgK88I" allowfullscreen></iframe>
+              {!! $portfolio->film !!}
             </div>
+            @else
+              <img src="{{ $portfolio->img }}" alt="" class="img-fluid rounded">
+            @endif
+
+
           </div>
           <div class="col-md-8">
-            <h4>Nombre del evento</h4>
+            <h4>{{ $portfolio->name  }}</h4>
             <p>Recursos:</p>
+            {!! $portfolio->body !!}
 
-            {{-- <p>{{ $post->excerpt }}<br> --}}
+            {{-- <p>{{ $portfolios->body }}<br> --}}
           </div>
-          <div class="col-md-12">
-            <hr>
-            {{-- {!! $post->body !!} --}}
-          </div>
+
         </div>
+        <hr><br>
+        @endforeach
 
         {{-- <div class="row">
           <div class="col-lg-12">

@@ -24,9 +24,10 @@ class PostController extends Controller
      */
     public function index()
     {   
-        $posts = Post::orderBy('id', 'DESC')
-            ->where('user_id', auth()->user()->id)->paginate();
-        // $posts = Post::orderBy('id', 'DESC')->paginate();
+        // $posts = Post::all();
+        // $posts = Post::orderBy('id', 'DESC')
+        //     ->where('user_id', auth()->user()->id)->paginate();
+         $posts = Post::orderBy('id', 'DESC')->where('user_id', auth()->user()->id)->get();
         return view('admin.posts.index', compact('posts'));
     }
 

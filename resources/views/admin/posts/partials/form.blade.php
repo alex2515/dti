@@ -1,6 +1,6 @@
 
-<div class="col-md-9">
-	<div class="box">
+<div class="col-md-8">
+	<div class="box box-info ">
 		<div class="box-header  with-border">
 			<h3 class="box-title">Agregar nueva entrada</h3>
 		</div>
@@ -29,8 +29,9 @@
 		</div>
 	</div>
 </div>
-<div class="col-md-3">
-  <div class="box collapsed-box box-solid">
+
+<div class="col-md-4">
+  <div class="box box-info collapsed-box">
     <div class="box-header with-border">
       <h3 class="box-title">Lugar, Hora y Fecha</h3>
 
@@ -43,24 +44,25 @@
     <!-- /.box-header -->
     <div class="box-body">
     	<div class="form-group">
-			{{ Form::label('date', 'Fecha') }}
-			{{ Form::text('date', null, ['class' => 'form-control input-sm', 'id' =>'date']) }}
-		</div>
-		<div class="form-group">
-			{{ Form::label('time', 'Hora') }}
-			{{ Form::text('time', null, ['class' => 'form-control input-sm', 'id' =>'time']) }}
-		</div>
-		<div class="form-group">
-			{{ Form::label('place', 'Lugar') }}
-			{{ Form::text('place', null, ['class' => 'form-control input-sm', 'id' =>'place']) }}
-		</div>
+  			{{ Form::label('date', 'Fecha') }}
+  			{{ Form::text('date', null, ['class' => 'form-control input-sm', 'id' =>'date']) }}
+  		</div>
+  		<div class="form-group">
+  			{{ Form::label('time', 'Hora') }}
+  			{{ Form::text('time', null, ['class' => 'form-control input-sm', 'id' =>'time']) }}
+  		</div>
+  		<div class="form-group">
+  			{{ Form::label('place', 'Lugar') }}
+  			{{ Form::text('place', null, ['class' => 'form-control input-sm', 'id' =>'place']) }}
+  		</div>
     </div>
     <!-- /.box-body -->
   </div>
   <!-- /.box -->
 </div>
-<div class="col-md-3">
-  <div class="box collapsed-box box-solid">
+
+<div class="col-md-4">
+  <div class="box box-info collapsed-box">
     <div class="box-header with-border">
       <h3 class="box-title">Categoria</h3>
 
@@ -74,7 +76,7 @@
     <div class="box-body">
     	<div class="form-group">
 			{{ Form::label('category_id', 'Categoría de evento') }}
-			{{ Form::select('category_id', $categories, null, ['class' => 'form-control']) }}
+			{{ Form::select('category_id', $categories, null, ['class' => 'form-control select2', 'style'=>"width: 100%;"]) }}
 		</div>
     </div>
     <!-- /.box-body -->
@@ -82,8 +84,8 @@
   <!-- /.box -->
 </div>
 
-<div class="col-md-3">
-  <div class="box box-solid">
+<div class="col-md-4">
+  <div class="box box-info box-solid">
     <div class="box-header with-border">
       <h3 class="box-title">Publicar</h3>
 
@@ -105,15 +107,16 @@
 			</label>
 		</div>
     	<div class="form-group">
-			{{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-default']) }}
+			{{ Form::submit('Guardar', ['class' => 'btn btn-info']) }}
 		</div>
     </div>
     <!-- /.box-body -->
   </div>
   <!-- /.box -->
 </div>
-<div class="col-md-3">
-  <div class="box collapsed-box box-solid">
+
+<div class="col-md-4">
+  <div class="box box-info collapsed-box">
     <div class="box-header with-border">
       <h3 class="box-title">Imagen</h3>
 
@@ -135,8 +138,9 @@
   </div>
   <!-- /.box -->
 </div>
-<div class="col-md-3">
-  <div class="box collapsed-box box-solid">
+
+<div class="col-md-4">
+  <div class="box box-info collapsed-box">
     <div class="box-header with-border">
       <h3 class="box-title">Etiquetas</h3>
 
@@ -166,19 +170,13 @@
 
 
 
-
-{{-- <div class="box-footer">
-	<div class="form-group">
-		{{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}
-	</div>
-</div> --}}
-
-
 @section('scripts')
+
+<!-- StringToSlug -->
 <script src="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
 <!-- CK Editor -->
 <script src="{{ asset('admin/bower_components/ckeditor/ckeditor.js') }}"></script>
-{{-- <script src="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script> --}}
+
 <script>
 	$(document).ready(function(){
 		$("#name, #slug").stringToSlug({
@@ -186,9 +184,29 @@
 				$("#slug").val(text);
 			}
 		})
+    // Select2
+    $('.select2').select2()
+
+    //iCheck for checkbox and radio inputs
+    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+      checkboxClass: 'icheckbox_minimal-blue',
+      radioClass   : 'iradio_minimal-blue'
+    })
+    //Red color scheme for iCheck
+    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+      checkboxClass: 'icheckbox_minimal-red',
+      radioClass   : 'iradio_minimal-red'
+    })
+    //Flat red color scheme for iCheck
+    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+      checkboxClass: 'icheckbox_flat-green',
+      radioClass   : 'iradio_flat-green'
+    })
+
 	});
-    // Replace the <textarea id="body"> with a CKEditor
-    // instance, using default configuration.
+  
+  // Replace the <textarea id="body"> with a CKEditor
+  // instance, using default configuration.
 	CKEDITOR.config.height = 400;
 	CKEDITOR.config.width = 'auto';
 	CKEDITOR.replace('body');

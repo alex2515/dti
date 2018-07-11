@@ -10,14 +10,27 @@ class Post extends Model
     	'user_id', 'category_id', 'name', 'slug', 'excerpt', 'body', 'status', 'file', 'date', 'time', 'place'
     ];
     public function user(){
+        // Un post "pertenece" a un Usuario
     	return $this->belongsTo(User::class);
     }
 
     public function category(){
+        //Un Post "pertenece" a una Categoria
     	return $this->belongsTo(Category::class);
     }
 
     public function tags(){
+        // Un Post "pertenece y tiene" muchas Etiquetas
     	return $this->belongsToMany(Tag::class);
     }
+
+    public function portfolio(){
+        // Un Post "tiene" a un Portafolio
+         return $this->hasOne(Portfolio::class);
+     }
+
+    // hasOne($related, $foreignKey = null, $localKey = null)
+    // belongsTo($related, $foreignKey = null, $ownerKey = null, $relation = null)
+    // hasMany($related, $foreignKey = null, $localKey = null)
+    // belongsToMany($related, $table = null, $foreignPivotKey = null, $relatedPivotKey = null, $parentKey = null, $relatedKey = null, $relation = null)
 }

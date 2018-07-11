@@ -30,6 +30,8 @@
               @endforeach
             </tbody>
           </table>
+              {{ $servicio->links('vendor/pagination/bootstrap-4') }}
+
           
         </div>
 

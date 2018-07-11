@@ -72,7 +72,11 @@
     <!-- /.box-body -->
   </div>
   <!-- /.box -->
+    
 </div>
+
+
+
 
 
 
@@ -89,13 +93,13 @@
 			}
 		})
 
-		 $('.select2').select2()
+		 $('.select2').select2({
+		 	language: "es",
+		 	placeholder: 'Select an option'
+		 })
 
-		 // Red color scheme for iCheck
-	    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-	      checkboxClass: 'icheckbox_minimal-red',
-	      radioClass   : 'iradio_minimal-red'
-	    })
+
+
 
 	});
 

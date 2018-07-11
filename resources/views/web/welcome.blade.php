@@ -185,19 +185,23 @@
           <div class="col-lg-4 box">
             <i class="ion-ios-bookmarks-outline"></i>
             <h4 class="title"><a href="{{ route('eventos') }}">Eventos</a></h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+            <p class="description">&nbsp</p>
+            {{-- <p class="description">&nbsp</p> --}}
+
           </div>
 
           <div class="col-lg-4 box box-bg">
             <i class="ion-ios-stopwatch-outline"></i>
             <h4 class="title"><a href="{{ route('servicios') }}">Servicios</a></h4>
-            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+            <p class="description">&nbsp</p>
+            {{-- <p class="description">&nbsp</p> --}}
           </div>
 
           <div class="col-lg-4 box">
             <i class="ion-ios-heart-outline"></i>
             <h4 class="title"><a href="#">Portafolio</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            <p class="description">&nbsp</p>
+            {{-- <p class="description">&nbsp</p> --}}
           </div>
 
         </div>
@@ -242,7 +246,6 @@
               <p>
                 La Unidad de Patentes, Propiedad Intelectual y Publicaciones, es la encargada de brindar servicios de asesoría integral con miras a la protección, promoción y difusión de las creaciones intelectuales desarrollados por los miembros de la comunidad universitaria.
               </p>
-              <br>
             </div>
           </div>
 
@@ -337,7 +340,7 @@
     <!--==========================
       Services Section
     ============================-->
-    <section id="services">
+    {{-- <section id="services">
       <div class="container">
 
         <header class="section-header wow fadeInUp">
@@ -378,6 +381,28 @@
             <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
           </div>
 
+        </div>
+
+      </div>
+    </section> --}}<!-- #services -->
+    
+    <section id="services">
+      <div class="container">
+
+        <header class="section-header wow fadeInUp">
+          <h3>Servicios</h3>
+          <p>A continuación los Grupos de Investigación de la UNHEVAL presentan su Oferta Tecnológica y de Servicios, por sector de actividad:</p>
+        </header>
+
+        <div class="row">
+          @foreach($servicios as $service)
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s" >
+            {{-- <div class="icon"><i class="ion-checkmark-circled"></i></div> --}}
+            <div class="icon"><i class="fa {{ $service->icon }}"></i></div>
+            <h4 class="title"><a href="{{ route('servicio', $service->slug) }}">{{ $service->name }}</a></h4>
+            <p class="description">{{ substr($service->body, 0,150) }}...</p>
+          </div>
+          @endforeach
         </div>
 
       </div>

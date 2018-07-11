@@ -163,5 +163,21 @@ Route::middleware(['auth'])->group(function() {
 		->middleware('permission:services.destroy');
 	Route::get('services/{service}/edit', 'Admin\ServiceController@edit')->name('services.edit')
 		->middleware('permission:services.edit');
+
+	// Portfolio
+	Route::post('portfolios/store', 'Admin\PortfolioController@store')->name('portfolios.store')
+		->middleware('permission:portfolios.create');
+	Route::get('portfolios', 'Admin\PortfolioController@index')->name('portfolios.index')
+		->middleware('permission:portfolios.index');
+	Route::get('portfolios/create', 'Admin\PortfolioController@create')->name('portfolios.create')
+		->middleware('permission:portfolios.create');
+	Route::put('portfolios/{portfolio}', 'Admin\PortfolioController@update')->name('portfolios.update')
+		->middleware('permission:portfolios.edit');
+	Route::get('portfolios/{portfolio}', 'Admin\PortfolioController@show')->name('portfolios.show')
+		->middleware('permission:portfolios.show');
+	Route::delete('portfolios/{portfolio}', 'Admin\PortfolioController@destroy')->name('portfolios.destroy')
+		->middleware('permission:portfolios.destroy');
+	Route::get('portfolios/{portfolio}/edit', 'Admin\PortfolioController@edit')->name('portfolios.edit')
+		->middleware('permission:portfolios.edit');
 });
 	
