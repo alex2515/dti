@@ -6,6 +6,7 @@ use App\Post;
 use App\Portfolio;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\PortfolioStoreRequest;
 use App\Http\Requests\PortfolioUpdateRequest;
 
@@ -18,7 +19,8 @@ class PortfolioController extends Controller
      */
     public function index()
     {   
-        $portfolios = Portfolio::orderBy('id', 'DESC')->paginate(3);
+        $portfolios = Portfolio::all();
+        // $portfolios = Portfolio::orderBy('id', 'DESC')->paginate(3);
         // $posts = Post::orderBy('id', 'DESC')->paginate();
         return view('admin.portfolio.index', compact('portfolios'));
     }
@@ -45,11 +47,11 @@ class PortfolioController extends Controller
     {
         $portfolio = Portfolio::create($request->all());
 
-        //IMAGEN
-        if ($request->file('file')) {
-            $path = Storage::disk('public')->put('image', $request->file('file'));
-            $portfolio->fill(['file' => asset($path)])->save();
-        }
+        // //IMAGEN
+        // if ($request->file('file')) {
+        //     $path = Storage::disk('public')->put('image', $request->file('file'));
+        //     $portfolio->fill(['file' => asset($path)])->save();
+        // }
 
         return redirect()->route('portfolios.edit', $portfolio->id)
         ->with('info', 'Entrada creada con exito');

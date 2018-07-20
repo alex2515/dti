@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Caffeinated\Shinobi\Models\Role;
+use App\Http\Requests\UserUpdateRequest;
 
 class UserController extends Controller
 {
@@ -16,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate();
+        $users = User::all();
 
         return view('admin.users.index', compact('users'));
     }
@@ -52,7 +53,7 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(UserUpdateRequest $request, User $user)
     {
         //actualice el usuario
         $user->update($request->all());

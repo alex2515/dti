@@ -23,16 +23,23 @@ class PortfolioStoreRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = [
+        return  [
             'user_id'     => 'required|integer',
             'post_id'     => 'required|integer',
+            // 'film'        => 'required|max:200',
             'body'        => 'required',
 
         ];
+    }
 
-        if ($this->get('file')) {
-            $rules = array_merge($rules, ['file' => 'mimes:jpg,jpeg,png']);
-        }
-        return $rules;
+    public function messages()
+    {
+        return [
+            'film.required' => 'El campo URL video es obligatorio',
+            'film.max'      => 'El campo URL video no debe contener más de :max caracteres.',
+            'body.required' => 'El campo descripción es obligatorio',
+            'body.max'      => 'El campo descripción no debe contener más de :max caracteres.',
+
+        ];
     }
 }

@@ -4,20 +4,32 @@ namespace App\Http\Controllers\Web;
 
 use App\Tag;
 use App\Post;
+use App\Team;
+use App\Unity;
+use App\Company;
 use App\Service;
 use App\Category;
+use App\Customer;
 use App\Portfolio;
+use App\Testimony;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SendMessageRequest;
 
 class PageController extends Controller
 {
 	// Pagina Principal 
-    public function blog(){
-    	$posts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
-        $servicios = Category::orderBy('id', 'DESC')->where('type', 'SERVICE')->get();
-    	return view('web.welcome', compact('posts','servicios')) ;
+    public function dti(){
+    	$posts          = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
+        $servicios      = Category::orderBy('id', 'DESC')->where('type', 'SERVICE')->get();
+        $company        = Company::first();
+        $unities        = Unity::all();
+        $customers      = Customer::all();
+        $teams          = Team::all();
+        $testimonies    = Testimony::all();
+
+    	return view('web.welcome', compact('posts','servicios','company','unities', 'customers', 'teams', 'testimonies' )) ;
     }
     
     public function eventos(){
@@ -37,18 +49,24 @@ class PageController extends Controller
     public function servicio($slug){
         $category   = Category::where('slug', $slug)->pluck('id')->first();
         $servicio    = Service::where('category_id', $category)
-            ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(5);
+            ->orderBy('id', 'DESC')->paginate(5);
         return view('web.servicio', compact('slug','servicio')) ;
 
     }
     public function nosotros(){
-    	return view('web.about');
+        $company = Company::first();
+    	return view('web.about', compact('company'));
     }
-    public function contact(){
+    public function contactos(){
     	return view('web.contact');
     }
     public function portafolios(){
-        $portfolios = DB::select("select p.id, (select po.name from posts as po where po.id=p.post_id ) as 'name',(select po.file from posts as po where po.id=p.post_id ) as 'img',  p.film, p.body from portfolios as p");
+        // $portfolios = DB::select("select p.id, (select po.name from posts as po where po.id=p.post_id ) as 'name',(select po.file from posts as po where po.id=p.post_id ) as 'img',  p.film, p.body from portfolios as p");
+        $portfolios = DB::table('posts as po')->join('portfolios as p','p.post_id','=','po.id')->select('p.id','po.name','po.file as img','p.film','p.body')->paginate(5);
+        // $post = Post::has('portfolio')->pluck('id','name')->each()->values();
+        // dd($post);
+
+        // $portfolios = Portfolio::whereHas('post')->get();
         
         // dd($portfolios);
         return view('web.portfolio', compact('portfolios'));
@@ -56,4 +74,23 @@ class PageController extends Controller
     public function icons(){
         return view('admin.icons');
     }
+
+    public function mensaje(){
+
+        
+        $data = request()->all();
+        //dd($data);
+        //enviar correo
+        if ($data['email'] != "") {
+            # code...
+            Mail::send("admin.emails.messages", $data, function($message) use ($data){
+                
+                $message->from($data['email'], $data['name']) // DE: 
+                        ->to($data['emailbusiness'], 'Alexander') // PARA: 
+                        ->subject($data['subject']); // ASUNTO: 
+            });
+        }
+        //responder al usuario
+         return back();
+     }
 }

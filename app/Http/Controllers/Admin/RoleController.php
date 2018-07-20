@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Caffeinated\Shinobi\Models\Role;
+use App\Http\Requests\RolStoreRequest;
+use App\Http\Requests\RolUpdateRequest;
 use Caffeinated\Shinobi\Models\Permission;
 
 class RoleController extends Controller
@@ -16,7 +18,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $roles = Role::paginate();
+        $roles = Role::all();
 
         return view('admin.roles.index', compact('roles'));
     }
@@ -38,7 +40,7 @@ class RoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RolStoreRequest $request)
     {
         $role = Role::create($request->all());
 
@@ -80,7 +82,7 @@ class RoleController extends Controller
      * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Role $role)
+    public function update(RolUpdateRequest $request, Role $role)
     {
         //actualice el role
         $role->update($request->all());

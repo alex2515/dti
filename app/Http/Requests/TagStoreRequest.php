@@ -28,4 +28,12 @@ class TagStoreRequest extends FormRequest
             'slug' => 'required|unique:tags,slug',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'El campo nombre es obligatorio',
+            'name.max'      => 'El campo nombre no debe contener más de :max caracteres.',
+        ];
+    }
 }

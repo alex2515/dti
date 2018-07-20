@@ -31,7 +31,7 @@ class ServiceStoreRequest extends FormRequest
             'excerpt'        => 'required',
             'slug'        => 'unique:services,slug',
             'filepdf'        => 'required',
-            'status'      => 'required|in:DRAFT,PUBLISHED'
+            // 'status'      => 'required|in:DRAFT,PUBLISHED'
         ];
 
         if ($this->get('file')) {
@@ -40,9 +40,11 @@ class ServiceStoreRequest extends FormRequest
         return $rules;
     }
 
-    public function messages(){
+    public function messages()
+    {
         return [
-            'name.required' => 'El campo "Nombre del servicio" es obligatorio'
+            'name.required' => 'El campo nombre es obligatorio',
+            'name.max'      => 'El campo nombre no debe contener más de :max caracteres.',
         ];
     }
 }

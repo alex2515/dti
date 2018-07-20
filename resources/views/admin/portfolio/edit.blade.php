@@ -1,25 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
-{{-- <div class="container"> --}}
-	<div class="row">
-		{{-- <div class="col-md-8 col-md-offset-2"> --}}
-			{{-- <div class="panel panel-default"> --}}
-				{{-- <div class="panel-heading"> --}}
-					{{-- Editar Entrada --}}
-				{{-- </div> --}}
-				{{-- <div class="panel-body"> --}}
-					{!! Form::model($portfolio, ['route' => ['portfolios.update', $portfolio->id], 'method' => 'PUT', 'files' => true]) !!}
-						
-						@include('admin.portfolio.partials.form')
+	<section class="content-header">
+	  <h1>
+	    Portafolios
+	    <small>Lista de Portafolios</small>
+	  </h1>
+	  <ol class="breadcrumb">
+	    <li><a href="{{ route('home') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+	    <li class="active">Portafolios</li>
+	  </ol>
+	</section>
+	<!-- /.content-header -->
+	<section class="content">
 
-					{!! Form::close() !!}
-				{{-- </div> --}}
-			{{-- </div> --}}
+		<div class="row">
+			{!! Form::model($portfolio, ['route' => ['portfolios.update', $portfolio->id], 'method' => 'PUT', 'files' => true]) !!}
+				
+				@include('admin.portfolio.partials.form')
 
-			
-		{{-- </div> --}}
-	</div>
-{{-- </div> --}}
-
+			{!! Form::close() !!}
+		</div>
+	</section>
+	
 @endsection

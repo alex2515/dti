@@ -1,0 +1,1322 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"po",
+				"post"
+			],
+			[
+				"uni",
+				"unities"
+			],
+			[
+				"unit",
+				"unity"
+			],
+			[
+				"Contro",
+				"Controller"
+			],
+			[
+				"co",
+				"col-xs-5"
+			],
+			[
+				"com",
+				"company"
+			],
+			[
+				"tr",
+				"treeview"
+			],
+			[
+				"port",
+				"portfolio"
+			],
+			[
+				"mini",
+				"minimal-red"
+			],
+			[
+				"text",
+				"text-center"
+			],
+			[
+				"te",
+				"text-center"
+			],
+			[
+				"pull",
+				"pull-right"
+			],
+			[
+				"conten",
+				"content-header \tin layouts.app"
+			],
+			[
+				"pos",
+				"portfolios"
+			],
+			[
+				"belongs",
+				"belongsTo"
+			],
+			[
+				"por",
+				"porfolios"
+			],
+			[
+				"post",
+				"posts"
+			],
+			[
+				"or",
+				"orderBy"
+			],
+			[
+				"select",
+				"select2"
+			],
+			[
+				"random",
+				"randomElement"
+			],
+			[
+				"Category",
+				"CategoryController"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"about",
+				"about-col"
+			],
+			[
+				"shad",
+				"text-shadow"
+			],
+			[
+				"bo",
+				"box-shadow"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"sty",
+				"style"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"asse",
+				"asset"
+			],
+			[
+				"bor",
+				"border-style"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"form",
+				"form-group"
+			],
+			[
+				"prod",
+				"product"
+			],
+			[
+				"append",
+				"appendChild\t( node: Node ): Node Node"
+			],
+			[
+				"createTe",
+				"createTextNode\t( data: DOMString ): Text Document"
+			],
+			[
+				"create",
+				"createElement\t( localName: DOMString ): Element Document"
+			],
+			[
+				"persona",
+				"personajes"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"getE",
+				"getElementsByClassName\t( classNames: DOMString ): HTMLCollection Document"
+			],
+			[
+				"pro",
+				"proveedor"
+			],
+			[
+				"arti",
+				"articulos"
+			],
+			[
+				"Art",
+				"Articulo"
+			],
+			[
+				"cate",
+				"categoria"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"li",
+				"li\tTag"
+			],
+			[
+				"ex",
+				"example"
+			],
+			[
+				"th",
+				"th\tTag"
+			],
+			[
+				"el_email_es_",
+				"el_email_tiene_que_ser_unico"
+			],
+			[
+				"User",
+				"UserFormRequest"
+			],
+			[
+				"assert",
+				"assertRedirect"
+			],
+			[
+				"styles",
+				"stylesheet"
+			],
+			[
+				"profe",
+				"profession_id"
+			],
+			[
+				"profes",
+				"profession"
+			],
+			[
+				"trunca",
+				"truncateTables"
+			],
+			[
+				"table",
+				"tables"
+			],
+			[
+				"h",
+				"h1\tTag"
+			],
+			[
+				"function",
+				"function"
+			],
+			[
+				"metho",
+				"aggregate_methods"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"UserCreate",
+				"UsersCanCreatePosts"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"strp",
+				"strpos"
+			],
+			[
+				"change",
+				"changeNickname"
+			],
+			[
+				"nic",
+				"nickname"
+			],
+			[
+				"per",
+				"person2"
+			],
+			[
+				"pers",
+				"person1"
+			],
+			[
+				"PER",
+				"person1"
+			],
+			[
+				"number",
+				"numberBetween"
+			],
+			[
+				"queryPa",
+				"queryParams"
+			],
+			[
+				"query",
+				"queryParams"
+			],
+			[
+				"pagina",
+				"paginate"
+			],
+			[
+				"pa",
+				"page"
+			],
+			[
+				"for",
+				"foreach\tforeach …"
+			],
+			[
+				"sor",
+				"sortData"
+			],
+			[
+				"sort",
+				"sort_by"
+			],
+			[
+				"tra",
+				"transformData"
+			],
+			[
+				"die",
+				"die"
+			],
+			[
+				"sub",
+				"substr〔function〕"
+			],
+			[
+				"isset",
+				"isset〔function〕"
+			],
+			[
+				"u",
+				"$user〔variable〕"
+			],
+			[
+				"ufc",
+				"ucfirst"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "resources/views/admin/posts/partials/form.blade.php",
+			"settings":
+			{
+				"buffer_size": 7229,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/admin/teams/partials/modal.blade.php",
+			"settings":
+			{
+				"buffer_size": 889,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/admin/teams/partials/form.blade.php",
+			"settings":
+			{
+				"buffer_size": 3810,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 48.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"package control: re",
+				"Package Control: Remove Package"
+			],
+			[
+				"package control:",
+				"Package Control: Remove Package"
+			],
+			[
+				"men",
+				"View: Toggle Menu"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"package control",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Material Theme: Activate theme"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"package contro",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"PHPU",
+				"File: Copy Path as URI"
+			],
+			[
+				"PHPUnit",
+				"Set Syntax: PHPUnit TextRunner"
+			],
+			[
+				"Package Control: li",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 520.0
+	},
+	"console":
+	{
+		"height": 118.0,
+		"history":
+		[
+			"ll",
+			"LL",
+			"terminal",
+			"clear",
+			"php artisan serve"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": true,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/areg/Documents/corporate",
+		"/home/areg/Documents/corporate/resources",
+		"/home/areg/Documents/corporate/resources/views",
+		"/home/areg/Documents/corporate/resources/views/admin",
+		"/home/areg/Documents/corporate/resources/views/admin/teams",
+		"/home/areg/Documents/corporate/resources/views/admin/teams/partials"
+	],
+	"file_history":
+	[
+		"/home/areg/Documents/corporate/app/Http/Requests/PostStoreRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/PostUpdateRequest.php",
+		"/home/areg/Documents/corporate/app/Presentation.php",
+		"/home/areg/Documents/corporate/database/migrations/2018_07_20_111743_create_presentations_table.php",
+		"/home/areg/Documents/corporate/database/factories/AdminPresentationFactory.php",
+		"/home/areg/Documents/corporate/database/seeds/DatabaseSeeder.php",
+		"/home/areg/Documents/corporate/database/migrations/2018_07_20_111141_create_presentations_table.php",
+		"/home/areg/Documents/corporate/resources/views/layouts/app.blade.php",
+		"/home/areg/Documents/corporate/app/Http/Controllers/Web/PageController.php",
+		"/home/areg/Documents/corporate/resources/views/web/portfolio.blade.php",
+		"/home/areg/Documents/corporate/vendor/laravel/framework/src/Illuminate/Pagination/Paginator.php",
+		"/home/areg/Documents/corporate/vendor/laravel/framework/src/Illuminate/Pagination/LengthAwarePaginator.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/RolStoreRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/RolUpdateRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Controllers/Admin/RoleController.php",
+		"/home/areg/Documents/corporate/app/Http/Controllers/Admin/PostController.php",
+		"/home/areg/Documents/corporate/resources/views/web/welcome.blade.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/UnityUpdateRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/UnityStoreRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/TestimonyUpdateRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/TestimonyStoreRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/TeamStoreRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/TagUpdateRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/TagStoreRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/ServiceUpdateRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/ServiceStoreRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/CustomerStoreRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/CustomerUpdateRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/PortfolioUpdateRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/TeamUpdateRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/PortfolioStoreRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/CompanyUpdateRequest.php",
+		"/home/areg/Documents/corporate/resources/views/admin/testimonies/partials/form.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/users/partials/form.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/unities/partials/form.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/teams/partials/form.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/tags/partials/form.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/services/partials/form.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/roles/partials/form.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/posts/partials/form.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/customers/partials/form.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/portfolio/partials/form.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/companies/partials/form.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/categories/partials/form.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/categories/partials/modal.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/portfolio/partials/modal.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/companies/partials/modal.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/users/partials/modal.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/unities/partials/modal.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/testimonies/partials/modal.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/teams/partials/modal.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/tags/partials/modal.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/services/partials/modal.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/roles/partials/modal.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/posts/partials/modal.blade.php",
+		"/home/areg/Documents/corporate/database/migrations/2018_06_12_111144_create_categories_table.php",
+		"/home/areg/Documents/corporate/resources/views/admin/categories/index.blade.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/CategoryStoreRequest.php",
+		"/home/areg/Documents/corporate/vendor/vlucas/phpdotenv/src/Validator.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/CategoryUpdateRequest.php",
+		"/home/areg/Documents/corporate/vendor/laravel/framework/src/Illuminate/Support/MessageBag.php",
+		"/home/areg/Documents/corporate/vendor/laravel/framework/src/Illuminate/Validation/Concerns/FormatsMessages.php",
+		"/home/areg/Documents/corporate/vendor/laravel/framework/src/Illuminate/Validation/Rule.php",
+		"/home/areg/Documents/corporate/vendor/laravel/framework/src/Illuminate/Support/Traits/Macroable.php",
+		"/home/areg/Documents/corporate/vendor/laravel/framework/src/Illuminate/Notifications/Messages/BroadcastMessage.php",
+		"/home/areg/Documents/corporate/.env",
+		"/home/areg/Documents/corporate/database/migrations/2018_06_29_061335_create_services_table.php",
+		"/home/areg/Documents/corporate/database/factories/ServiceFactory.php",
+		"/home/areg/Documents/corporate/resources/views/admin/testimonies/edit.blade.php",
+		"/home/areg/Documents/corporate/app/Testimony.php",
+		"/home/areg/Documents/corporate/resources/views/admin/testimonies/create.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/customers/index.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/teams/index.blade.php",
+		"/home/areg/Documents/corporate/public/css/style.css",
+		"/home/areg/Documents/corporate/public/css/style2.css",
+		"/home/areg/Documents/corporate/resources/views/admin/testimonies/index.blade.php",
+		"/home/areg/Documents/corporate/database/seeds/TeamsTableSeeder.php",
+		"/home/areg/Documents/corporate/resources/views/admin/teams/edit.blade.php",
+		"/home/areg/Documents/corporate/app/Team.php",
+		"/home/areg/Documents/corporate/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php",
+		"/home/areg/Documents/corporate/vendor/symfony/http-foundation/Request.php",
+		"/home/areg/Documents/corporate/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php",
+		"/home/areg/Documents/corporate/vendor/laravel/framework/src/Illuminate/Validation/ValidatesWhenResolvedTrait.php",
+		"/home/areg/Documents/corporate/vendor/doctrine/inflector/lib/Doctrine/Common/Inflector/Inflector.php",
+		"/home/areg/Documents/corporate/vendor/laravel/framework/src/Illuminate/Foundation/Auth/ResetsPasswords.php",
+		"/home/areg/Documents/corporate/vendor/laravel/framework/src/Illuminate/Foundation/Console/stubs/request.stub",
+		"/home/areg/Documents/corporate/resources/views/admin/teams/create.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/customers/partials/modal.blade.php",
+		"/home/areg/Documents/corporate/app/Customer.php",
+		"/home/areg/Documents/corporate/resources/views/admin/customers/create.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/customers/edit.blade.php",
+		"/home/areg/Documents/corporate/app/Http/Controllers/Admin/TestimonyController.php",
+		"/home/areg/Documents/corporate/app/Http/Controllers/Admin/TeamController.php",
+		"/home/areg/Documents/corporate/app/Http/Controllers/Admin/CustomerController.php",
+		"/home/areg/Documents/corporate/database/migrations/2018_07_17_140202_create_testimonies_table.php",
+		"/home/areg/Documents/corporate/database/migrations/2018_07_17_140953_create_teams_table.php",
+		"/home/areg/Documents/corporate/database/migrations/2018_07_17_141348_create_customers_table.php",
+		"/home/areg/Documents/corporate/database/migrations/2018_07_17_143630_create_intros_table.php",
+		"/home/areg/Documents/corporate/database/factories/TestimonyFactory.php",
+		"/home/areg/Documents/corporate/database/factories/CustomerFactory.php",
+		"/home/areg/Documents/corporate/database/factories/CompanyFactory.php",
+		"/home/areg/Documents/corporate/database/seeds/UnitiesTableSeeder.php",
+		"/home/areg/Documents/corporate/resources/views/admin/unities/show.blade.php",
+		"/home/areg/Documents/corporate/app/Http/Controllers/Admin/UnityController.php",
+		"/home/areg/Documents/corporate/resources/views/admin/unities/create.blade.php",
+		"/home/areg/Documents/corporate/database/migrations/2018_07_17_135742_create_unities_table.php",
+		"/home/areg/Documents/corporate/app/Unity.php",
+		"/home/areg/Documents/corporate/app/Http/Controllers/Auth/RegisterController.php",
+		"/home/areg/Documents/corporate/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ClassCreator.php",
+		"/home/areg/Documents/corporate/vendor/laravelcollective/html/src/FormBuilder.php",
+		"/home/areg/Documents/corporate/resources/views/admin/unities/edit.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/unities/index.blade.php",
+		"/home/areg/Documents/corporate/database/seeds/TestimoniesTableSeeder.php",
+		"/home/areg/Documents/corporate/database/factories/TeamFactory.php",
+		"/home/areg/Documents/corporate/vendor/fzaninotto/faker/src/Faker/Provider/Image.php",
+		"/home/areg/Documents/corporate/database/seeds/CustomersTableSeeder.php",
+		"/home/areg/Documents/corporate/database/migrations/2018_07_17_082930_create_companies_table.php",
+		"/home/areg/Documents/corporate/routes/web.php",
+		"/home/areg/Documents/corporate/app/Http/Controllers/HomeController.php",
+		"/home/areg/Documents/corporate/database/migrations/2018_07_17_143521_create_intros_table.php",
+		"/home/areg/Documents/corporate/resources/views/web/about.blade.php",
+		"/home/areg/Documents/corporate/database/seeds/CompaniesTableSeeder.php",
+		"/home/areg/Documents/corporate/app/Http/Controllers/Admin/CompanyController.php",
+		"/home/areg/Documents/corporate/app/Company.php",
+		"/home/areg/Downloads/AdminLTE-2.4.3/pages/forms/general.html",
+		"/home/areg/Downloads/AdminLTE-2.4.3/pages/examples/login.html",
+		"/home/areg/Documents/corporate/resources/views/admin/companies/edit.blade.php",
+		"/home/areg/Documents/corporate/vendor/laravel/framework/src/Illuminate/Contracts/Routing/UrlGenerator.php"
+	],
+	"find":
+	{
+		"height": 70.0
+	},
+	"find_in_files":
+	{
+		"height": 176.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"number",
+			"nombre",
+			"name",
+			"tag",
+			"categories",
+			"message",
+			"caracteres",
+			"unities",
+			"unity",
+			"unities",
+			"email",
+			"unities",
+			"Unidad",
+			"Unidades",
+			"unities",
+			"unity",
+			"unities",
+			"Unidades",
+			"unities",
+			"unity",
+			"unities",
+			"email",
+			"unities",
+			"name",
+			"Unidades",
+			"unities",
+			"Unidad",
+			"unity",
+			"unities",
+			"Unidades",
+			"unidad",
+			"unities",
+			"unity",
+			"Unidades",
+			"unities",
+			"Unidades",
+			"Unidad",
+			"unity",
+			"unities",
+			"Unidad",
+			"Unidades",
+			"team",
+			"teams",
+			"Team",
+			"customer",
+			"customers",
+			"Customer",
+			"unity",
+			"unities",
+			"Unity",
+			"image",
+			"category",
+			"Categorias",
+			"categoría",
+			"Categoría",
+			"image",
+			"file",
+			"post",
+			"Post",
+			"posts",
+			"image",
+			"categories",
+			"category",
+			"Categorias",
+			"categories",
+			"Categorias",
+			"categoria",
+			"categories",
+			"category",
+			"categories",
+			"Categoria",
+			"Categorias",
+			" $table->string(",
+			"$table->string(",
+			"CustomerController",
+			"customer",
+			"customers",
+			"TestimonyController",
+			"testimony",
+			"testimonies",
+			"PortfolioController",
+			"portfolio",
+			"portfolios",
+			"PortfolioController",
+			"portfolio",
+			"portfolios",
+			"portfolio",
+			"PortfolioController",
+			"portfolios",
+			"Unidades",
+			"portfolio",
+			"')\n",
+			"tag",
+			"Etiquetas",
+			");",
+			"$table->string(",
+			"varchar",
+			"char",
+			"Varchar",
+			"VARCHAR",
+			"Edición",
+			"data-wow-duration",
+			"role",
+			"category",
+			"post",
+			"posts",
+			"widt",
+			"Articulo"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"company",
+			"tags",
+			"services",
+			"roles",
+			"testimonies",
+			"testimony",
+			"testimonies",
+			"Testimonio",
+			"Testimonios",
+			"testimonies",
+			"testimony",
+			"testimonies",
+			"Testimonios",
+			"teams",
+			"team",
+			"customers",
+			"teams",
+			"Integrantes",
+			"teams",
+			"Equipo",
+			"team",
+			"teams",
+			"Equipo de Trabajo",
+			"cliente",
+			"customers",
+			"customer",
+			"Clientes",
+			"customers",
+			"Clientes",
+			"Cliente",
+			"customer",
+			"customers",
+			"Cliente",
+			"Clientes",
+			"testimony",
+			"testimonies",
+			"Testimony",
+			"team",
+			"teams",
+			"Team",
+			"customer",
+			"customers",
+			"Customer",
+			"file",
+			"unity",
+			"Unidades",
+			"unidad",
+			"Unidad",
+			"unity",
+			"Unity",
+			"unities",
+			"file",
+			"unities",
+			"Unity",
+			"Unidades",
+			"unities",
+			"Unidades",
+			"unidad",
+			"unities",
+			"unity",
+			"unities",
+			"Unidad",
+			"Unidades",
+			"",
+			"company",
+			"Compañia",
+			" => ",
+			"",
+			"Editar",
+			"rol",
+			"user",
+			"tag",
+			"service",
+			"role",
+			"product",
+			"portfolio",
+			"category",
+			"categories",
+			"Evento"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "resources/views/admin/posts/partials/form.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7229,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								795,
+								734
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "resources/views/admin/teams/partials/modal.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 889,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								627,
+								627
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "resources/views/admin/teams/partials/form.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3810,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								287,
+								287
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 80.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 114.0
+	},
+	"output.exec":
+	{
+		"height": 314.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "corporate.sublime-project",
+	"replace":
+	{
+		"height": 114.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"categories/mod",
+				"resources/views/admin/categories/partials/modal.blade.php"
+			],
+			[
+				"categories/",
+				"resources/views/admin/categories/partials/form.blade.php"
+			],
+			[
+				"categories/index",
+				"resources/views/admin/categories/index.blade.php"
+			],
+			[
+				"app.bla",
+				"resources/views/layouts/app.blade.php"
+			],
+			[
+				"messagebag",
+				"vendor/laravel/framework/src/Illuminate/Support/MessageBag.php"
+			],
+			[
+				"validator",
+				"vendor/vlucas/phpdotenv/src/Validator.php"
+			],
+			[
+				"validation",
+				"vendor/laravel/framework/src/Illuminate/Validation/Concerns/FormatsMessages.php"
+			],
+			[
+				"rule",
+				"vendor/laravel/framework/src/Illuminate/Validation/Rule.php"
+			],
+			[
+				"categoryup",
+				"app/Http/Requests/CategoryUpdateRequest.php"
+			],
+			[
+				"messagesbage",
+				"vendor/laravel/framework/src/Illuminate/Notifications/Messages/BroadcastMessage.php"
+			],
+			[
+				"welco",
+				"resources/views/web/welcome.blade.php"
+			],
+			[
+				"home",
+				"app/Http/Controllers/HomeController.php"
+			],
+			[
+				"pageco",
+				"app/Http/Controllers/Web/PageController.php"
+			],
+			[
+				"app.blade",
+				"resources/views/layouts/app.blade.php"
+			],
+			[
+				"userstable",
+				"database/seeds/UsersTableSeeder.php"
+			],
+			[
+				"index.blade.php",
+				"vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/404.blade.php"
+			],
+			[
+				"web",
+				"routes/web.php"
+			],
+			[
+				"page",
+				"app/Http/Controllers/Web/PageController.php"
+			],
+			[
+				"pagec",
+				"app/Http/Controllers/Web/PageController.php"
+			],
+			[
+				"welcome",
+				"resources/views/web/welcome.blade.php"
+			],
+			[
+				"pagecontroller",
+				"app/Http/Controllers/Web/PageController.php"
+			],
+			[
+				"postcontr",
+				"app/Http/Controllers/Admin/PostController.php"
+			],
+			[
+				"conta",
+				"resources/views/web/contact.blade.php"
+			],
+			[
+				"web/abou",
+				"resources/views/web/about.blade.php"
+			],
+			[
+				"portfolioupda",
+				"app/Http/Requests/PortfolioUpdateRequest.php"
+			],
+			[
+				"portfoliostore",
+				"app/Http/Requests/PortfolioStoreRequest.php"
+			],
+			[
+				"wel",
+				"resources/views/web/welcome2.blade.php"
+			],
+			[
+				"we",
+				"routes/web.php"
+			],
+			[
+				"welcom",
+				"resources/views/welcome.blade.php"
+			],
+			[
+				"about.blade",
+				"resources/views/web/about.blade.php"
+			],
+			[
+				"pagecontrole",
+				"app/Http/Controllers/Web/PageController.php"
+			],
+			[
+				".env",
+				".env"
+			],
+			[
+				"minute",
+				"vendor/mtdowling/cron-expression/src/Cron/MinutesField.php"
+			],
+			[
+				".e",
+				".env"
+			],
+			[
+				"layouts.a",
+				"resources/views/layouts/app.blade.php"
+			],
+			[
+				"ingreso",
+				"app/Http/Controllers/IngresoController.php"
+			],
+			[
+				"index",
+				"resources/views/compras/proveedor/index.blade.php"
+			],
+			[
+				"artic",
+				"app/Http/Controllers/ArticuloController.php"
+			],
+			[
+				"categori",
+				"app/Http/Controllers/CategoriaController.php"
+			],
+			[
+				"categoria",
+				"tests/Feature/CategoriaModulTest.php"
+			],
+			[
+				"layo",
+				"resources/views/layouts.blade.php"
+			],
+			[
+				"articulo",
+				"app/Http/Controllers/ArticuloController.php"
+			],
+			[
+				"create",
+				"resources/views/almacen/categoria/create.blade.php"
+			],
+			[
+				"invalidargumentexception",
+				"vendor/psr/simple-cache/src/InvalidArgumentException.php"
+			],
+			[
+				"arti",
+				"app/Articulo.php"
+			],
+			[
+				"categoriacontr",
+				"app/Http/Controllers/CategoriaController.php"
+			],
+			[
+				"edit",
+				"resources/views/almacen/categoria/edit.blade.php"
+			],
+			[
+				"index.blade",
+				"resources/views/almacen/categoria/index.blade.php"
+			],
+			[
+				"modul",
+				"tests/Feature/CategoriaModulTest.php"
+			],
+			[
+				"categoriacontrole",
+				"app/Http/Controllers/CategoriaController.php"
+			],
+			[
+				"layou",
+				"resources/views/layouts.blade.php"
+			],
+			[
+				"layouts",
+				"resources/views/layouts.blade.php"
+			],
+			[
+				"practica",
+				"tests/Feature/PracticandoTest.php"
+			],
+			[
+				"usermodule",
+				"tests/Feature/UserModuleTest.php"
+			],
+			[
+				"usercontroller",
+				"app/Http/Controllers/UserController.php"
+			],
+			[
+				"crea",
+				"resources/views/user/create.blade.php"
+			],
+			[
+				"userco",
+				"app/Http/Controllers/UserController.php"
+			],
+			[
+				"model",
+				"vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php"
+			],
+			[
+				"sho",
+				"resources/views/user/show.blade.php"
+			],
+			[
+				"index.",
+				"resources/views/user/index.blade.php"
+			],
+			[
+				"show",
+				"resources/views/user/show.blade.php"
+			],
+			[
+				"usercontr",
+				"app/Http/Controllers/UserController.php"
+			],
+			[
+				"user",
+				"app/User.php"
+			],
+			[
+				"profession",
+				"database/seeds/ProfessionSeeder.php"
+			],
+			[
+				"usercontrole",
+				"app/Http/Controllers/UserController.php"
+			],
+			[
+				"route",
+				"vendor/symfony/routing/Route.php"
+			],
+			[
+				"usermod",
+				"tests/Feature/UserModuleTest.php"
+			],
+			[
+				"create_ca",
+				"database/migrations/2018_04_16_012830_create_categorias_table.php"
+			],
+			[
+				"cate",
+				"app/Categoria.php"
+			],
+			[
+				"notfoundhttpexception",
+				"vendor/symfony/http-kernel/Exception/UnauthorizedHttpException.php"
+			],
+			[
+				"selle",
+				"app/Seller.php"
+			],
+			[
+				"create_",
+				"database/migrations/2018_04_07_222839_create__persona_table.php"
+			],
+			[
+				"personaco",
+				"app/Http/Controllers/PersonaController.php"
+			],
+			[
+				"persona",
+				"app/Persona.php"
+			],
+			[
+				"pos",
+				"app/Http/Controllers/PostsController.php"
+			],
+			[
+				"apires",
+				"app/Traits/ApiResponser.php"
+			],
+			[
+				"usertran",
+				"app/Transformers/UserTransformer.php"
+			],
+			[
+				"app",
+				"config/app.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 390.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

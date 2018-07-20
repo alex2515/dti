@@ -1,8 +1,8 @@
 
 <div class="col-md-8">
-	<div class="box box-info ">
+	<div class="box box-primary ">
 		<div class="box-header  with-border">
-			<h3 class="box-title">Agregar nueva entrada</h3>
+			<h3 class="box-title">Agregar nueva entrada</h3><a href="{{ route('posts.index') }}" class="badge bg-orange pull-right"><< Ver Lista</a>
 		</div>
 		<div class="box-body">
 			{{  Form::hidden('user_id', auth()->user()->id) }}			
@@ -11,11 +11,12 @@
 				{{ Form::text('name', null, ['class' => 'form-control input-lg', 'id' =>'name', 'placeholder' => 'Ingrese el título aquí']) }}
 			</div>
 			<div class="form-group">
-				{{ Form::label('excerpt', 'Descripción pequeña (max: 200 caracteres)') }}
+				{{ Form::label('excerpt', 'Descripción pequeña (*)') }}
 				{{ Form::textarea('excerpt', null, ['class' => 'form-control', 'rows' => '2'])}}
+        <p class="help-block pull-right">(máximo: 200 carácteres)</p>
 			</div>
 			<div class="form-group">
-				{{ Form::label('body', 'Descripcion Completa') }}
+				{{ Form::label('body', 'Descripcion Completa (*)') }}
 				{{ Form::textarea('body', null, ['class' => 'form-control']) }}
 			</div>
 			<div class="form-group">
@@ -31,7 +32,7 @@
 </div>
 
 <div class="col-md-4">
-  <div class="box box-info collapsed-box">
+  <div class="box box-primary collapsed-box">
     <div class="box-header with-border">
       <h3 class="box-title">Lugar, Hora y Fecha</h3>
 
@@ -44,16 +45,16 @@
     <!-- /.box-header -->
     <div class="box-body">
     	<div class="form-group">
-  			{{ Form::label('date', 'Fecha') }}
-  			{{ Form::text('date', null, ['class' => 'form-control input-sm', 'id' =>'date']) }}
+  			{{ Form::label('date', 'Fecha (*)') }}
+  			{{ Form::text('date', null, ['class' => 'form-control input-sm', 'id' =>'date', 'placeholder' => 'Fecha ...']) }}
   		</div>
   		<div class="form-group">
-  			{{ Form::label('time', 'Hora') }}
-  			{{ Form::text('time', null, ['class' => 'form-control input-sm', 'id' =>'time']) }}
+  			{{ Form::label('time', 'Hora (*)') }}
+  			{{ Form::text('time', null, ['class' => 'form-control input-sm', 'id' =>'time', 'placeholder' => 'Hora ...']) }}
   		</div>
   		<div class="form-group">
-  			{{ Form::label('place', 'Lugar') }}
-  			{{ Form::text('place', null, ['class' => 'form-control input-sm', 'id' =>'place']) }}
+  			{{ Form::label('place', 'Lugar (*)') }}
+  			{{ Form::text('place', null, ['class' => 'form-control input-sm', 'id' =>'place', 'placeholder' => 'Lugar ...']) }}
   		</div>
     </div>
     <!-- /.box-body -->
@@ -62,7 +63,7 @@
 </div>
 
 <div class="col-md-4">
-  <div class="box box-info collapsed-box">
+  <div class="box box-primary collapsed-box">
     <div class="box-header with-border">
       <h3 class="box-title">Categoria</h3>
 
@@ -85,7 +86,7 @@
 </div>
 
 <div class="col-md-4">
-  <div class="box box-info box-solid">
+  <div class="box box-primary box-solid">
     <div class="box-header with-border">
       <h3 class="box-title">Publicar</h3>
 
@@ -96,18 +97,21 @@
       <!-- /.box-tools -->
     </div>
     <!-- /.box-header -->
-    <div class="box-body">
+    <div class="box-body" style="text-align: center;">
     	<div class="form-group">
-			{{ Form::label('status', 'Estado') }}
 			<label>
-				{{ Form::radio('status', 'PUBLISHED')}} Publicado
+				{{ Form::radio('status', 'PUBLISHED', 'checked', ['class' => 'flat-red']) }} Publicado
 			</label>
 			<label>
-				{{ Form::radio('status', 'DRAFT')}} Borrador
+				{{ Form::radio('status', 'DRAFT', null, ['class' => 'flat-red' ]) }} Borrador
 			</label>
 		</div>
     	<div class="form-group">
-			{{ Form::submit('Guardar', ['class' => 'btn btn-info']) }}
+        <button type="reset" class="btn btn-danger"><i class="fa  fa-times-circle"></i> Cancelar</button>
+        <button type="submit" class="btn btn-success"><i class="fa fa-check-circle"></i> Guargar</button>
+
+{{-- 			{{ Form::submit('Guardar', ['class' => 'btn btn-primary']) }}
+      {{ Form::reset('Cancelar', ['class' => 'btn btn-danger']) }} --}}
 		</div>
     </div>
     <!-- /.box-body -->
@@ -116,7 +120,7 @@
 </div>
 
 <div class="col-md-4">
-  <div class="box box-info collapsed-box">
+  <div class="box box-primary collapsed-box">
     <div class="box-header with-border">
       <h3 class="box-title">Imagen</h3>
 
@@ -140,7 +144,7 @@
 </div>
 
 <div class="col-md-4">
-  <div class="box box-info collapsed-box">
+  <div class="box box-primary collapsed-box">
     <div class="box-header with-border">
       <h3 class="box-title">Etiquetas</h3>
 
@@ -157,8 +161,14 @@
 			<div>
 				@foreach($tags as $tag)
 					<label>
-						{{ Form::checkbox('tags[]', $tag->id) }} {{ $tag->name }}
+						{{ Form::checkbox('tags[]', $tag->id, null ,['class' => 'minimal-red']) }} {{ $tag->name }}
 					</label>
+{{--       <input type="checkbox" class="minimal">
+      <input type="radio" name="r1" class="minimal">
+      <input type="checkbox" class="minimal-red">
+      <input type="radio" name="r2" class="minimal-red">
+      <input type="checkbox" class="flat-red">
+      <input type="radio" name="r3" class="flat-red"> --}}
 				@endforeach
 			</div>
 		</div>

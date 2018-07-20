@@ -16,209 +16,209 @@ class PermissionsTableSeeder extends Seeder
         Permission::create([
         	'name' => 'Navegar USUARIOS',
         	'slug' => 'users.index',
-        	'description' => 'Lista y navega todos los USUARIOS del sistema'
+        	'description' => 'Lista y navega todos los usuarios del sistema'
         ]);
         Permission::create([
         	'name' => 'Ver detalle de USUARIOS',
         	'slug' => 'users.show',
-        	'description' => 'Ver en detalle cada USUARIO del sistema'
+        	'description' => 'Ver en detalle cada usuario del sistema'
         ]);
         Permission::create([
         	'name' => 'Edición de USUARIOS',
         	'slug' => 'users.edit',
-        	'description' => 'Editar cualquier dato de un USUARIO del sistema'
+        	'description' => 'Editar cualquier dato de un usuario del sistema'
         ]);
         Permission::create([
         	'name' => 'Eliminar USUARIOS',
         	'slug' => 'users.destroy',
-        	'description' => 'Eliminar cualquier USUARIO del sistema'
+        	'description' => 'Eliminar cualquier usuario del sistema'
         ]);
 
         //Roles
         Permission::create([
-        	'name' => 'Navegar roles',
+        	'name' => 'Navegar ROLES',
         	'slug' => 'roles.index',
         	'description' => 'Lista y navega todos los roles del sistema'
         ]);
         Permission::create([
-        	'name' => 'Ver detalle de rol',
+        	'name' => 'Ver detalle de ROLES',
         	'slug' => 'roles.show',
         	'description' => 'Ver en detalle cada rol del sistema'
         ]);
         Permission::create([
-        	'name' => 'Creación de roles',
+        	'name' => 'Creación de ROLES',
         	'slug' => 'roles.create',
         	'description' => 'Editar cualquier dato de un rol del sistema'
         ]);
         Permission::create([
-        	'name' => 'Edición de roles',
+        	'name' => 'Edición de ROLES',
         	'slug' => 'roles.edit',
         	'description' => 'Editar cualquier dato de un rol del sistema'
         ]);
         Permission::create([
-        	'name' => 'Eliminar rol',
+        	'name' => 'Eliminar ROLES',
         	'slug' => 'roles.destroy',
         	'description' => 'Eliminar cualquier rol del sistema'
         ]);
 
         //Products
         Permission::create([
-        	'name' => 'Navegar productos',
+        	'name' => 'Navegar PRODUCTOS',
         	'slug' => 'products.index',
         	'description' => 'Lista y navega todos los productos del sistema'
         ]);
         Permission::create([
-        	'name' => 'Ver detalle de producto',
+        	'name' => 'Ver detalle de PRODUCTOS',
         	'slug' => 'products.show',
         	'description' => 'Ver en detalle cada producto del sistema'
         ]);
         Permission::create([
-        	'name' => 'Creación de productos',
+        	'name' => 'Creación de PRODUCTOS',
         	'slug' => 'products.create',
         	'description' => 'Editar cualquier dato de un producto del sistema'
         ]);
         Permission::create([
-        	'name' => 'Edición de productos',
+        	'name' => 'Edición de PRODUCTOS',
         	'slug' => 'products.edit',
         	'description' => 'Editar cualquier dato de un producto del sistema'
         ]);
         Permission::create([
-        	'name' => 'Eliminar producto',
+        	'name' => 'Eliminar PRODUCTOS',
         	'slug' => 'products.destroy',
         	'description' => 'Eliminar cualquier producto del sistema'
         ]);
 
         //Categories
         Permission::create([
-            'name' => 'Navegar categorias',
+            'name' => 'Navegar CATEGORIAS',
             'slug' => 'categories.index',
             'description' => 'Lista y navega todos los categorias del sistema'
         ]);
         Permission::create([
-            'name' => 'Ver detalle de categoria',
+            'name' => 'Ver detalle de CATEGORIAS',
             'slug' => 'categories.show',
             'description' => 'Ver en detalle cada categoria del sistema'
         ]);
         Permission::create([
-            'name' => 'Creación de categorias',
+            'name' => 'Creación de CATEGORIAS',
             'slug' => 'categories.create',
             'description' => 'Editar cualquier dato de un categoria del sistema'
         ]);
         Permission::create([
-            'name' => 'Edición de categorias',
+            'name' => 'Edición de CATEGORIAS',
             'slug' => 'categories.edit',
             'description' => 'Editar cualquier dato de un categoria del sistema'
         ]);
         Permission::create([
-            'name' => 'Eliminar categoria',
+            'name' => 'Eliminar CATEGORIAS',
             'slug' => 'categories.destroy',
             'description' => 'Eliminar cualquier categoria del sistema'
         ]);
 
         //Tags
         Permission::create([
-            'name' => 'Navegar etiquetas',
+            'name' => 'Navegar ETIQUETAS',
             'slug' => 'tags.index',
             'description' => 'Lista y navega todos los etiquetas del sistema'
         ]);
         Permission::create([
-            'name' => 'Ver detalle de etiqueta',
+            'name' => 'Ver detalle de ETIQUETAS',
             'slug' => 'tags.show',
             'description' => 'Ver en detalle cada etiqueta del sistema'
         ]);
         Permission::create([
-            'name' => 'Creación de etiquetas',
+            'name' => 'Creación de ETIQUETAS',
             'slug' => 'tags.create',
             'description' => 'Editar cualquier dato de un etiqueta del sistema'
         ]);
         Permission::create([
-            'name' => 'Edición de etiquetas',
+            'name' => 'Edición de ETIQUETAS',
             'slug' => 'tags.edit',
             'description' => 'Editar cualquier dato de un etiqueta del sistema'
         ]);
         Permission::create([
-            'name' => 'Eliminar etiqueta',
+            'name' => 'Eliminar ETIQUETAS',
             'slug' => 'tags.destroy',
             'description' => 'Eliminar cualquier etiqueta del sistema'
         ]);
 
         //Posts
         Permission::create([
-            'name' => 'Navegar posts',
+            'name' => 'Navegar EVENTOS',
             'slug' => 'posts.index',
             'description' => 'Lista y navega todos los posts del sistema'
         ]);
         Permission::create([
-            'name' => 'Ver detalle de post',
+            'name' => 'Ver detalle de EVENTOS',
             'slug' => 'posts.show',
             'description' => 'Ver en detalle cada post del sistema'
         ]);
         Permission::create([
-            'name' => 'Creación de posts',
+            'name' => 'Creación de EVENTOS',
             'slug' => 'posts.create',
             'description' => 'Editar cualquier dato de un post del sistema'
         ]);
         Permission::create([
-            'name' => 'Edición de posts',
+            'name' => 'Edición de EVENTOS',
             'slug' => 'posts.edit',
             'description' => 'Editar cualquier dato de un post del sistema'
         ]);
         Permission::create([
-            'name' => 'Eliminar posts',
+            'name' => 'Eliminar EVENTOS',
             'slug' => 'posts.destroy',
             'description' => 'Eliminar cualquier post del sistema'
         ]);
 
         //Services
         Permission::create([
-            'name' => 'Navegar services',
+            'name' => 'Navegar SERVICIOS',
             'slug' => 'services.index',
             'description' => 'Lista y navega todos los services del sistema'
         ]);
         Permission::create([
-            'name' => 'Ver detalle de SERVICE',
+            'name' => 'Ver detalle de SERVICIOS',
             'slug' => 'services.show',
             'description' => 'Ver en detalle cada SERVICE del sistema'
         ]);
         Permission::create([
-            'name' => 'Creación de services',
+            'name' => 'Creación de SERVICIOS',
             'slug' => 'services.create',
             'description' => 'Editar cualquier dato de un SERVICE del sistema'
         ]);
         Permission::create([
-            'name' => 'Edición de services',
+            'name' => 'Edición de SERVICIOS',
             'slug' => 'services.edit',
             'description' => 'Editar cualquier dato de un SERVICE del sistema'
         ]);
         Permission::create([
-            'name' => 'Eliminar services',
+            'name' => 'Eliminar SERVICIOS',
             'slug' => 'services.destroy',
             'description' => 'Eliminar cualquier SERVICE del sistema'
         ]);
 
         //PORTAFOLIO
         Permission::create([
-            'name' => 'Navegar portfolios',
+            'name' => 'Navegar PORTAFOLIOS',
             'slug' => 'portfolios.index',
             'description' => 'Lista y navega todos los portfolios del sistema'
         ]);
         Permission::create([
-            'name' => 'Ver detalle de post',
+            'name' => 'Ver detalle de PORTAFOLIOS',
             'slug' => 'portfolios.show',
             'description' => 'Ver en detalle cada post del sistema'
         ]);
         Permission::create([
-            'name' => 'Creación de portfolios',
+            'name' => 'Creación de PORTAFOLIOS',
             'slug' => 'portfolios.create',
             'description' => 'Editar cualquier dato de un post del sistema'
         ]);
         Permission::create([
-            'name' => 'Edición de portfolios',
+            'name' => 'Edición de PORTAFOLIOS',
             'slug' => 'portfolios.edit',
             'description' => 'Editar cualquier dato de un post del sistema'
         ]);
         Permission::create([
-            'name' => 'Eliminar portfolios',
+            'name' => 'Eliminar PORTAFOLIOS',
             'slug' => 'portfolios.destroy',
             'description' => 'Eliminar cualquier post del sistema'
         ]);

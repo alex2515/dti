@@ -17,32 +17,18 @@
 
 // Web -> Rutas en español
 Route::redirect('/', 'dti');
-Route::get('dti', 'Web\PageController@blog')->name('blog');
-Route::get('portafolios','Web\PageController@portafolios')->name('portafolios');
-Route::get('servicios','Web\PageController@servicios')->name('servicios');
-Route::get('servicio/{slug}','Web\PageController@servicio')->name('servicio');
-Route::get('eventos','Web\PageController@eventos')->name('eventos');
-Route::get('evento/{slug}','Web\PageController@evento')->name('evento');
-Route::get('contact','Web\PageController@contact')->name('contact');
-Route::get('nosotros','Web\PageController@nosotros')->name('nosotros');
-Route::get('icons','Web\PageController@icons')->name('icons');
+Route::get('dti', 				'Web\PageController@dti')->name('dti');
+Route::get('portafolios',		'Web\PageController@portafolios')->name('portafolios');
+Route::get('servicios',			'Web\PageController@servicios')->name('servicios');
+Route::get('servicio/{slug}',	'Web\PageController@servicio')->name('servicio');
+Route::get('eventos',			'Web\PageController@eventos')->name('eventos');
+Route::get('evento/{slug}',		'Web\PageController@evento')->name('evento');
+Route::get('contactos',			'Web\PageController@contactos')->name('contactos');
+Route::get('nosotros',			'Web\PageController@nosotros')->name('nosotros');
+Route::post('messages',			'Web\PageController@mensaje')->name('messages');
+Route::get('icons',				'Web\PageController@icons')->name('icons');
 
-Route::post('messages', function(){
-	$data = request()->all();
-	//dd($data);
-	//enviar correo
-	if ($data['email'] != "") {
-		# code...
-		Mail::send("admin.emails.messages", $data, function($message) use ($data){
-			
-			$message->from($data['email'], $data['name']) // DE: 
-					->to($data['emailoficina'], 'Alexander') // PARA: 
-					->subject($data['subject']); // ASUNTO: 
-		});
-	}
-	//responder al usuario
-	 return back();
-})->name('messages');
+
 
 
 // admin
@@ -179,5 +165,91 @@ Route::middleware(['auth'])->group(function() {
 		->middleware('permission:portfolios.destroy');
 	Route::get('portfolios/{portfolio}/edit', 'Admin\PortfolioController@edit')->name('portfolios.edit')
 		->middleware('permission:portfolios.edit');
+
+	//Company
+	Route::get('companies/{company}/edit', 'Admin\CompanyController@edit')->name('companies.edit')
+		->middleware('permission:companies.edit');
+		Route::put('companies/{company}', 'Admin\CompanyController@update')->name('companies.update')
+		->middleware('permission:companies.edit');
+
+	// Unity
+	Route::post('unities/store', 'Admin\UnityController@store')->name('unities.store')
+		->middleware('permission:unities.create');
+	Route::get('unities', 'Admin\UnityController@index')->name('unities.index')
+		->middleware('permission:unities.index');
+	Route::get('unities/create', 'Admin\UnityController@create')->name('unities.create')
+		->middleware('permission:unities.create');
+	Route::put('unities/{unity}', 'Admin\UnityController@update')->name('unities.update')
+		->middleware('permission:unities.edit');
+	Route::get('unities/{unity}', 'Admin\UnityController@show')->name('unities.show')
+		->middleware('permission:unities.show');
+	Route::delete('unities/{unity}', 'Admin\UnityController@destroy')->name('unities.destroy')
+		->middleware('permission:unities.destroy');
+	Route::get('unities/{unity}/edit', 'Admin\UnityController@edit')->name('unities.edit')
+		->middleware('permission:unities.edit');
+
+	// Team
+	Route::post('teams/store', 'Admin\TeamController@store')->name('teams.store')
+		->middleware('permission:teams.create');
+	Route::get('teams', 'Admin\TeamController@index')->name('teams.index')
+		->middleware('permission:teams.index');
+	Route::get('teams/create', 'Admin\TeamController@create')->name('teams.create')
+		->middleware('permission:teams.create');
+	Route::put('teams/{team}', 'Admin\TeamController@update')->name('teams.update')
+		->middleware('permission:teams.edit');
+	Route::get('teams/{team}', 'Admin\TeamController@show')->name('teams.show')
+		->middleware('permission:teams.show');
+	Route::delete('teams/{team}', 'Admin\TeamController@destroy')->name('teams.destroy')
+		->middleware('permission:teams.destroy');
+	Route::get('teams/{team}/edit', 'Admin\TeamController@edit')->name('teams.edit')
+		->middleware('permission:teams.edit');
+
+	// Testimony
+	Route::post('testimonies/store', 'Admin\TestimonyController@store')->name('testimonies.store')
+		->middleware('permission:testimonies.create');
+	Route::get('testimonies', 'Admin\TestimonyController@index')->name('testimonies.index')
+		->middleware('permission:testimonies.index');
+	Route::get('testimonies/create', 'Admin\TestimonyController@create')->name('testimonies.create')
+		->middleware('permission:testimonies.create');
+	Route::put('testimonies/{testimony}', 'Admin\TestimonyController@update')->name('testimonies.update')
+		->middleware('permission:testimonies.edit');
+	Route::get('testimonies/{testimony}', 'Admin\TestimonyController@show')->name('testimonies.show')
+		->middleware('permission:testimonies.show');
+	Route::delete('testimonies/{testimony}', 'Admin\TestimonyController@destroy')->name('testimonies.destroy')
+		->middleware('permission:testimonies.destroy');
+	Route::get('testimonies/{testimony}/edit', 'Admin\TestimonyController@edit')->name('testimonies.edit')
+		->middleware('permission:testimonies.edit');
+
+	// Customer
+	Route::post('customers/store', 'Admin\CustomerController@store')->name('customers.store')
+		->middleware('permission:customers.create');
+	Route::get('customers', 'Admin\CustomerController@index')->name('customers.index')
+		->middleware('permission:customers.index');
+	Route::get('customers/create', 'Admin\CustomerController@create')->name('customers.create')
+		->middleware('permission:customers.create');
+	Route::put('customers/{customer}', 'Admin\CustomerController@update')->name('customers.update')
+		->middleware('permission:customers.edit');
+	Route::get('customers/{customer}', 'Admin\CustomerController@show')->name('customers.show')
+		->middleware('permission:customers.show');
+	Route::delete('customers/{customer}', 'Admin\CustomerController@destroy')->name('customers.destroy')
+		->middleware('permission:customers.destroy');
+	Route::get('customers/{customer}/edit', 'Admin\CustomerController@edit')->name('customers.edit')
+		->middleware('permission:customers.edit');
+
+	// Intro
+	Route::post('intros/store', 'Admin\IntroController@store')->name('intros.store')
+		->middleware('permission:intros.create');
+	Route::get('intros', 'Admin\IntroController@index')->name('intros.index')
+		->middleware('permission:intros.index');
+	Route::get('intros/create', 'Admin\IntroController@create')->name('intros.create')
+		->middleware('permission:intros.create');
+	Route::put('intros/{intro}', 'Admin\IntroController@update')->name('intros.update')
+		->middleware('permission:intros.edit');
+	Route::get('intros/{intro}', 'Admin\IntroController@show')->name('intros.show')
+		->middleware('permission:intros.show');
+	Route::delete('intros/{intro}', 'Admin\IntroController@destroy')->name('intros.destroy')
+		->middleware('permission:intros.destroy');
+	Route::get('intros/{intro}/edit', 'Admin\IntroController@edit')->name('intros.edit')
+		->middleware('permission:intros.edit');
 });
 	

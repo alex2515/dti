@@ -53,80 +53,40 @@
   <header id="header">
     <div class="container-fluid">
       <div id="logo" class="pull-left">
-        <h1><a href="{{ route('blog') }}" class="scrollto">DTI</a></h1>
+        <h1><a href="{{ route('dti') }}" class="scrollto">DTI</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li><a href="{{ route('blog') }}">Inicio</a></li>
+          <li><a href="{{ route('dti') }}">Inicio</a></li>
           <li><a href="{{ route('nosotros')}}">Nosotros</a></li>
           <li><a href="{{ route('eventos')}}">Eventos</a></li>
           <li><a href="{{ route('servicios')}}">Servicios</a></li>
           <li><a href="{{ route('portafolios')}}">Portafolio</a></li>
-          <!-- <li><a href="#team">Equipo</a></li> -->
-          <li class="menu-has-children"><a href="">Vigilancia Técnologica</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li>
-          <li><a href="{{ route('contact')}}">Contact</a></li>
-          {{-- @if (Route::has('login'))
-              @auth
-                  <li><a class="btn btn-sm" href="{{ url('/home') }}"><span class="glyphicon glyphicon-search"></span></a></li>
-              @else <ion-icon name="person"></ion-icon>
-                <li><a class="btn btn-sm" href="{{ route('register') }}"><span class="ion ion-person-add"></span></a></li>
-                <li><a class="btn btn-sm" href="{{ route('login') }}"><span class="ion ion-settings"></span></a></li>
-                
-              @endauth
-          @endif   --}}
+          <li><a href="#">Vigilancia Técnologica</a></li>
+          <li><a href="{{ route('contactos')}}">Contáctenos</a></li>
           <li class="menu-has-children"><a href=""><span class="ion ion-donwload"></span></a>
             <ul>
-              @if (Route::has('login'))
-              @auth
-                  <li><a class="btn btn-sm" href="{{ url('/home') }}">Regresar</a></li>
-              @else <ion-icon name="person"></ion-icon>
-                <li><a href="{{ route('register') }}">Registrarse</a></li>
-                <li><a href="{{ route('login') }}">Ingresar</a></li>
-                
-              @endauth
-          @endif
+                @if (Route::has('login'))
+                  @auth
+                    <li><a class="btn btn-sm" href="{{ url('/home') }}">Regresar</a></li>
+                  @else <ion-icon name="person"></ion-icon>
+                    <li><a href="{{ route('register') }}">Registrarse</a></li>
+                    <li><a href="{{ route('login') }}">Ingresar</a></li>
+                  @endauth
+                @endif
+            </ul>
+          </li>
         </ul>
       </nav><!-- #nav-menu-container -->
-
     </div>
   </header><!-- #header -->
-
-{{--   <main id="main">
-    <section id="about">
-      <div class="container">
-        <header class="section-header">
-          <h3>Eventos</h3>
-        </header>
-        @foreach($posts as $post)
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title"><strong>{{$post->name}}</strong></h4>
-            <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
-            <a href="#" class="btn btn-primary">Leer mas</a>
-          </div>
-          <img class="img-thumbnail" src="{{$post->file}}" alt="Card image" style="width:100%" height="350px">
-        </div>
-        @endforeach
-        <br>
-        {{ $posts->links('vendor/pagination/bootstrap-4') }}
-      </div>
-    </section>
-  </main> --}}
 
   <main id="main">
     @yield('content')
   </main>
-
 
   <!--==========================
     Footer
@@ -143,7 +103,7 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Enlaces útiles</h4>
             <ul>
-              <li><i class="ion-ios-arrow-right"></i> <a href="{{ route('blog') }}">Inicio</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="{{ route('dti') }}">Inicio</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="{{ route('nosotros') }}">Nosotros</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="{{ route('eventos') }}">Eventos</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="{{ route('servicios') }}">Servicios</a></li>

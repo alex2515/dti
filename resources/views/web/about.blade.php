@@ -8,7 +8,7 @@
 
         <header class="section-header">
           <h3>Nosotros</h3>
-          <p>La Dirección de Transferencia e Innovación (DTI) es un órgano dependiente del Vicerrectorado de Investigación, encargado de promover y gestionar relaciones e interacciones entre la Universidad y su entorno, particularmente del sector empresarial, en el área de investigación e innovación (I+D+I) tecnológica encargado de la gestión administrativa de la investigación, desarrollo e innovación en la UNHEVAL y de promover y gestionar relaciones e interacciones entre la UNHEVAL, y su entorno, particularmente, el sector empresarial, en el área de la investigación e innovación tecnológica. Específicamente está encargada de transferir los resultados de los trabajos de investigación y prestaciones de servicios con entidades públicas y privadas; organizar información para empresas; publicaciones; proteger la propiedad intelectual y el registro de patentes.</p>
+          <p>{{$company->description}}</p>
         </header>
 
         <div class="row about-cols">

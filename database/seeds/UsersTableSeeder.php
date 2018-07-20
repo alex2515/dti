@@ -16,15 +16,15 @@ class UsersTableSeeder extends Seeder
     	factory(User::class, 29)->create();
 
     	Role::create([
-    		'name' 		=> 'Admin',
-    		'slug' 		=> 'admin',
+    		'name' 		=> 'Administrador',
+    		'slug' 		=> 'administrador',
             'description' => 'Acceso a todas las opciones',
     		'special' 	=> 'all-access'
     	]);
 
         factory(User::class)->create([
             'name' => 'Alexander Espinoza G.',
-            'email' => 'admin@admin.com',
+            'email' => 'a@espinoza.com',
             'password' => bcrypt('123456'),
         ]);
     }

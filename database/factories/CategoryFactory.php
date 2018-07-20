@@ -8,9 +8,8 @@ $factory->define(App\Category::class, function (Faker $faker) {
         //
         'name' => $title,
         'slug' => str_slug($title),
-        'body' => $faker->text(500),
+        'body' => $faker->text(200),
         'type' => $faker->randomElement(['EVENT', 'SERVICE']),
-        'icon' => $faker->randomElement(['fa-building','fa-database','fa-graduation-cap','fa-industry']),
-        'file' => 'ion-ios-analytics-outline',
+        'icon' => $faker->randomElement(['fa fa-building','fa fa-database','fa fa-graduation-cap','fa fa-industry']),
     ];
 });

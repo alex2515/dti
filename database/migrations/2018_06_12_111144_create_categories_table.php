@@ -18,11 +18,9 @@ class CreateCategoriesTable extends Migration
 
             $table->string('name', 128);
             $table->string('slug', 128)->unique(); // URL amigable 
-            $table->mediumText('body')->nullable();
+            $table->mediumText('body', 200)->nullable();
             $table->enum('type', ['EVENT', 'SERVICE']);
-            $table->string('icon', 128);
-            $table->string('file', 128)->nullable();
-
+            $table->string('icon', 100);
             $table->timestamps();
         });
     }

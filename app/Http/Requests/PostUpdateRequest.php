@@ -29,17 +29,36 @@ class PostUpdateRequest extends FormRequest
             'user_id'     => 'required|integer',
             'category_id' => 'required|integer',
             // 'tags'        => 'required|array',
+            'excerpt'     => 'required|max:200',
             'tags'        => 'array',
             'body'        => 'required',
             'status'      => 'required|in:DRAFT,PUBLISHED',
-            'date'        => 'required',
-            'time'        => 'required',
-            'place'        => 'required',
+            'date'        => 'required|max:120',
+            'time'        => 'required|max:120',
+            'place'       => 'required|max:120',
         ];
 
         if ($this->get('file')) {
             $rules = array_merge($rules, ['file' => 'mimes:jpg,jpeg,png']);
         }
         return $rules;
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required'     => 'El campo nombre es obligatorio',
+            'name.max'          => 'El campo nombre no debe contener más de :max caracteres.',
+            'body.required'     => 'El campo nombre es obligatorio',
+            // 'name.max'       => 'El campo nombre no debe contener más de :max caracteres.',
+            'excerpt.required'  => 'El campo descripción es obligatorio',
+            'excerpt.max'       => 'El campo descripción no debe contener más de :max caracteres.',
+            'date.required'     => 'El campo fecha es obligatorio',
+            'date.max'          => 'El campo fecha no debe contener más de :max caracteres.',
+            'time.required'     => 'El campo hora es obligatorio',
+            'time.max'          => 'El campo hora no debe contener más de :max caracteres.',
+            'place.required'    => 'El campo lugar es obligatorio',
+            'place.max'         => 'El campo lugar no debe contener más de :max caracteres.',
+        ];
     }
 }

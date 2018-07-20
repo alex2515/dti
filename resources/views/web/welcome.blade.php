@@ -4,7 +4,7 @@
 <html lang="{{ app()->getLocale() }}">
 <head>
   <meta charset="utf-8">
-  <title>Dirección de Transferencia, Emprendimiento e Innovación </title>
+  <title>{{ $company->name }}</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -23,7 +23,7 @@
   {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{ asset('bower_components/font-awesome/css/font-awesome.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('admin/bower_components/font-awesome/css/font-awesome.min.css') }}">
 
   <!-- Libraries CSS Files -->
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -47,65 +47,44 @@
 
 
 <body>
+
   <!--==========================
     Header
   ============================-->
   <header id="header">
     <div class="container-fluid">
       <div id="logo" class="pull-left">
-        <h1><a href="{{ route('blog') }}" class="scrollto">DTI</a></h1>
+        <h1><a href="{{ route('dti') }}" class="scrollto">{{ $company->logo }}</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
       </div>
-
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li><a href="{{ route('blog') }}">Inicio</a></li>
+          <li><a href="{{ route('dti') }}">Inicio</a></li>
           <li><a href="{{ route('nosotros') }}">Nosotros</a></li>
           <li><a href="{{ route('eventos') }}">Eventos</a></li>
           <li><a href="{{ route('servicios') }}">Servicios</a></li>
           <li><a href="{{ route('portafolios') }}">Portafolio</a></li>
-          <li><a href="https://deitt.000webhostapp.com/index.php">Vigilancia Técnologica<</a></li>
-          
-          <!-- <li><a href="#team">Equipo</a></li> -->
-          {{-- <li class="menu-has-children"><a href="">Vigilancia Técnologica</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li> --}}
-          <li><a href="{{ route('contact')}}">Contact</a></li>
-          {{-- @if (Route::has('login'))
-              @auth
-                  <li><a class="btn btn-sm" href="{{ url('/home') }}"><span class="glyphicon glyphicon-search"></span></a></li>
-              @else <ion-icon name="person"></ion-icon>
-                <li><a class="btn btn-sm" href="{{ route('register') }}"><span class="ion ion-person-add"></span></a></li>
-                <li><a class="btn btn-sm" href="{{ route('login') }}"><span class="ion ion-settings"></span></a></li>
-                
-              @endauth
-          @endif --}}
+          <li><a href="{{ $company->url }}">Vigilancia Técnologica</a></li>
+          <li><a href="{{ route('contactos')}}">Contáctenos</a></li>
           <li class="menu-has-children"><a href=""><span class="ion ion-donwload"></span></a>
             <ul>
               @if (Route::has('login'))
-              @auth
-                <li><a href="{{ url('/home') }}">Regresar</a></li>
-              @else <ion-icon name="person"></ion-icon>
-                <li><a href="{{ route('register') }}">Registrarse</a></li>
-                <li><a href="{{ route('login') }}">Ingresar</a></li>
-                
-              @endauth
-          @endif
+                @auth
+                  <li><a href="{{ url('/home') }}">Regresar</a></li>
+                @else <ion-icon name="person"></ion-icon>
+                  <li><a href="{{ route('register') }}">Registrarse</a></li>
+                  <li><a href="{{ route('login') }}">Ingresar</a></li>                  
+                @endauth
+              @endif
             </ul>
           </li>  
         </ul>
       </nav><!-- #nav-menu-container -->
-
     </div>
   </header><!-- #header -->
 
-    <!--==========================
+  <!--==========================
     Intro Section
   ============================-->
   <section id="intro">
@@ -115,6 +94,7 @@
         <ol class="carousel-indicators"></ol>
 
         <div class="carousel-inner" role="listbox">
+
           <div class="carousel-item active">
             <div class="carousel-background"><img src="img/intro-carousel/4.jpg" alt=""></div>
             <div class="carousel-container">
@@ -183,29 +163,21 @@
     <section id="featured-services">
       <div class="container">
         <div class="row">
-        
           <div class="col-lg-4 box">
             <i class="ion-ios-bookmarks-outline"></i>
             <h4 class="title"><a href="{{ route('eventos') }}">Eventos</a></h4>
             <p class="description">&nbsp</p>
-            {{-- <p class="description">&nbsp</p> --}}
-
           </div>
-
           <div class="col-lg-4 box box-bg">
             <i class="ion-ios-stopwatch-outline"></i>
             <h4 class="title"><a href="{{ route('servicios') }}">Servicios</a></h4>
             <p class="description">&nbsp</p>
-            {{-- <p class="description">&nbsp</p> --}}
           </div>
-
           <div class="col-lg-4 box">
             <i class="ion-ios-heart-outline"></i>
             <h4 class="title"><a href="{{ route('portafolios') }}">Portafolio</a></h4>
             <p class="description">&nbsp</p>
-            {{-- <p class="description">&nbsp</p> --}}
           </div>
-
         </div>
       </div>
     </section>
@@ -219,62 +191,35 @@
 
         <header class="section-header">
           <h3>Nosotros</h3>
-          <p>La Dirección de Transferencia e Innovación (DTI) es un órgano dependiente del Vicerrectorado de Investigación, encargado de promover y gestionar relaciones e interacciones entre la Universidad y su entorno, particularmente del sector empresarial, en el área de investigación e innovación (I+D+I) tecnológica encargado de la gestión administrativa de la investigación, desarrollo e innovación en la UNHEVAL y de promover y gestionar relaciones e interacciones entre la UNHEVAL, y su entorno, particularmente, el sector empresarial, en el área de la investigación e innovación tecnológica. Específicamente está encargada de transferir los resultados de los trabajos de investigación y prestaciones de servicios con entidades públicas y privadas; organizar información para empresas; publicaciones; proteger la propiedad intelectual y el registro de patentes.</p>
+          <p>{{ $company->description }}</p>
         </header>
 
         <div class="row about-cols">
-
+          @foreach($unities as $unity)
           <div class="col-md-4 wow fadeInUp">
             <div class="about-col">
               <div class="img">
-                <img src="img/about-mission.jpg" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+                <img src="{{ $unity->file }}" alt="" class="img-fluid">
+                <div class="icon"><i class="{{ $unity->icon }}"></i></div>
               </div>
-              <h2 class="title"><a href="#">Oferta Tecnológica</a></h2>
+              <h2 class="title"><a href="#">{{ $unity->name }}</a></h2>
               <p>
-                La Unidad de Oferta Tecnológica es la encargada de identificar, organizar y transferir conocimiento producido como resultado de las investigaciones e innovación tecnológica a empresas y la sociedad. Brinda asesoramiento al sector público y privado en temas de su competencia.
+                {{ $unity->description }}
               </p>
               <br>
             </div>
           </div>
-
-          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="about-col">
-              <div class="img">
-                <img src="img/about-plan.jpg" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-list-outline"></i></div>
-              </div>
-              <h2 class="title"><a href="#">Patentes, Propiedad Intelectual y Publicaciones</a></h2>
-              <p>
-                La Unidad de Patentes, Propiedad Intelectual y Publicaciones, es la encargada de brindar servicios de asesoría integral con miras a la protección, promoción y difusión de las creaciones intelectuales desarrollados por los miembros de la comunidad universitaria.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
-            <div class="about-col">
-              <div class="img">
-                <img src="img/about-vision.jpg" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-eye-outline"></i></div>
-              </div>
-              <h2 class="title"><a href="#">Emprendimiento e Incubadora de Empresas</a></h2>
-              <p>
-                La Unidad de Emprendimiento e Incubadora de Empresas, promueve la iniciativa de los estudiantes para la creación de pequeñas y micro empresas de propiedad de los estudiantes, brindando asesoría o facilidades en el uso de los equipos e instalaciones de la institución.
-              </p>
-            </div>
-          </div>
-
+          @endforeach
         </div>
 
       </div>
     </section><!-- #about -->
 
-        <!--==========================
+    <!--==========================
       Events Section
     ============================-->
     <section id="events">
       <div class="container">
-
         <header class="section-header wow fadeInUp">
           <h3>Eventos</h3>
         </header>
@@ -298,310 +243,60 @@
               <strong>Lugar: </strong>{{ $post->place }}
               <a href="{{ route('evento',$post->slug) }}" class="btn btn-success pull-right">Ver mas</a>
             </p>
-
-            
           </div>
         </div><hr>
         @endforeach
-
-        {{-- <div class="row">
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
-            <h4 class="title"><a href="">Capacitaciones</a></h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
-            <h4 class="title"><a href="">Consultorias</a></h4>
-            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-paper-outline"></i></div>
-            <h4 class="title"><a href="">Laboratorio</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
-            <h4 class="title"><a href="">Emprendimiento e Innovación</a></h4>
-            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-barcode-outline"></i></div>
-            <h4 class="title"><a href="">Programa de PYMES</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-people-outline"></i></div>
-            <h4 class="title"><a href="">CATI</a></h4>
-            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-          </div>
-        </div> --}}
       </div>
     </section><!-- #Events -->
 
     <!--==========================
       Services Section
     ============================-->
-    {{-- <section id="services">
-      <div class="container">
-
-        <header class="section-header wow fadeInUp">
-          <h3>Servicios</h3>
-          <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus, ad pro quaestio laboramus. Ei ubique vivendum pro. At ius nisl accusam lorenta zanos paradigno tridexa panatarel.</p>
-        </header>
-
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
-            <h4 class="title"><a href="">Capacitaciones</a></h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
-            <h4 class="title"><a href="">Consultorias</a></h4>
-            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-paper-outline"></i></div>
-            <h4 class="title"><a href="">Laboratorio</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
-            <h4 class="title"><a href="">Emprendimiento e Innovación</a></h4>
-            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-barcode-outline"></i></div>
-            <h4 class="title"><a href="">Programa de PYMES</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-people-outline"></i></div>
-            <h4 class="title"><a href="">CATI</a></h4>
-            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-          </div>
-
-        </div>
-
-      </div>
-    </section> --}}<!-- #services -->
-    
     <section id="services">
       <div class="container">
-
         <header class="section-header wow fadeInUp">
           <h3>Servicios</h3>
           <p>A continuación los Grupos de Investigación de la UNHEVAL presentan su Oferta Tecnológica y de Servicios, por sector de actividad:</p>
         </header>
-
         <div class="row">
           @foreach($servicios as $service)
           <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s" >
-            {{-- <div class="icon"><i class="ion-checkmark-circled"></i></div> --}}
             <div class="icon"><i class="fa {{ $service->icon }}"></i></div>
             <h4 class="title"><a href="{{ route('servicio', $service->slug) }}">{{ $service->name }}</a></h4>
             <p class="description">{{ substr($service->body, 0,150) }}...</p>
           </div>
           @endforeach
         </div>
-
       </div>
     </section><!-- #services -->
-
-    <!--==========================
-      Portfolio Section
-    ============================-->
-    {{-- <section id="portfolio"  class="section-bg" >
-      <div class="container">
-
-        <header class="section-header">
-          <h3 class="section-title">PORTAFOLIO</h3>
-        </header>
-
-        <div class="row">
-          <div class="col-lg-12">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="img/portfolio/app1.jpg" class="img-fluid" alt="">
-                <a href="img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">App 1</a></h4>
-                <p>App</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="img/portfolio/web3.jpg" class="img-fluid" alt="">
-                <a href="img/portfolio/web3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">Web 3</a></h4>
-                <p>Web</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="img/portfolio/app2.jpg" class="img-fluid" alt="">
-                <a href="img/portfolio/app2.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">App 2</a></h4>
-                <p>App</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="img/portfolio/card2.jpg" class="img-fluid" alt="">
-                <a href="img/portfolio/card2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">Card 2</a></h4>
-                <p>Card</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="img/portfolio/web2.jpg" class="img-fluid" alt="">
-                <a href="img/portfolio/web2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">Web 2</a></h4>
-                <p>Web</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="img/portfolio/app3.jpg" class="img-fluid" alt="">
-                <a href="img/portfolio/app3.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">App 3</a></h4>
-                <p>App</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="img/portfolio/card1.jpg" class="img-fluid" alt="">
-                <a href="img/portfolio/card1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">Card 1</a></h4>
-                <p>Card</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp" data-wow-delay="0.1s">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="img/portfolio/card3.jpg" class="img-fluid" alt="">
-                <a href="img/portfolio/card3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">Card 3</a></h4>
-                <p>Card</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.2s">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="img/portfolio/web1.jpg" class="img-fluid" alt="">
-                <a href="img/portfolio/web1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">Web 1</a></h4>
-                <p>Web</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section> --}}
-    <!-- #portfolio -->
 
     <!--==========================
       Clients Section
     ============================-->
     <section id="clients" class="wow fadeInUp">
       <div class="container">
-
         <header class="section-header">
           <h3>Nuestros Clientes</h3>
         </header>
-
         <div class="owl-carousel clients-carousel">
-          <img src="img/clients/client-1.png" alt="">
-          <img src="img/clients/client-2.png" alt="">
+          @foreach($customers as $customer)
+          <img src="{{ $customer->file }}">
+          @endforeach
+{{--           <img src="img/clients/client-2.png" alt="">
           <img src="img/clients/client-3.png" alt="">
           <img src="img/clients/client-4.png" alt="">
           <img src="img/clients/client-5.png" alt="">
           <img src="img/clients/client-6.png" alt="">
           <img src="img/clients/client-7.png" alt="">
-          <img src="img/clients/client-8.png" alt="">
+          <img src="img/clients/client-8.png" alt=""> --}}
         </div>
-
       </div>
     </section><!-- #clients -->
 
     <!--==========================
       Clients Section
     ============================-->
-    {{-- <section id="testimonials" class="section-bg wow fadeInUp">
+    <section id="testimonials" class="section-bg wow fadeInUp">
       <div class="container">
 
         <header class="section-header">
@@ -610,18 +305,20 @@
 
         <div class="owl-carousel testimonials-carousel">
 
+          @foreach($testimonies as $testimony)
           <div class="testimonial-item">
-            <img src="img/testimonial-1.jpg" class="testimonial-img" alt="">
-            <h3>Saul Goodman</h3>
-            <h4>Ceo &amp; Founder</h4>
+            <img src="{{ $testimony->file }}" class="testimonial-img" alt="">
+            <h3>{{ $testimony->name }}</h3>
+            <h4>{{ $testimony->profession }}</h4>
             <p>
               <img src="img/quote-sign-left.png" class="quote-sign-left" alt="">
-              Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+              {{ $testimony->description }}
               <img src="img/quote-sign-right.png" class="quote-sign-right" alt="">
             </p>
           </div>
+          @endforeach
 
-          <div class="testimonial-item">
+{{--           <div class="testimonial-item">
             <img src="img/testimonial-2.jpg" class="testimonial-img" alt="">
             <h3>Sara Wilsson</h3>
             <h4>Designer</h4>
@@ -663,12 +360,12 @@
               Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
               <img src="img/quote-sign-right.png" class="quote-sign-right" alt="">
             </p>
-          </div>
+          </div> --}}
 
         </div>
 
       </div>
-    </section> --}}<!-- #testimonials -->
+    </section><!-- #testimonials -->
 
     <!--==========================
       Team Section
@@ -677,139 +374,28 @@
       <div class="container">
         <div class="section-header wow fadeInUp">
           <h3>Equipo</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
-
         <div class="row">
-
-          <div class="col-lg-3 col-md-6 wow fadeInUp">
-            <div class="member">
-              <img src="img/team-2.jpg" class="img-fluid " alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Dr. Nerida Pastrana</h4>
-                  <span>Directora de transferencia e innovación</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          @foreach($teams as $team)
           <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
             <div class="member">
-              <img src="img/team-1.jpg" class="img-fluid" alt="">
+              <img src="{{ $team->file }}" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>Ing. Robin Herrera Calero</h4>
-                  <span>Especialista en oferta tecnológica</span>
+                  <h4>{{ $team->name }}</h4>
+                  <span>{{ $team->occupation }}</span>
                   <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
+                    <a href="{{ $team->twitter }}"><i class="fa fa-twitter"></i></a>
+                    <a href="{{ $team->facebook }}"><i class="fa fa-facebook"></i></a>
+                    <a href="{{ $team->gmail }}"><i class="fa fa-google-plus"></i></a>
+                    <a href="{{ $team->linkedin }}"><i class="fa fa-linkedin"></i></a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-            <div class="member">
-              <img src="img/team-3.jpg" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Ing. Carlos Ventura Matos</h4>
-                  <span>Especilista en emprendimiento</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="member">
-              <img src="img/team-1.jpg" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Abraham Parra Moreno </h4>
-                  <span>Jefe de propiedad intelectual</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="member">
-              <img src="img/team-4.jpg" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Linver Luciano Villar </h4>
-                  <span>Jefe de Oferta Técnologica</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="member">
-              <img src="img/team-4.jpg" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Betsy Quispe Osorio</h4>
-                  <span>Secretaria</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="member">
-              <img src="img/team-2.jpg" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Amparo Espinoza Chavez </h4>
-                  <span>Jefe de Emprendimiento</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          @endforeach
         </div>
-
       </div>
     </section><!-- #team -->
 
@@ -818,28 +404,22 @@
     ============================-->
     <section id="contact" class="section-bg wow fadeInUp">
       <div class="container">
-
-
         <div class="section-header">
           <h3>Contáctenos</h3>
-          {{-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p> --}}
         </div>
-
         <div class="row contact-info">
-
           <div class="col-md-4">
             <div class="contact-address">
               <i class="ion-ios-location-outline"></i>
               <h3>Dirección</h3>
-              <address>Av. Universitaría 601 - 607 - Huánuco - Pillco Marca - Cayhuayna</address>
+              <address>{{ $company->address }}</address>
             </div>
           </div>
-
           <div class="col-md-4">
             <div class="contact-phone">
               <i class="ion-ios-telephone-outline"></i>
-              <h3>Phone Number</h3>
-              <p><a href="tel:+155895548855">999 999 999</a></p>
+              <h3>Teléfono</h3>
+              <p><a href="#">{{ $company->phone }}</a></p>
             </div>
           </div>
 
@@ -847,16 +427,43 @@
             <div class="contact-email">
               <i class="ion-ios-email-outline"></i>
               <h3>Email</h3>
-              <p><a href="mailto:info@example.com">oficinadti@gmail.com</a></p>
+              <p><a href="#">{{ $company->email }}</a></p>
             </div>
           </div>
         </div>
+
+        {{-- <div class="form">
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>
+          <form action="" method="post" role="form" class="contactForm">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <div class="validation"></div>
+            </div>
+            <div class="text-center"><button type="submit">Send Message</button></div>
+          </form>
+        </div> --}}
+
 
         <div class="form">
           <div id="sendmessage">Your message has been sent. Thank you!</div>
           <div id="errormessage"></div>
 
-          <form  method="post" action="{{ route('messages')}}" role="form">
+          <form  method="post" action="{{ route('messages')}}" role="form" class="contactForm">
             {{ csrf_field()}}
             <div class="form-row">
               <div class="col-md-6">
@@ -864,29 +471,31 @@
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <select name="emailoficina" id="" class="form-control">
-                    <option value="alexander-310@hotmail.com">Unidad de Oferta Tecnológica</option>
-                    <option value="ManuelCorreo">Unidad de Emprendimiento e Incubadora de Empresas</option>
-                    <option value="AbrahamCorreo">Unidad de Propiedad Intelectual, Patentes y Publicaciones</option>
+                  <select name="emailbusiness" id="" class="form-control">
+                    @foreach($unities as $unity)
+                    <option value="{{ $unity->email }}">{{ $unity->name }}</option>
+                    @endforeach
+                    {{-- <option value="ManuelCorreo">Unidad de Emprendimiento e Incubadora de Empresas</option>
+                    <option value="AbrahamCorreo">Unidad de Propiedad Intelectual, Patentes y Publicaciones</option> --}}
                   </select>
                 </div>
                 <div class="form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Escribe tu nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Escribe tu nombre" data-rule="minlen:4" data-msg="Por favor ingrese al menos 4 caracteres" />
                   <div class="validation"></div>
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Escribe tu correo" data-rule="email" data-msg="Please enter a valid email" />
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Escribe tu correo" data-rule="email" data-msg="Por favor ingrese un correo valido" />
                   <div class="validation"></div>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="phone" id="phone" placeholder="Escribe tu celular"/>
+                  <input type="text" class="form-control" name="phone" id="phone" placeholder="Escribe tu celular" data-rule="phone" data-msg="Por favor ingrese un numero de celular valido"/>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Escribe tu asunto" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Escribe tu asunto" data-rule="minlen:4" data-msg="Por favor ingrese al menos 8 caracteres de su asunto" />
                   <div class="validation"></div>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" name="body" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Escribe tu mensaje"></textarea>
+                  <textarea class="form-control" name="body" rows="5" data-rule="required" data-msg="Por favor escribamos sus necesidaes" placeholder="Escribe tu mensaje"></textarea>
                   <div class="validation"></div>
                 </div>
                 <div class="text-center"><button type="submit">Enviar Mensaje</button>
@@ -917,7 +526,7 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Enlaces útiles</h4>
             <ul>
-              <li><i class="ion-ios-arrow-right"></i> <a href="{{ route('blog') }}">Inicio</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="{{ route('dti') }}">Inicio</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="{{ route('nosotros') }}">Nosotros</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="{{ route('eventos') }}">Eventos</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="{{ route('servicios') }}">Servicios</a></li>
@@ -927,17 +536,16 @@
 
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contáctenos</h4>
-            <p>Av. Universitaría 601 - 607 <br>Huánuco <br> Pillco Marca <br> Cayhuayna <br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> dtiunheval@gmail.com<br>
+            {{ $company->address }} <br>
+              <strong>Phone: </strong>{{ $company->phone }}<br>
+              <strong>Email: </strong>{{ $company->email }}<br>
             </p>
 
             <div class="social-links">
-              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+              <a href="{{ $company->twitter }}" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="{{ $company->facebook }}" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="{{ $company->instagram }}" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="{{ $company->gmail }}" class="google-plus"><i class="fa fa-google-plus"></i></a>
             </div>
 
           </div>
@@ -990,6 +598,7 @@
 
   <!-- Template Main Javascript File -->
   <script src="{{ asset('js/main.js') }}"></script>
+  <script src="{{ asset('js/contact.js') }}"></script>
 
 </body>
 </html>

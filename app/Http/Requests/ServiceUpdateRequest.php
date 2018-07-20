@@ -31,12 +31,20 @@ class ServiceUpdateRequest extends FormRequest
             'excerpt'        => 'required',
             'slug'        => 'unique:services,slug,' . $this->service,
             'filepdf'        => 'required',
-            'status'      => 'required|in:DRAFT,PUBLISHED'
+            // 'status'      => 'required|in:DRAFT,PUBLISHED'
         ];
 
         if ($this->get('file')) {
             $rules = array_merge($rules, ['file' => 'mimes:jpg,jpeg,png']);
         }
         return $rules;
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'El campo nombre es obligatorio',
+            'name.max'      => 'El campo nombre no debe contener más de :max caracteres.',
+        ];
     }
 }
