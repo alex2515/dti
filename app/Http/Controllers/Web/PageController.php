@@ -12,9 +12,11 @@ use App\Category;
 use App\Customer;
 use App\Portfolio;
 use App\Testimony;
+use App\Presentation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\SendMessageRequest;
 
 class PageController extends Controller
@@ -28,8 +30,9 @@ class PageController extends Controller
         $customers      = Customer::all();
         $teams          = Team::all();
         $testimonies    = Testimony::all();
+        $presentations  = Presentation::where('file','!=', '')->get();
 
-    	return view('web.welcome', compact('posts','servicios','company','unities', 'customers', 'teams', 'testimonies' )) ;
+    	return view('web.welcome', compact('posts','servicios','company','unities', 'customers', 'teams', 'testimonies', 'presentations' )) ;
     }
     
     public function eventos(){
@@ -54,11 +57,14 @@ class PageController extends Controller
 
     }
     public function nosotros(){
-        $company = Company::first();
-    	return view('web.about', compact('company'));
+        $company        = Company::first();
+        $unities        = Unity::all();
+    	return view('web.about', compact('company','unities'));
     }
     public function contactos(){
-    	return view('web.contact');
+        $unities        = Unity::all();
+        $company        = Company::first();
+    	return view('web.contact',compact('unities','company'));
     }
     public function portafolios(){
         // $portfolios = DB::select("select p.id, (select po.name from posts as po where po.id=p.post_id ) as 'name',(select po.file from posts as po where po.id=p.post_id ) as 'img',  p.film, p.body from portfolios as p");

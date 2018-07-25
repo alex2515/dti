@@ -52,9 +52,9 @@
           <div class="col-md-8">
             <h4><strong>{{ $post->name }}</strong></h4>
             <p>{{ $post->excerpt }}<br>
-              <strong>Fecha:</strong><br>
-              <strong>Hora:</strong><br>
-              <strong>Lugar:</strong>
+              <strong>Fecha: </strong>{{ $post->date }}<br>
+              <strong>Hora: </strong>{{ $post->time }}<br>
+              <strong>Lugar: </strong>{{ $post->place }}
               <a href="{{ route('evento',$post->slug) }}" class="btn btn-success pull-right">Ver mas</a>
             </p>
 

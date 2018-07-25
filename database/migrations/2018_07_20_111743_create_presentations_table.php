@@ -15,9 +15,9 @@ class CreatePresentationsTable extends Migration
     {
         Schema::create('presentations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title', 120);
+            $table->string('title', 120)->nullable();
             $table->string('description', 200)->nullable();
-            $table->string('file', 128);
+            $table->string('file', 128)->nullable();
             $table->timestamps();
         });
     }

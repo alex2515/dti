@@ -9,24 +9,21 @@
 
         <div class="section-header">
           <h3>Contáctenos</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
 
         <div class="row contact-info">
-
           <div class="col-md-4">
             <div class="contact-address">
               <i class="ion-ios-location-outline"></i>
               <h3>Dirección</h3>
-              <address>Av. Universitaría 601 - 607 - Huánuco - Pillco Marca - Cayhuayna</address>
+              <address>{{ $company->address }}</address>
             </div>
           </div>
-
           <div class="col-md-4">
             <div class="contact-phone">
               <i class="ion-ios-telephone-outline"></i>
-              <h3>Phone Number</h3>
-              <p><a href="tel:+155895548855">999 999 999</a></p>
+              <h3>Teléfono</h3>
+              <p><a href="#">{{ $company->phone }}</a></p>
             </div>
           </div>
 
@@ -34,7 +31,7 @@
             <div class="contact-email">
               <i class="ion-ios-email-outline"></i>
               <h3>Email</h3>
-              <p><a href="mailto:info@example.com">oficinadti@gmail.com</a></p>
+              <p><a href="#">{{ $company->email }}</a></p>
             </div>
           </div>
         </div>
@@ -51,10 +48,10 @@
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <select name="emailoficina" id="" class="form-control">
-                    <option value="alexander-310@hotmail.com">Unidad de Oferta Tecnológica</option>
-                    <option value="ManuelCorreo">Unidad de Emprendimiento e Incubadora de Empresas</option>
-                    <option value="AbrahamCorreo">Unidad de Propiedad Intelectual, Patentes y Publicaciones</option>
+                  <select name="emailbusiness" id="" class="form-control">
+                    @foreach($unities as $unity)
+                    <option value="{{ $unity->email }}">{{ $unity->name }}</option>
+                    @endforeach
                   </select>
                 </div>
                 <div class="form-group">
@@ -66,7 +63,7 @@
                   <div class="validation"></div>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="phone" id="phone" placeholder="Escribe tu celular"/>
+                  <input type="text" class="form-control" name="phone" id="phone" placeholder="Escribe tu celular" data-rule="phone" data-msg="Por favor ingrese un numero de celular valido"/>
                 </div>
                 <div class="form-group">
                   <input type="text" class="form-control" name="subject" id="subject" placeholder="Escribe tu asunto" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />

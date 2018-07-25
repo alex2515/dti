@@ -139,6 +139,19 @@
             </div>
           </div>
 
+          @foreach($presentations as $presentation)
+          <div class="carousel-item">
+            <div class="carousel-background"><img src="{{ $presentation->file }}" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animated zoomIn">{{ $presentation->title }}</h2>
+                <p>{{ $presentation->description }}</p>
+                {{-- <a href="#featured-services" class="btn-get-started scrollto">Iniciar</a> --}}
+              </div>
+            </div>
+          </div>
+          @endforeach
+
         </div>
 
         <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
@@ -163,17 +176,17 @@
     <section id="featured-services">
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 box">
+          <div class="col-lg-4 col-sm-4 box">
             <i class="ion-ios-bookmarks-outline"></i>
             <h4 class="title"><a href="{{ route('eventos') }}">Eventos</a></h4>
             <p class="description">&nbsp</p>
           </div>
-          <div class="col-lg-4 box box-bg">
+          <div class="col-lg-4 col-sm-4 box box-bg">
             <i class="ion-ios-stopwatch-outline"></i>
             <h4 class="title"><a href="{{ route('servicios') }}">Servicios</a></h4>
             <p class="description">&nbsp</p>
           </div>
-          <div class="col-lg-4 box">
+          <div class="col-lg-4 col-sm-4 box">
             <i class="ion-ios-heart-outline"></i>
             <h4 class="title"><a href="{{ route('portafolios') }}">Portafolio</a></h4>
             <p class="description">&nbsp</p>
@@ -457,13 +470,14 @@
             <div class="text-center"><button type="submit">Send Message</button></div>
           </form>
         </div> --}}
+        {{-- class="contactForm" --}}
 
 
         <div class="form">
           <div id="sendmessage">Your message has been sent. Thank you!</div>
           <div id="errormessage"></div>
 
-          <form  method="post" action="{{ route('messages')}}" role="form" class="contactForm">
+          <form  method="post" action="{{ route('messages')}}" role="form" >
             {{ csrf_field()}}
             <div class="form-row">
               <div class="col-md-6">
@@ -471,7 +485,7 @@
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <select name="emailbusiness" id="" class="form-control">
+                  <select name="emailbusiness" id="emailbusiness" class="form-control">
                     @foreach($unities as $unity)
                     <option value="{{ $unity->email }}">{{ $unity->name }}</option>
                     @endforeach
@@ -481,22 +495,22 @@
                 </div>
                 <div class="form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Escribe tu nombre" data-rule="minlen:4" data-msg="Por favor ingrese al menos 4 caracteres" />
-                  <div class="validation"></div>
+                  {{-- <div class="validation"></div> --}}
                 </div>
                 <div class="form-group">
                   <input type="email" class="form-control" name="email" id="email" placeholder="Escribe tu correo" data-rule="email" data-msg="Por favor ingrese un correo valido" />
-                  <div class="validation"></div>
+                  {{-- <div class="validation"></div> --}}
                 </div>
                 <div class="form-group">
                   <input type="text" class="form-control" name="phone" id="phone" placeholder="Escribe tu celular" data-rule="phone" data-msg="Por favor ingrese un numero de celular valido"/>
                 </div>
                 <div class="form-group">
                   <input type="text" class="form-control" name="subject" id="subject" placeholder="Escribe tu asunto" data-rule="minlen:4" data-msg="Por favor ingrese al menos 8 caracteres de su asunto" />
-                  <div class="validation"></div>
+                  {{-- <div class="validation"></div> --}}
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" name="body" rows="5" data-rule="required" data-msg="Por favor escribamos sus necesidaes" placeholder="Escribe tu mensaje"></textarea>
-                  <div class="validation"></div>
+                  <textarea class="form-control" name="body" rows="5" data-rule="required" data-msg="Por favor escribamos sus necesidaes" placeholder="Escribe tu mensaje" id="contenido"></textarea>
+                  {{-- <div class="validation"></div> --}}
                 </div>
                 <div class="text-center"><button type="submit">Enviar Mensaje</button>
                 </div>    
@@ -519,8 +533,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3><small><strong>Dirección de Transferencia e Innovación</strong></small></h3>
-            <p>La Dirección de Transferencia e Innovación (DTI) es un órgano dependiente del Vicerrectorado de Investigación, encargado de promover y gestionar relaciones e interacciones entre la Universidad y su entorno.</p>
+            <h3><small><strong>{{ $company->name }}</strong></small></h3>
+            {{-- <p>La Dirección de Transferencia e Innovación (DTI) es un órgano dependiente del Vicerrectorado de Investigación, encargado de promover y gestionar relaciones e interacciones entre la Universidad y su entorno.</p> --}}
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
@@ -599,6 +613,23 @@
   <!-- Template Main Javascript File -->
   <script src="{{ asset('js/main.js') }}"></script>
   <script src="{{ asset('js/contact.js') }}"></script>
+  <script>
+    $(document).ready(function(){
+      var texto = ""
+      $( "#emailbusiness" ).change(function () {
+        var str = "";
+        $( "select option:selected" ).each(function() {
+          str += $( this ).text() + " ";
+        });
+        texto = str;
+        
+      }).change(function(){
+        if(texto == "Oferta Tecnológica"){
+          $('#contenido').prop('placeholder', "tus deseos" );
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>

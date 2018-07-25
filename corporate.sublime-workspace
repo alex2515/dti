@@ -339,33 +339,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "resources/views/admin/posts/partials/form.blade.php",
-			"settings":
-			{
-				"buffer_size": 7229,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/views/admin/teams/partials/modal.blade.php",
-			"settings":
-			{
-				"buffer_size": 889,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/views/admin/teams/partials/form.blade.php",
-			"settings":
-			{
-				"buffer_size": 3810,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -460,15 +433,29 @@
 	},
 	"expanded_folders":
 	[
-		"/home/areg/Documents/corporate",
-		"/home/areg/Documents/corporate/resources",
-		"/home/areg/Documents/corporate/resources/views",
-		"/home/areg/Documents/corporate/resources/views/admin",
-		"/home/areg/Documents/corporate/resources/views/admin/teams",
-		"/home/areg/Documents/corporate/resources/views/admin/teams/partials"
+		"/home/areg/Documents/corporate"
 	],
 	"file_history":
 	[
+		"/home/areg/Documents/corporate/app/Http/Requests/RolStoreRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/RolUpdateRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Controllers/Admin/PortfolioController.php",
+		"/home/areg/Documents/corporate/app/Http/Controllers/Admin/UserController.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/UserUpdateRequest.php",
+		"/home/areg/Documents/corporate/resources/views/admin/portfolio/partials/form.blade.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/PortfolioStoreRequest.php",
+		"/home/areg/Documents/corporate/app/Http/Requests/PortfolioUpdateRequest.php",
+		"/home/areg/Documents/corporate/vendor/laravelcollective/html/src/FormBuilder.php",
+		"/home/areg/Documents/corporate/resources/views/admin/unities/partials/form.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/roles/partials/form.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/users/partials/form.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/services/partials/form.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/posts/partials/form.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/tags/partials/form.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/teams/partials/modal.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/testimonies/partials/modal.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/testimonies/partials/form.blade.php",
+		"/home/areg/Documents/corporate/resources/views/admin/teams/partials/form.blade.php",
 		"/home/areg/Documents/corporate/app/Http/Requests/PostStoreRequest.php",
 		"/home/areg/Documents/corporate/app/Http/Requests/PostUpdateRequest.php",
 		"/home/areg/Documents/corporate/app/Presentation.php",
@@ -481,8 +468,6 @@
 		"/home/areg/Documents/corporate/resources/views/web/portfolio.blade.php",
 		"/home/areg/Documents/corporate/vendor/laravel/framework/src/Illuminate/Pagination/Paginator.php",
 		"/home/areg/Documents/corporate/vendor/laravel/framework/src/Illuminate/Pagination/LengthAwarePaginator.php",
-		"/home/areg/Documents/corporate/app/Http/Requests/RolStoreRequest.php",
-		"/home/areg/Documents/corporate/app/Http/Requests/RolUpdateRequest.php",
 		"/home/areg/Documents/corporate/app/Http/Controllers/Admin/RoleController.php",
 		"/home/areg/Documents/corporate/app/Http/Controllers/Admin/PostController.php",
 		"/home/areg/Documents/corporate/resources/views/web/welcome.blade.php",
@@ -497,20 +482,9 @@
 		"/home/areg/Documents/corporate/app/Http/Requests/ServiceStoreRequest.php",
 		"/home/areg/Documents/corporate/app/Http/Requests/CustomerStoreRequest.php",
 		"/home/areg/Documents/corporate/app/Http/Requests/CustomerUpdateRequest.php",
-		"/home/areg/Documents/corporate/app/Http/Requests/PortfolioUpdateRequest.php",
 		"/home/areg/Documents/corporate/app/Http/Requests/TeamUpdateRequest.php",
-		"/home/areg/Documents/corporate/app/Http/Requests/PortfolioStoreRequest.php",
 		"/home/areg/Documents/corporate/app/Http/Requests/CompanyUpdateRequest.php",
-		"/home/areg/Documents/corporate/resources/views/admin/testimonies/partials/form.blade.php",
-		"/home/areg/Documents/corporate/resources/views/admin/users/partials/form.blade.php",
-		"/home/areg/Documents/corporate/resources/views/admin/unities/partials/form.blade.php",
-		"/home/areg/Documents/corporate/resources/views/admin/teams/partials/form.blade.php",
-		"/home/areg/Documents/corporate/resources/views/admin/tags/partials/form.blade.php",
-		"/home/areg/Documents/corporate/resources/views/admin/services/partials/form.blade.php",
-		"/home/areg/Documents/corporate/resources/views/admin/roles/partials/form.blade.php",
-		"/home/areg/Documents/corporate/resources/views/admin/posts/partials/form.blade.php",
 		"/home/areg/Documents/corporate/resources/views/admin/customers/partials/form.blade.php",
-		"/home/areg/Documents/corporate/resources/views/admin/portfolio/partials/form.blade.php",
 		"/home/areg/Documents/corporate/resources/views/admin/companies/partials/form.blade.php",
 		"/home/areg/Documents/corporate/resources/views/admin/categories/partials/form.blade.php",
 		"/home/areg/Documents/corporate/resources/views/admin/categories/partials/modal.blade.php",
@@ -518,8 +492,6 @@
 		"/home/areg/Documents/corporate/resources/views/admin/companies/partials/modal.blade.php",
 		"/home/areg/Documents/corporate/resources/views/admin/users/partials/modal.blade.php",
 		"/home/areg/Documents/corporate/resources/views/admin/unities/partials/modal.blade.php",
-		"/home/areg/Documents/corporate/resources/views/admin/testimonies/partials/modal.blade.php",
-		"/home/areg/Documents/corporate/resources/views/admin/teams/partials/modal.blade.php",
 		"/home/areg/Documents/corporate/resources/views/admin/tags/partials/modal.blade.php",
 		"/home/areg/Documents/corporate/resources/views/admin/services/partials/modal.blade.php",
 		"/home/areg/Documents/corporate/resources/views/admin/roles/partials/modal.blade.php",
@@ -578,7 +550,6 @@
 		"/home/areg/Documents/corporate/app/Unity.php",
 		"/home/areg/Documents/corporate/app/Http/Controllers/Auth/RegisterController.php",
 		"/home/areg/Documents/corporate/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ClassCreator.php",
-		"/home/areg/Documents/corporate/vendor/laravelcollective/html/src/FormBuilder.php",
 		"/home/areg/Documents/corporate/resources/views/admin/unities/edit.blade.php",
 		"/home/areg/Documents/corporate/resources/views/admin/unities/index.blade.php",
 		"/home/areg/Documents/corporate/database/seeds/TestimoniesTableSeeder.php",
@@ -593,10 +564,7 @@
 		"/home/areg/Documents/corporate/database/seeds/CompaniesTableSeeder.php",
 		"/home/areg/Documents/corporate/app/Http/Controllers/Admin/CompanyController.php",
 		"/home/areg/Documents/corporate/app/Company.php",
-		"/home/areg/Downloads/AdminLTE-2.4.3/pages/forms/general.html",
-		"/home/areg/Downloads/AdminLTE-2.4.3/pages/examples/login.html",
-		"/home/areg/Documents/corporate/resources/views/admin/companies/edit.blade.php",
-		"/home/areg/Documents/corporate/vendor/laravel/framework/src/Illuminate/Contracts/Routing/UrlGenerator.php"
+		"/home/areg/Downloads/AdminLTE-2.4.3/pages/forms/general.html"
 	],
 	"find":
 	{
@@ -819,97 +787,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "resources/views/admin/posts/partials/form.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7229,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								795,
-								734
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "resources/views/admin/teams/partials/modal.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 889,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								627,
-								627
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "resources/views/admin/teams/partials/form.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3810,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								287,
-								287
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1314,7 +1193,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 390.0,
+	"side_bar_width": 266.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

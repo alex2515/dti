@@ -42,7 +42,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 // Routers
 Route::middleware(['auth'])->group(function() {
-	// Roles
+	// Role
 	Route::post('roles/store', 'Admin\RoleController@store')->name('roles.store')
 		->middleware('permission:roles.create');
 	Route::get('roles', 'Admin\RoleController@index')->name('roles.index')
@@ -74,7 +74,7 @@ Route::middleware(['auth'])->group(function() {
 	Route::get('products/{product}/edit', 'Admin\ProductController@edit')->name('products.edit')
 		->middleware('permission:products.edit');
 
-	// Users
+	// User
 	Route::get('users', 'Admin\UserController@index')->name('users.index')
 		->middleware('permission:users.index');
 	Route::put('users/{user}', 'Admin\UserController@update')->name('users.update')
@@ -102,7 +102,7 @@ Route::middleware(['auth'])->group(function() {
 	Route::get('tags/{tag}/edit', 'Admin\TagController@edit')->name('tags.edit')
 		->middleware('permission:tags.edit');
 
-	// Categories
+	// Category
 	Route::post('categories/store', 'Admin\CategoryController@store')->name('categories.store')
 		->middleware('permission:categories.create');
 	Route::get('categories', 'Admin\CategoryController@index')->name('categories.index')
@@ -118,7 +118,7 @@ Route::middleware(['auth'])->group(function() {
 	Route::get('categories/{category}/edit', 'Admin\CategoryController@edit')->name('categories.edit')
 		->middleware('permission:categories.edit');
 
-	// Posts
+	// Post
 	Route::post('posts/store', 'Admin\PostController@store')->name('posts.store')
 		->middleware('permission:posts.create');
 	Route::get('posts', 'Admin\PostController@index')->name('posts.index')
@@ -166,7 +166,7 @@ Route::middleware(['auth'])->group(function() {
 	Route::get('portfolios/{portfolio}/edit', 'Admin\PortfolioController@edit')->name('portfolios.edit')
 		->middleware('permission:portfolios.edit');
 
-	//Company
+	// Company
 	Route::get('companies/{company}/edit', 'Admin\CompanyController@edit')->name('companies.edit')
 		->middleware('permission:companies.edit');
 		Route::put('companies/{company}', 'Admin\CompanyController@update')->name('companies.update')
@@ -236,20 +236,20 @@ Route::middleware(['auth'])->group(function() {
 	Route::get('customers/{customer}/edit', 'Admin\CustomerController@edit')->name('customers.edit')
 		->middleware('permission:customers.edit');
 
-	// Intro
-	Route::post('intros/store', 'Admin\IntroController@store')->name('intros.store')
-		->middleware('permission:intros.create');
-	Route::get('intros', 'Admin\IntroController@index')->name('intros.index')
-		->middleware('permission:intros.index');
-	Route::get('intros/create', 'Admin\IntroController@create')->name('intros.create')
-		->middleware('permission:intros.create');
-	Route::put('intros/{intro}', 'Admin\IntroController@update')->name('intros.update')
-		->middleware('permission:intros.edit');
-	Route::get('intros/{intro}', 'Admin\IntroController@show')->name('intros.show')
-		->middleware('permission:intros.show');
-	Route::delete('intros/{intro}', 'Admin\IntroController@destroy')->name('intros.destroy')
-		->middleware('permission:intros.destroy');
-	Route::get('intros/{intro}/edit', 'Admin\IntroController@edit')->name('intros.edit')
-		->middleware('permission:intros.edit');
+	// Presentation
+	Route::post('presentations/store', 'Admin\PresentationController@store')->name('presentations.store')
+		->middleware('permission:presentations.create');
+	Route::get('presentations', 'Admin\PresentationController@index')->name('presentations.index')
+		->middleware('permission:presentations.index');
+	Route::get('presentations/create', 'Admin\PresentationController@create')->name('presentations.create')
+		->middleware('permission:presentations.create');
+	Route::put('presentations/{presentation}', 'Admin\PresentationController@update')->name('presentations.update')
+		->middleware('permission:presentations.edit');
+	Route::get('presentations/{presentation}', 'Admin\PresentationController@show')->name('presentations.show')
+		->middleware('permission:presentations.show');
+	Route::delete('presentations/{presentation}', 'Admin\PresentationController@destroy')->name('presentations.destroy')
+		->middleware('permission:presentations.destroy');
+	Route::get('presentations/{presentation}/edit', 'Admin\PresentationController@edit')->name('presentations.edit')
+		->middleware('permission:presentations.edit');
 });
 	

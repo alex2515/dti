@@ -6,7 +6,6 @@
   <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  
   <!-- Favicons -->
   <link href="{{ asset('img/icon.png') }}" rel="icon">
   <link href="{{ asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
@@ -65,7 +64,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition skin-blue sidebar-collapse sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">
 
   <div class="wrapper">
 
@@ -152,12 +151,13 @@
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
-          <li class="active treeview"><a href="{{ route('home') }}"><i class="fa fa-dashboard"></i><span>Panel</span></a></li>
+          <li class="header">NAVEGACIÓN PRINCIPAL</li>
+          <li class="{{ active('home') }} "><a href="{{ route('home') }}"><i class="fa fa-dashboard"></i><span>Panel</span></a></li>
           <li class="header"></li>
           @can('categories.index')
-            <li><a href="{{ route('categories.index') }}"><i class="glyphicon glyphicon-tag"></i><span>Categorias</span></a></li>     
+            <li class=" {{ active('categories') }} "><a href="{{ route('categories.index') }}"><i class="glyphicon glyphicon-tag"></i><span>Categorias</span></a></li>     
           @endcan
-          <li class="treeview">
+          <li class=" {{ active('posts') }} treeview">
             @can('posts.index')
             <a href="#">
               <i class="glyphicon glyphicon-pushpin"></i>
@@ -179,10 +179,10 @@
               </ul>
           </li>
           @can('services.index')
-          <li><a href="{{ route('services.index') }}"><i class="glyphicon glyphicon-fire"></i><span>Servicios</span></a></li>
+          <li class=" {{ active('services') }} "><a href="{{ route('services.index') }}"><i class="glyphicon glyphicon-fire"></i><span>Servicios</span></a></li>
           @endcan
           @can('portfolios.index')
-          <li><a href="{{ route('portfolios.index') }}"><i class="glyphicon glyphicon-briefcase"></i><span>Portafolio</span></a></li>
+          <li class=" {{ active('portfolios') }} "><a href="{{ route('portfolios.index') }}"><i class="glyphicon glyphicon-briefcase"></i><span>Portafolio</span></a></li>
           @endcan
         {{-- @can('products.index')
           <li><a href="{{ route('products.index') }}"><i class="glyphicon glyphicon-pushpin"></i><span>Productos</span></a></li>
@@ -190,13 +190,13 @@
         <li class="header"></li>
           
         @can('users.index')
-          <li><a href="{{ route('users.index') }}"><i class="glyphicon glyphicon-user"></i><span>Usuario</span></a></li>
+          <li class=" {{ active('users') }} "><a href="{{ route('users.index') }}"><i class="glyphicon glyphicon-user"></i><span>Usuario</span></a></li>
         @endcan
         @can('roles.index')
-          <li><a href="{{ route('roles.index') }}"><i class="glyphicon glyphicon-tower"></i><span>Roles</span></a></li>
+          <li class=" {{ active('roles') }} "><a href="{{ route('roles.index') }}"><i class="glyphicon glyphicon-tower"></i><span>Roles</span></a></li>
         @endcan
           <li class="treeview">
-            @can('posts.index')
+            @can('roles.index')
             <a href="#">
               <i class="glyphicon glyphicon-cog"></i>
               <span>Configuracion General</span>
@@ -206,7 +206,10 @@
             @endcan
               <ul class="treeview-menu">
               @can('companies.edit')
-                <li><a href="{{ route('companies.edit', 1) }}"><i class="fa fa-circle-o"></i><span>Empresa</span></a></li>
+                <li><a href="{{ route('companies.edit', 1) }}"><i class="fa fa-circle-o"></i><span>Datos de Empresa</span></a></li>
+              @endcan
+              @can('presentations.index')
+              <li><a href="{{ route('presentations.index') }}"><i class="fa fa-circle-o"></i><span>Foto de Inicio</span></a></li>
               @endcan
               @can('unities.index')
                 <li><a href="{{ route('unities.index') }}"><i class="fa fa-circle-o"></i><span>Unidades</span></a></li>
