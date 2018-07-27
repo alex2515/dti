@@ -24,14 +24,15 @@ class RolUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required'
+            'name' => 'required',
+            // 'slug' => 'required|unique:roles,slug,' . $this->role,
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' => 'El campo nombre es obligatorio.'
+            'name.required' => 'El campo nombre es obligatorio.',
         ];
     }
 }

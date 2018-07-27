@@ -26,10 +26,10 @@ Route::get('evento/{slug}',		'Web\PageController@evento')->name('evento');
 Route::get('contactos',			'Web\PageController@contactos')->name('contactos');
 Route::get('nosotros',			'Web\PageController@nosotros')->name('nosotros');
 Route::post('messages',			'Web\PageController@mensaje')->name('messages');
-Route::get('icons',				'Web\PageController@icons')->name('icons');
-
-
-
+// Route::get('icons',				'Web\PageController@icons')->name('icons');
+// Filtros
+Route::get('eventos/categoria/{slug}', 	'Web\PageController@category')->name('category');
+Route::get('eventos/etiqueta/{slug}',  	'Web\PageController@tag')->name('tag');
 
 // admin
 // Route::resource('tags', 		'Admin\TagController');

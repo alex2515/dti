@@ -85,6 +85,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #header.header-scrolled {
   background: rgb(52, 60, 180);
+  /* background: #000; */
   padding: 10px 0;
   height: 65px;
   transition: all 0.5s;
@@ -100,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-#header #logo h1 {
+#header #logo h1 { /* CSS LOGO */
   font-size: 34px;
   margin: 0;
   padding: 0;

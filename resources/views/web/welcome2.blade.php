@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <title>Dirección de Transferencia, Emprendimiento e Innovación </title>

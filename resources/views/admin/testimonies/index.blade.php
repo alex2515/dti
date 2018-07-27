@@ -45,17 +45,17 @@
 										<td>{{ $testimony->name }}</td>
 										<td width="10px">
 											@can('testimonies.show')
-											<a href="{{ route('testimonies.show', $testimony->id) }}" class="btn btn-sm btn-warning">Ver</a>
+											<a href="{{ route('testimonies.show', $testimony->id) }}" class="btn btn-sm btn-warning"><i class="fa fa-eye" style="font-size: 15px;"></i></a>
 											@endcan
 										</td>
 										<td width="10px">
 											@can('testimonies.edit')
-											<a href="{{ route('testimonies.edit', $testimony->id) }}" class="btn btn-sm btn-success">Editar</a>
+											<a href="{{ route('testimonies.edit', $testimony->id) }}" class="btn btn-sm btn-success"><i class="fa fa-pencil-square-o" style="font-size: 15px;"></i></a>
 											@endcan
 										</td>
 										<td width="10px">
 											@can('testimonies.destroy')
-											<a href="" data-target="#modal-delete-{{$testimony->id}}" data-toggle="modal"><button class="btn btn-sm btn-danger">Eliminar</button></a>
+											<a href="" data-target="#modal-delete-{{$testimony->id}}" data-toggle="modal"><button class="btn btn-sm btn-danger"><i class="fa fa-trash-o" style="font-size: 15px;"></i></button></a>
 											@endcan
 										</td>
 									</tr>

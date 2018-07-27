@@ -53,7 +53,7 @@ class ServiceController extends Controller
 
         //IMAGEN
         if ($request->file('file')) {
-            $path = Storage::disk('public')->put('image', $request->file('file'));
+            $path = Storage::disk('public')->put('image/servicios/', $request->file('file'));
             $service->fill(['file' => asset($path)])->save();
         }
 
@@ -114,7 +114,7 @@ class ServiceController extends Controller
 
         //IMAGEN
         if ($request->file('file')) {
-            $path = Storage::disk('public')->put('image', $request->file('file'));
+            $path = Storage::disk('public')->put('image/servicios/', $request->file('file'));
             $service->fill(['file' => asset($path)])->save();
         }
 

@@ -24,14 +24,23 @@ class RolStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required'
+            'name' => 'required|unique:roles,name,$id',
+            // 'slug' => 'required',
         ];
     }
-
     public function messages()
     {
         return [
-            'name.required' => 'El campo nombre es obligatorio.'
+            'name.required' => 'El campo nombre es obligatorio.',
+            'slug.required' => 'El campo slug es obligatorio.',
+            'name.unique' => "El rol $this->name ya está en uso."
         ];
     }
+    // public function messages()
+    // {
+    //     return [
+    //         'name.required' => 'El campo nombre es obligatorio',
+    //         'name.max'      => 'El campo nombre no debe contener más de :max caracteres.',
+    //     ];
+    // }
 }

@@ -1,7 +1,5 @@
-
-
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <title>{{ $company->name }}</title>
@@ -54,9 +52,9 @@
   <header id="header">
     <div class="container-fluid">
       <div id="logo" class="pull-left">
-        <h1><a href="{{ route('dti') }}" class="scrollto">{{ $company->logo }}</a></h1>
+        {{-- <h1><a href="{{ route('dti') }}" class="scrollto">{{ $company->logo }}</a></h1> --}}
         <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+        <h1><a href="#intro"><img src="img/logo.png" alt="" title="" width="350px" height="55px"/></a></h1>
       </div>
       <nav id="nav-menu-container">
         <ul class="nav-menu">
@@ -241,7 +239,7 @@
           <div class="col-md-12">
             <p class="text-muted pull-right">
               <em>
-                <small>Publicado: {{ $post->created_at }}</small>
+                <small>Publicado: {{ $post->created_at->formatLocalized('%A %d %B %Y') }}</small>
               </em>
             </p>
           </div>
@@ -509,7 +507,7 @@
                   {{-- <div class="validation"></div> --}}
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" name="body" rows="5" data-rule="required" data-msg="Por favor escribamos sus necesidaes" placeholder="Escribe tu mensaje" id="contenido"></textarea>
+                  <textarea class="form-control" name="body" rows="5" data-rule="required" data-msg="Por favor escribamos sus necesidaes" placeholder="Escribe tu mensaje" id="body"></textarea>
                   {{-- <div class="validation"></div> --}}
                 </div>
                 <div class="text-center"><button type="submit">Enviar Mensaje</button>
@@ -614,20 +612,21 @@
   <script src="{{ asset('js/main.js') }}"></script>
   <script src="{{ asset('js/contact.js') }}"></script>
   <script>
-    $(document).ready(function(){
-      var texto = ""
-      $( "#emailbusiness" ).change(function () {
-        var str = "";
-        $( "select option:selected" ).each(function() {
-          str += $( this ).text() + " ";
-        });
-        texto = str;
-        
-      }).change(function(){
-        if(texto == "Oferta Tecnológica"){
-          $('#contenido').prop('placeholder', "tus deseos" );
-        }
-      });
+    let seleccionar  = document.getElementById('emailbusiness');
+    seleccionar.addEventListener("change", () => {
+      let idx = seleccionar.selectedIndex;
+      let texto = seleccionar.options[idx].text;
+      
+      if (texto == "Oferta Tecnológica") {
+        document.getElementById("body").placeholder = "Cuales son tus necesidaes"
+      }
+      if (texto == "Patentes, Propiedad Intelectual y Publicaciones") {
+        document.getElementById("body").placeholder = "{{ $company->name }}"
+      }
+      if (texto == "Emprendimiento e Incubadora de Empresas") {
+        document.getElementById("body").placeholder = "Caul es tu duda respecto a emprendimiento"
+      }
+      
     });
   </script>
 

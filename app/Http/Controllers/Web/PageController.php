@@ -12,6 +12,7 @@ use App\Category;
 use App\Customer;
 use App\Portfolio;
 use App\Testimony;
+use Carbon\Carbon;
 use App\Presentation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -37,12 +38,27 @@ class PageController extends Controller
     
     public function eventos(){
         $posts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
-        
     	return view('web.eventos', compact('posts')) ;
     }
     public function evento($slug){
         $post = Post::orderBy('id', 'DESC')->where('slug',$slug)->where('status', 'PUBLISHED')->first();
         return view('web.evento', compact('post')) ;
+    }
+    //FILTROS
+        public function category($slug){
+        $category = Category::where('slug', $slug)->pluck('id')->first();
+        $posts    = Post::where('category_id', $category)
+            ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
+        return view('web.eventos', compact('posts')) ;
+    }
+
+    public function tag($slug){
+        $posts = Post::whereHas('tags', function($query) use ($slug){
+            $query->where('slug', $slug);
+        })
+        ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
+        
+        return view('web.eventos', compact('posts')) ;
     }
     // SERVICE
     public function servicios(){

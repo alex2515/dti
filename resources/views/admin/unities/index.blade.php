@@ -45,17 +45,17 @@
 										<td>{{ $unity->name }}</td>
 										<td width="10px">
 											@can('unities.show')
-											<a href="{{ route('unities.show', $unity->id) }}" class="btn btn-sm btn-warning">Ver</a>
+											<a href="{{ route('unities.show', $unity->id) }}" class="btn btn-sm btn-warning"><i class="fa fa-eye" style="font-size: 15px;"></i></a>
 											@endcan
 										</td>
 										<td width="10px">
 											@can('unities.edit')
-											<a href="{{ route('unities.edit', $unity->id) }}" class="btn btn-sm btn-success">Editar</a>
+											<a href="{{ route('unities.edit', $unity->id) }}" class="btn btn-sm btn-success"><i class="fa fa-pencil-square-o" style="font-size: 15px;"></i></a>
 											@endcan
 										</td>
 										<td width="10px">
 											@can('unities.destroy')
-											<a href="" data-target="#modal-delete-{{$unity->id}}" data-toggle="modal"><button class="btn btn-sm btn-danger">Eliminar</button></a>
+											<a href="" data-target="#modal-delete-{{$unity->id}}" data-toggle="modal"><button class="btn btn-sm btn-danger"><i class="fa fa-trash-o" style="font-size: 15px;"></i></button></a>
 											@endcan
 										</td>
 									</tr>

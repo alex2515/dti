@@ -2,19 +2,22 @@
 	{!! Form::open(['route' => ['categories.destroy', $category->id], 'method' => 'DELETE']) !!}
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<div class="modal-header">
+			<div class="modal-header" style="background: #ff4d4d; color: #fff;">
 				<button type="button" class="close" data-dismiss="modal" 
 				aria-label="Close">
                      <span aria-hidden="true">×</span>
                 </button>
-                <h4 class="modal-title">Eliminar Categoría</h4>
+                <h4 class="modal-title">¿Estas seguro de eliminar la categoria <strong>{{ $category->name }}</strong>?</h4>
 			</div>
 			<div class="modal-body">
-				<p>Confirme si desea Eliminar la categoría N° {{ $category->id }}</p>
+				<strong>ADVERTENCIA! <i class="fa fa-exclamation-triangle"></i></strong>
+				<ul>
+					<li>También se eliminarán los EVENTOS y SERVICIOS relacionados a esta categoría.</li>
+				</ul>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-				<button type="submit" class="btn btn-primary">Confirmar</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+				<button type="submit" class="btn" style="background: #ff4d4d; color: #fff;">Confirmar</button>
 			</div>
 		</div>
 	</div>

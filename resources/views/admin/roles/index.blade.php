@@ -46,17 +46,17 @@
                                         <td>{{ $rol->name }}</td>
                                         <td width="10px">
                                             @can('roles.show')
-                                            <a href="{{ route('roles.show', $rol->id) }}" class="btn btn-sm btn-warning">Ver</a>
+                                            <a href="{{ route('roles.show', $rol->id) }}" class="btn btn-sm btn-warning"><i class="fa fa-eye" style="font-size: 15px;"></i></a>
                                             @endcan
                                         </td>
                                         <td width="10px">
                                             @can('roles.edit')
-                                            <a href="{{ route('roles.edit', $rol->id) }}" class="btn btn-sm btn-success">Editar</a>
+                                            <a href="{{ route('roles.edit', $rol->id) }}" class="btn btn-sm btn-success"><i class="fa fa-pencil-square-o" style="font-size: 15px;"></i></a>
                                             @endcan
                                         </td>
                                         <td width="10px">
                                             @can('roles.destroy')
-                                            <a href="" data-target="#modal-delete-{{$rol->id}}" data-toggle="modal"><button class="btn btn-sm btn-danger">Eliminar</button></a>
+                                            <a href="" data-target="#modal-delete-{{$rol->id}}" data-toggle="modal"><button class="btn btn-sm btn-danger"><i class="fa fa-trash-o" style="font-size: 15px;"></i></button></a>
                                             @endcan
                                         </td>
                                     </tr>

@@ -42,7 +42,7 @@
           <div class="col-md-12">
             <p class="text-muted pull-right">
               <em>
-                <small>Publicado: {{ $post->created_at }}</small>
+                <small>Publicado: {{ $post->created_at->formatLocalized('%A %d %B %Y') }}</small>
               </em>
             </p>
           </div>

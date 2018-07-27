@@ -45,17 +45,17 @@
 										<td>{{ $tag->name }}</td>
 										<td width="10px">
 											@can('tags.show')
-											<a href="{{ route('tags.show', $tag->id) }}" class="btn btn-sm btn-warning">Ver</a>
+											<a href="{{ route('tags.show', $tag->id) }}" class="btn btn-sm btn-warning"><i class="fa fa-eye" style="font-size: 15px;"></i></a>
 											@endcan
 										</td>
 										<td width="10px">
 											@can('tags.edit')
-											<a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-sm btn-success">Editar</a>
+											<a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-sm btn-success"><i class="fa fa-pencil-square-o" style="font-size: 15px;"></i></a>
 											@endcan
 										</td>
 										<td width="10px">
 											@can('tags.destroy')
-											<a href="" data-target="#modal-delete-{{$tag->id}}" data-toggle="modal"><button class="btn btn-sm btn-danger">Eliminar</button></a>
+											<a href="" data-target="#modal-delete-{{$tag->id}}" data-toggle="modal"><button class="btn btn-sm btn-danger"><i class="fa fa-trash-o miestilo" style="font-size: 15px;"></i></button></a>
 											{{-- <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modal-danger">
 											Eliminar</button> --}}
 											@endcan

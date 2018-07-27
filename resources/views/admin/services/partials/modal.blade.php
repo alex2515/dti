@@ -2,7 +2,7 @@
 	{!! Form::open(['route' => ['services.destroy', $service->id], 'method' => 'DELETE']) !!}
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<div class="modal-header">
+			<div class="modal-header" style="background: #ff4d4d; color: #fff;">
 				<button type="button" class="close" data-dismiss="modal" 
 				aria-label="Close">
                      <span aria-hidden="true">×</span>
@@ -14,7 +14,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-				<button type="submit" class="btn btn-primary">Confirmar</button>
+				<button type="submit" class="btn" style="background: #ff4d4d; color: #fff;">Confirmar</button>
 			</div>
 		</div>
 	</div>

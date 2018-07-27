@@ -107,7 +107,7 @@ class PortfolioController extends Controller
 
         //IMAGEN
         if ($request->file('file')) {
-            $path = Storage::disk('public')->put('image', $request->file('file'));
+            $path = Storage::disk('public')->put('image/portafolios/', $request->file('file'));
             $portfolio->fill(['file' => asset($path)])->save();
         }
 

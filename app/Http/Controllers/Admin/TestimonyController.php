@@ -49,7 +49,7 @@ class TestimonyController extends Controller
         $testimony = Testimony::create($request->all());
         //IMAGE 
         if($request->file('file')){
-            $path = Storage::disk('public')->put('image',  $request->file('file'));
+            $path = Storage::disk('public')->put('image/testi/',  $request->file('file'));
             $testimony->fill(['file' => asset($path)])->save();
         }
 
@@ -90,7 +90,7 @@ class TestimonyController extends Controller
         $testimony->fill($request->all())->save();
         //IMAGE 
         if($request->file('file')){
-            $path = Storage::disk('public')->put('file',  $request->file('file'));
+            $path = Storage::disk('public')->put('image/testi/',  $request->file('file'));
             $testimony->fill(['file' => asset($path)])->save();
         }
 

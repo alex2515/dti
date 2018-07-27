@@ -55,7 +55,7 @@ class PostController extends Controller
 
         //IMAGEN
         if ($request->file('file')) {
-            $path = Storage::disk('public')->put('image', $request->file('file'));
+            $path = Storage::disk('public')->put('image/posts', $request->file('file'));
             $post->fill(['file' => asset($path)])->save();
         }
 
@@ -108,12 +108,14 @@ class PostController extends Controller
     {
         //
         $post = Post::find($id);
+        
+        // dd($post);
         // $this->authorize('pass',$post);
         $post->fill($request->all())->save();
 
         //IMAGEN
         if ($request->file('file')) {
-            $path = Storage::disk('public')->put('image', $request->file('file'));
+            $path = Storage::disk('public')->put('image/posts', $request->file('file'));
             $post->fill(['file' => asset($path)])->save();
         }
 

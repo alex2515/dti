@@ -45,22 +45,17 @@
 										<td>{{ $category->name }}</td>
 										<td width="10px">
 											@can('categories.show')
-											<a href="{{ route('categories.show', $category->id) }}" class="btn btn-sm btn-warning">Ver</a>
+											<a href="{{ route('categories.show', $category->id) }}" class="btn btn-sm btn-warning"><i class="fa fa-eye" style="font-size: 15px;"></i></a>
 											@endcan
 										</td>
 										<td width="10px">
 											@can('categories.edit')
-											<a href="{{ route('categories.edit', $category->id) }}" class="btn btn-sm btn-success">Editar</a>
+											<a href="{{ route('categories.edit', $category->id) }}" class="btn btn-sm btn-success"><i class="fa fa-pencil-square-o" style="font-size: 15px;"></i></a>
 											@endcan
 										</td>
 										<td width="10px">
 											@can('categories.destroy')
-											<a href="" data-target="#modal-delete-{{$category->id}}" data-toggle="modal"><button class="btn btn-sm btn-danger">Eliminar</button></a>
-											{{-- {!! Form::open(['route' => ['categories.destroy', $category->id], 'method' => 'DELETE']) !!}
-											<button class="btn btn-sm btn-danger">Eliminar</button>
-											{!! Form::close() !!} --}}
-											{{-- <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modal-danger">
-											Eliminar</button> --}}
+											<a href="" data-target="#modal-delete-{{$category->id}}" data-toggle="modal"><button class="btn btn-sm btn-danger"><i class="fa fa-trash-o" style="font-size: 15px;"></i></button></a>
 											@endcan
 										</td>
 									</tr>
@@ -88,8 +83,6 @@
 		</div>
 	</section>
 	<!-- /.content -->
-
-
 @endsection
 
 @section('scripts')

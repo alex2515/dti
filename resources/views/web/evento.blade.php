@@ -1,7 +1,9 @@
 @extends('web.welcome2')
 @section('content')
     <!--==========================
-      Events Section
+      Events Section format('d-m-Y')
+      format('D, M j, Y g:i A')
+      createFromFormat
     ============================-->
     <section id="about">
       <div class="container">
@@ -11,9 +13,10 @@
         
         <div class="row" style="background: #fff ">
           <div class="col-md-12">
+            Categoría: <a href="{{ route('category', $post->category->slug) }}">{{ $post->category->name }}</a>
             <p class="text-muted pull-right">
               <em>
-                <small>Publicado: {{ $post->created_at }}</small>
+                <small>Publicado: {{ $post->created_at->formatLocalized('%A %d %B %Y') }}</small>
               </em>
             </p>
           </div>
@@ -35,7 +38,17 @@
           <div class="col-md-12">
             <hr>
             {!! $post->body !!}
+            <hr>
+            Etiquetas: 
+            @foreach($post->tags as $tag)
+            <a href="{{ route('tag', $tag->slug) }}">
+              {{ $tag->name }}
+            </a>
+          @endforeach
           </div>
+
+          <hr>
+          
         </div>
 
       </div>

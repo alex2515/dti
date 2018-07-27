@@ -14,7 +14,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-				<button type="submit" class="btn btn-primary">Confirmar</button>
+				<button type="submit" class="btn" style="background: #ff4d4d; color: #fff;">Confirmar</button>
 			</div>
 		</div>
 	</div>
