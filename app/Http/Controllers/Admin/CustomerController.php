@@ -49,7 +49,7 @@ class CustomerController extends Controller
         $customer = Customer::create($request->all());
         //IMAGE 
         if($request->file('file')){
-            $path = Storage::disk('public')->put('image/clientes/',  $request->file('file'));
+            $path = Storage::disk('public')->put('image/clientes',  $request->file('file'));
             $customer->fill(['file' => asset($path)])->save();
         }
 
@@ -90,7 +90,7 @@ class CustomerController extends Controller
         $customer->fill($request->all())->save();
         //IMAGE 
         if($request->file('file')){
-            $path = Storage::disk('public')->put('image/clientes/',  $request->file('file'));
+            $path = Storage::disk('public')->put('image/clientes',  $request->file('file'));
             $customer->fill(['file' => asset($path)])->save();
         }
 

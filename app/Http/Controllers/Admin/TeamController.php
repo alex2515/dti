@@ -49,7 +49,7 @@ class TeamController extends Controller
         $team = Team::create($request->all());
         //IMAGE 
         if($request->file('file')){
-            $path = Storage::disk('public')->put('image/team/',  $request->file('file'));
+            $path = Storage::disk('public')->put('image/team',  $request->file('file'));
             $team->fill(['file' => asset($path)])->save();
         }
 
@@ -90,7 +90,7 @@ class TeamController extends Controller
         $team->fill($request->all())->save();
         //IMAGE 
         if($request->file('file')){
-            $path = Storage::disk('public')->put('image/team/',  $request->file('file'));
+            $path = Storage::disk('public')->put('image/team',  $request->file('file'));
             $team->fill(['file' => asset($path)])->save();
         }
 

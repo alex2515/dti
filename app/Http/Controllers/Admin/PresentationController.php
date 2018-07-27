@@ -1,3 +1,4 @@
+
 <?php
 namespace App\Http\Controllers\Admin;
 use App\Presentation;
@@ -49,7 +50,7 @@ class PresentationController extends Controller
         $presentation = Presentation::create($request->all());
         //IMAGE 
         if($request->file('file')){
-            $path = Storage::disk('public')->put('image/presentacion/',  $request->file('file'));
+            $path = Storage::disk('public')->put('image/presentacion',  $request->file('file'));
             $presentation->fill(['file' => asset($path)])->save();
         }
 
@@ -90,7 +91,7 @@ class PresentationController extends Controller
         $presentation->fill($request->all())->save();
         //IMAGE 
         if($request->file('file')){
-            $path = Storage::disk('public')->put('image/presentacion/',  $request->file('file'));
+            $path = Storage::disk('public')->put('image/presentacion',  $request->file('file'));
             $presentation->fill(['file' => asset($path)])->save();
         }
 
