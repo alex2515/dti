@@ -68,12 +68,24 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    404 - 
+                    <h3>Ooops... Error 404</h3>
                 </div>
+                <p>Lo sentimos, pero la página que buscas no esta disponible</p>
 
                 <div class="links">
-                    <a href="{{route('home')}}">Ir al Home</a>
+                    <a href="{{route('dti')}}">Regresar a la Pagina principal</a>
                 </div>
+        <ul>
+          @if (Route::has('login'))
+              @auth
+                  <li><a class="btn btn-sm" href="{{ url('/home') }}">IR AL HOME</a></li>
+              @else <ion-icon name="person"></ion-icon>
+                <li><a class="btn btn-sm" href="{{ route('register') }}"> IR REGISTER</a></li>
+                <li><a class="btn btn-sm" href="{{ route('login') }}"> IR A LOGIN</a></li>
+                
+              @endauth
+          @endif  
+        </ul>
             </div>
         </div>
     </body>

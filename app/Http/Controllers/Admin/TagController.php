@@ -62,7 +62,7 @@ class TagController extends Controller
     public function show($id)
     {
         //
-        $tag = Tag::find($id);
+        $tag = Tag::findOrFail($id);
 
         return view('admin.tags.show', compact('tag'));
     }
@@ -76,7 +76,7 @@ class TagController extends Controller
     public function edit($id)
     {
         //
-        $tag = Tag::find($id);
+        $tag = Tag::findOrFail($id);
 
         return view('admin.tags.edit', compact('tag'));
     }
@@ -91,7 +91,7 @@ class TagController extends Controller
     public function update(TagUpdateRequest $request, $id)
     {
         //
-        $tag = Tag::find($id);
+        $tag = Tag::findOrFail($id);
 
         $tag->fill($request->all())->save();
 
@@ -108,7 +108,7 @@ class TagController extends Controller
     public function destroy($id)
     {
         //
-        $tag = Tag::find($id)->delete();
+        $tag = Tag::findOrFail($id)->delete();
 
         return back()->with('info', 'Eliminado correctamente');
     }

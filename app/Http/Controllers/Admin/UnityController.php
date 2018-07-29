@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers\Admin;
+
 use App\Unity;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -63,7 +65,7 @@ class UnityController extends Controller
      */
     public function show($id)
     {
-        $unity = Unity::find($id);
+        $unity = Unity::findOrFail($id);
         return view('admin.unities.show', compact('unity'));
     }
     /**
@@ -74,7 +76,7 @@ class UnityController extends Controller
      */
     public function edit($id)
     {
-        $unity       = Unity::find($id);
+        $unity       = Unity::findOrFail($id);
         return view('admin.unities.edit', compact('unity'));
     }
     /**
@@ -86,7 +88,7 @@ class UnityController extends Controller
      */
     public function update(UnityUpdateRequest $request, $id)
     {
-        $unity = Unity::find($id);
+        $unity = Unity::findOrFail($id);
         $unity->fill($request->all())->save();
         //IMAGE 
         if($request->file('file')){
@@ -104,7 +106,7 @@ class UnityController extends Controller
      */
     public function destroy($id)
     {
-        $unity = Unity::find($id)->delete();
+        $unity = Unity::findOrFail($id)->delete();
         return back()->with('info', 'Eliminado correctamente');
     }
 }

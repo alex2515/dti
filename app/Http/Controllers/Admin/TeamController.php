@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers\Admin;
+
 use App\Team;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -63,7 +65,7 @@ class TeamController extends Controller
      */
     public function show($id)
     {
-        $team = Team::find($id);
+        $team = Team::findOrFail($id);
         return view('admin.teams.show', compact('team'));
     }
     /**
@@ -74,7 +76,7 @@ class TeamController extends Controller
      */
     public function edit($id)
     {
-        $team       = Team::find($id);
+        $team       = Team::findOrFail($id);
         return view('admin.teams.edit', compact('team'));
     }
     /**
@@ -86,7 +88,7 @@ class TeamController extends Controller
      */
     public function update(TeamUpdateRequest $request, $id)
     {
-        $team = Team::find($id);
+        $team = Team::findOrFail($id);
         $team->fill($request->all())->save();
         //IMAGE 
         if($request->file('file')){
@@ -104,7 +106,7 @@ class TeamController extends Controller
      */
     public function destroy($id)
     {
-        $team = Team::find($id)->delete();
+        $team = Team::findOrFail($id)->delete();
         return back()->with('info', 'Eliminado correctamente');
     }
 }

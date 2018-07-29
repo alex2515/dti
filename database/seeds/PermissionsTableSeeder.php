@@ -330,6 +330,14 @@ class PermissionsTableSeeder extends Seeder
             'slug' => 'presentations.destroy',
             'description' => 'Eliminar cualquier foto de inicio en el sistema'
         ]);
+
+        // Companies
+        Permission::create([
+            'name' => 'Editar Datos de la empresa',
+            'slug' => 'companies/1/edit',
+            'description' => 'Editar cualquier dato de la empresa en el sistema'
+        ]);
+
         // Homestead ofrece una máquina virtual completa de Ubuntu con configuración automatizada de Nginx. Homestead es una elección maravillosa si desea un entorno de desarrollo de Linux completamente virtualizado o está en Windows / Linux.
 
     }

@@ -73,7 +73,7 @@ class ServiceController extends Controller
     public function show($id)
     {
         //
-        $service = Service::find($id);
+        $service = Service::findOrFail($id);
         // $this->authorize('pass',$service);
 
         return view('admin.services.show', compact('service'));
@@ -88,7 +88,7 @@ class ServiceController extends Controller
     public function edit($id)
     {
         //
-        $service = Service::find($id);
+        $service = Service::findOrFail($id);
         // $this->authorize('pass',$service);
         $categories = Category::orderBy('name', 'ASC')->where('type','SERVICE')->pluck('name','id');
 
@@ -108,7 +108,7 @@ class ServiceController extends Controller
     public function update(ServiceUpdateRequest $request, $id)
     {
         //
-        $service = Service::find($id);
+        $service = Service::findOrFail($id);
         // $this->authorize('pass',$service);
         $service->fill($request->all())->save();
 
@@ -134,7 +134,7 @@ class ServiceController extends Controller
     public function destroy($id)
     {
         //
-        $service = Service::find($id);
+        $service = Service::findOrFail($id);
         // $this->authorize('pass',$service);
         $service->delete();
 

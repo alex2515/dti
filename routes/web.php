@@ -167,8 +167,8 @@ Route::middleware(['auth'])->group(function() {
 		->middleware('permission:portfolios.edit');
 
 	// Company
-	Route::get('companies/{company}/edit', 'Admin\CompanyController@edit')->name('companies.edit')
-		->middleware('permission:companies.edit');
+	Route::get('companies/{company}/edit', 'Admin\CompanyController@edit')->name('companies/1/edit')
+		->middleware('permission:companies/1/edit');
 		Route::put('companies/{company}', 'Admin\CompanyController@update')->name('companies.update')
 		->middleware('permission:companies.edit');
 

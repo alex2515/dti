@@ -139,7 +139,7 @@
           </div>
         </div>
         <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
+        {{-- <form action="#" method="get" class="sidebar-form">
           <div class="input-group">
             <input type="text" name="q" class="form-control" placeholder="Search...">
             <span class="input-group-btn">
@@ -147,85 +147,133 @@
                   </button>
                 </span>
           </div>
-        </form>
+        </form> --}}
         <!-- /.search form -->
+
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">NAVEGACIÓN PRINCIPAL</li>
+          <li class="{{ active('home') }}"><a href="{{ route('home') }}"><i class="fa fa-dashboard"></i><span>Panel</span></a></li>
+          @can('categories.index')
+            <li class="{{ active('categories') }}"><a href="{{ route('categories.index') }}"><i class="glyphicon glyphicon-bookmark"></i> <span>Categorías</span></a></li>
+          @endcan
+          @can('tags.index')
+            <li class="{{ active('tags') }}"><a href="{{ route('tags.index') }}"><i class="glyphicon glyphicon-tags"></i> <span>Etiquetas</span></a></li>
+          @endcan
+          @can('posts.index')
+            <li class="{{ active('posts') }}"><a href="{{ route('posts.index') }}"><i class="glyphicon glyphicon-fire"></i> <span>Eventos</span></a></li>
+          @endcan
+          @can('services.index')
+            <li class="{{ active('services') }}"><a href="{{ route('services.index') }}"><i class="glyphicon glyphicon-education"></i> <span>Servicios</span></a></li>
+          @endcan
+          @can('portfolios.index')
+            <li class="{{ active('portfolios') }}"><a href="{{ route('portfolios.index') }}"><i class="glyphicon glyphicon-folder-open"></i> <span>Portafolios</span></a></li>
+          @endcan
+          @can('testimonies.index')
+            <li class="{{ active('testimonies') }}"><a href="{{ route('testimonies.index') }}"><i class="glyphicon glyphicon-pushpin"></i> <span>Testimonios</span></a></li>
+          @endcan
+          @can('customers.index')
+            <li class="{{ active('customers') }}"><a href="{{ route('customers.index') }}"><i class="fa fa-users"></i> <span>Clientes</span></a></li>
+          @endcan
+          @can('presentations.index')
+            <li class="{{ active('presentations') }}"><a href="{{ route('presentations.index') }}"><i class="glyphicon glyphicon-picture"></i> <span>Presentaciónes</span></a></li>
+          @endcan
+          @can('companies/1/edit')
+            <li class="header">CONFIGURACIÓN</li>
+            <li class="{{ active('companies/1/edit') }}"><a href="{{ route('companies/1/edit', 1) }}"><i class="glyphicon glyphicon-tent"></i><span>Datos de Empresa</span></a></li>
+          @endcan
+          @can('roles.index')
+            <li class="{{ active('roles') }}"><a href="{{ route('roles.index') }}"><i class="glyphicon glyphicon-queen"></i> <span>Roles</span></a></li>
+          @endcan
+          @can('unities.index')
+            <li class="{{ active('unities') }}"><a href="{{ route('unities.index') }}"><i class="glyphicon glyphicon-modal-window"></i> <span>Unidades</span></a></li>
+          @endcan
+          @can('users.index')
+            <li class="{{ active('users') }}"><a href="{{ route('users.index') }}"><i class="glyphicon glyphicon-user"></i> <span>Usuarios</span></a></li>
+          @endcan
+          @can('teams.index')
+            <li class="{{ active('teams') }}"><a href="{{ route('teams.index') }}"><i class="glyphicon glyphicon-globe"></i><span>Equipo de Trabajo</span></a></li>
+          @endcan
+        </ul>
+
+        {{-- <ul class="sidebar-menu" data-widget="tree">
           <li class="{{ active('home') }} "><a href="{{ route('home') }}"><i class="fa fa-dashboard"></i><span>Panel</span></a></li>
+          <li class="header">NAVEGACIÓN PRINCIPAL</li>
+          <li><a href=" {{ route('categories.index') }}"><i class="glyphicon glyphicon-bookmark"></i> <span>Categorías</span></a></li>
+          <li><a href=" {{ route('tags.index') }}"><i class="glyphicon glyphicon-tags"></i> <span>Etiquetas</span></a></li>
+          <li><a href=" {{ route('posts.index') }}"><i class="glyphicon glyphicon-fire"></i> <span>Eventos</span></a></li>
+          <li><a href=" {{ route('services.index') }}"><i class="glyphicon glyphicon-education"></i> <span>Servicios</span></a></li>
+          <li><a href=" {{ route('portfolios.index') }}"><i class="glyphicon glyphicon-folder-open"></i> <span>Portafolios</span></a></li>
+          <li><a href=" {{ route('testimonies.index') }}"><i class="glyphicon glyphicon-pushpin"></i> <span>Testimonios</span></a></li>
+          <li><a href=" {{ route('customers.index') }}"><i class="fa fa-users"></i> <span>Clientes</span></a></li>
+          <li><a href=" {{ route('presentations.index') }}"><i class="glyphicon glyphicon-picture"></i> <span>Presentaciónes</span></a></li>
+          <li class="header">CONFIGURACIÓN</li>
+          <li><a href=" {{ route('companies.index') }}"><i class="glyphicon glyphicon-tent"></i> <span>Compañía</span></a></li>
+          <li><a href=" {{ route('roles.index') }}"><i class="glyphicon glyphicon-queen"></i> <span>Roles</span></a></li>
+          <li><a href=" {{ route('unities.index') }}"><i class="glyphicon glyphicon-modal-window"></i> <span>Unidades</span></a></li>
+          <li><a href=" {{ route('users.index') }}"><i class="glyphicon glyphicon-user"></i> <span>Usuarios</span></a></li>
+          
+          
+
           <li class="header"></li>
           @can('categories.index')
             <li class=" {{ active('categories') }} "><a href="{{ route('categories.index') }}"><i class="glyphicon glyphicon-tag"></i><span>Categorias</span></a></li>     
           @endcan
           <li class=" {{ active('posts') }} treeview">
             @can('posts.index')
-            <a href="#">
-              <i class="glyphicon glyphicon-pushpin"></i>
-              <span>Eventos</span>
-              <span class="pull-right-container">
-              </span>
-            </a>
+              <a href="#"><i class="glyphicon glyphicon-pushpin"></i><span>Eventos</span><span class="pull-right-container"></span></a>
             @endcan
               <ul class="treeview-menu">
-              @can('posts.index')
-                <li><a href="{{ route('posts.index') }}"><i class="fa fa-circle-o"></i><span>Todas las entradas</span></a></li>
-              @endcan
-              @can('posts.create')
-                <li><a href="{{ route('posts.create') }}"><i class="fa fa-circle-o"></i><span>Agregar nueva</span></a></li>
-              @endcan
-              @can('tags.index')
-                <li><a href="{{ route('tags.index') }}"><i class="fa fa-circle-o"></i><span>Etiquetas</span></a></li>
-              @endcan
+                @can('posts.index')
+                  <li><a href="{{ route('posts.index') }}"><i class="fa fa-circle-o"></i><span>Todas las entradas</span></a></li>
+                @endcan
+                @can('posts.create')
+                  <li><a href="{{ route('posts.create') }}"><i class="fa fa-circle-o"></i><span>Agregar nueva</span></a></li>
+                @endcan
+                @can('tags.index')
+                  <li><a href="{{ route('tags.index') }}"><i class="fa fa-circle-o"></i><span>Etiquetas</span></a></li>
+                @endcan
               </ul>
           </li>
           @can('services.index')
-          <li class=" {{ active('services') }} "><a href="{{ route('services.index') }}"><i class="glyphicon glyphicon-fire"></i><span>Servicios</span></a></li>
+            <li class=" {{ active('services') }} "><a href="{{ route('services.index') }}"><i class="glyphicon glyphicon-fire"></i><span>Servicios</span></a></li>
           @endcan
           @can('portfolios.index')
-          <li class=" {{ active('portfolios') }} "><a href="{{ route('portfolios.index') }}"><i class="glyphicon glyphicon-briefcase"></i><span>Portafolio</span></a></li>
+            <li class=" {{ active('portfolios') }} "><a href="{{ route('portfolios.index') }}"><i class="glyphicon glyphicon-briefcase"></i><span>Portafolio</span></a></li>
+          @endcan          
+          @can('users.index')
+            <li class=" {{ active('users') }} "><a href="{{ route('users.index') }}"><i class="glyphicon glyphicon-user"></i><span>Usuario</span></a></li>
           @endcan
-        {{-- @can('products.index')
-          <li><a href="{{ route('products.index') }}"><i class="glyphicon glyphicon-pushpin"></i><span>Productos</span></a></li>
-        @endcan --}}
-        <li class="header"></li>
-          
-        @can('users.index')
-          <li class=" {{ active('users') }} "><a href="{{ route('users.index') }}"><i class="glyphicon glyphicon-user"></i><span>Usuario</span></a></li>
-        @endcan
-        @can('roles.index')
-          <li class=" {{ active('roles') }} "><a href="{{ route('roles.index') }}"><i class="glyphicon glyphicon-tower"></i><span>Roles</span></a></li>
-        @endcan
+          @can('roles.index')
+            <li class=" {{ active('roles') }} "><a href="{{ route('roles.index') }}"><i class="glyphicon glyphicon-tower"></i><span>Roles</span></a></li>
+          @endcan
+
           <li class="treeview">
             @can('roles.index')
-            <a href="#">
-              <i class="glyphicon glyphicon-cog"></i>
-              <span>Configuracion General</span>
-              <span class="pull-right-container">
-              </span>
-            </a>
+              <a href="#"><i class="glyphicon glyphicon-cog"></i><span>Configuracion General</span><span class="pull-right-container"></span></a>
             @endcan
               <ul class="treeview-menu">
-              @can('companies.edit')
-                <li><a href="{{ route('companies.edit', 1) }}"><i class="fa fa-circle-o"></i><span>Datos de Empresa</span></a></li>
-              @endcan
-              @can('presentations.index')
-              <li><a href="{{ route('presentations.index') }}"><i class="fa fa-circle-o"></i><span>Foto de Inicio</span></a></li>
-              @endcan
-              @can('unities.index')
-                <li><a href="{{ route('unities.index') }}"><i class="fa fa-circle-o"></i><span>Unidades</span></a></li>
-              @endcan
-              @can('customers.index')
-                <li><a href="{{ route('customers.index') }}"><i class="fa fa-circle-o"></i><span>Clientes</span></a></li>
-              @endcan
-              @can('teams.index')
-              <li><a href="{{ route('teams.index') }}"><i class="fa fa-circle-o"></i><span>Equipo de Trabajo</span></a></li>
-              @endcan
-              @can('testimonies.index')
-              <li><a href="{{ route('testimonies.index') }}"><i class="fa fa-circle-o"></i><span>Testimonios</span></a></li>
-              @endcan
+                @can('companies.edit')
+                  <li><a href="{{ route('companies.edit', 1) }}"><i class="fa fa-circle-o"></i><span>Datos de Empresa</span></a></li>
+                @endcan
+                @can('presentations.index')
+                <li><a href="{{ route('presentations.index') }}"><i class="fa fa-circle-o"></i><span>Foto de Inicio</span></a></li>
+                @endcan
+                @can('unities.index')
+                  <li><a href="{{ route('unities.index') }}"><i class="fa fa-circle-o"></i><span>Unidades</span></a></li>
+                @endcan
+                @can('customers.index')
+                  <li><a href="{{ route('customers.index') }}"><i class="fa fa-circle-o"></i><span>Clientes</span></a></li>
+                @endcan
+                @can('teams.index')
+                <li><a href="{{ route('teams.index') }}"><i class="fa fa-circle-o"></i><span>Equipo de Trabajo</span></a></li>
+                @endcan
+                @can('testimonies.index')
+                <li><a href="{{ route('testimonies.index') }}"><i class="fa fa-circle-o"></i><span>Testimonios</span></a></li>
+                @endcan
               </ul>
           </li>
-        </ul>
+        </ul> --}}
       </section>
       <!-- /.sidebar -->
     </aside>

@@ -65,7 +65,7 @@ class PortfolioController extends Controller
      */
     public function show($id)
     {
-        $portfolio = Portfolio::find($id);
+        $portfolio = Portfolio::findOrFail($id);
         // $this->authorize('pass',$post);
 
         return view('admin.portfolio.show', compact('portfolio'));
@@ -80,7 +80,7 @@ class PortfolioController extends Controller
     public function edit($id)
     {
         // $posts = Post::orderBy('name', 'ASC')->where('status', 'PUBLISHED')->pluck('name','id');
-        $portfolio = Portfolio::find($id);
+        $portfolio = Portfolio::findOrFail($id);
         // $this->authorize('pass',$post);
         $posts = Post::orderBy('name', 'ASC')->where('status', 'PUBLISHED')->pluck('name','id');
 
@@ -101,7 +101,7 @@ class PortfolioController extends Controller
     public function update(PortfolioUpdateRequest $request, $id)
     {
         //
-        $portfolio = Portfolio::find($id);
+        $portfolio = Portfolio::findOrFail($id);
         // $this->authorize('pass',$post);
         $portfolio->fill($request->all())->save();
 
@@ -126,7 +126,7 @@ class PortfolioController extends Controller
     public function destroy($id)
     {
         //
-        $portfolio = Portfolio::find($id);
+        $portfolio = Portfolio::findOrFail($id);
         // $this->authorize('pass',$post);
         $portfolio->delete();
 

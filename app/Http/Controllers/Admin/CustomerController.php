@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers\Admin;
+
 use App\Customer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -63,7 +65,7 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        $customer = Customer::find($id);
+        $customer = Customer::findOrFail($id);
         return view('admin.customers.show', compact('customer'));
     }
     /**
@@ -74,7 +76,7 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        $customer       = Customer::find($id);
+        $customer       = Customer::findOrFail($id);
         return view('admin.customers.edit', compact('customer'));
     }
     /**
@@ -86,7 +88,7 @@ class CustomerController extends Controller
      */
     public function update(CustomerUpdateRequest $request, $id)
     {
-        $customer = Customer::find($id);
+        $customer = Customer::findOrFail($id);
         $customer->fill($request->all())->save();
         //IMAGE 
         if($request->file('file')){
@@ -104,7 +106,7 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-        $customer = Customer::find($id)->delete();
+        $customer = Customer::findOrFail($id)->delete();
         return back()->with('info', 'Eliminado correctamente');
     }
 }

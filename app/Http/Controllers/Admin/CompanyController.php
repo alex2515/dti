@@ -75,7 +75,7 @@ class CompanyController extends Controller
     public function update(CompanyUpdateRequest $request, Company $company)
     {
         //
-        $company = Company::find($company->id);
+        $company = Company::findOrFail($company->id);
         // $this->authorize('pass',$post);
         $company->fill($request->all())->save();
 

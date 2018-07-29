@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers\Admin;
+
 use App\Testimony;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -63,7 +65,7 @@ class TestimonyController extends Controller
      */
     public function show($id)
     {
-        $testimony = Testimony::find($id);
+        $testimony = Testimony::findOrFail($id);
         return view('admin.testimonies.show', compact('testimony'));
     }
     /**
@@ -74,7 +76,7 @@ class TestimonyController extends Controller
      */
     public function edit($id)
     {
-        $testimony       = Testimony::find($id);
+        $testimony       = Testimony::findOrFail($id);
         return view('admin.testimonies.edit', compact('testimony'));
     }
     /**
@@ -86,7 +88,7 @@ class TestimonyController extends Controller
      */
     public function update(TestimonyUpdateRequest $request, $id)
     {
-        $testimony = Testimony::find($id);
+        $testimony = Testimony::findOrFail($id);
         $testimony->fill($request->all())->save();
         //IMAGE 
         if($request->file('file')){
@@ -104,7 +106,7 @@ class TestimonyController extends Controller
      */
     public function destroy($id)
     {
-        $testimony = Testimony::find($id)->delete();
+        $testimony = Testimony::findOrFail($id)->delete();
         return back()->with('info', 'Eliminado correctamente');
     }
 }
