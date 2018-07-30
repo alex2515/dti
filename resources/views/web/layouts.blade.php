@@ -17,19 +17,13 @@
 
   <!-- Bootstrap CSS File -->
   <link href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-  {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> --}}
 
-  {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
-
-  <!-- Font Awesome -->
-  <link href="{{ asset('admin/bower_components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-
-  <!-- Libraries CSS Files -->
+  <!-- Libraries CSS Icons -->
   <link href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('lib/animate/animate.min.css') }}" rel="stylesheet">
   <link href="{{ asset('lib/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
-    <!-- Ionicons -->
-  {{-- <link rel="stylesheet" href="{{ asset('admin/bower_components/Ionicons/css/ionicons.min.css') }}"> --}}
+
+    <!-- Libraries CSS Files -->
+  <link href="{{ asset('lib/animate/animate.min.css') }}" rel="stylesheet">
   <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
   <link href="{{ asset('lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
 
@@ -58,6 +52,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-3 footer-info">
+            <h1><a href="#intro"><img src="img/logo.png" alt="" title="" width="200px" height="50px"/></a></h1>
             <h3><small><strong>{{ $company->name }}</strong></small></h3>
             {{-- <p>La Dirección de Transferencia e Innovación (DTI) es un órgano dependiente del Vicerrectorado de Investigación, encargado de promover y gestionar relaciones e interacciones entre la Universidad y su entorno.</p> --}}
           </div>
@@ -81,17 +76,23 @@
             </p>
 
             <div class="social-links">
-              <a href="{{ $company->twitter }}" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="{{ $company->facebook }}" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="{{ $company->instagram }}" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="{{ $company->gmail }}" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="{{ $company->twitter }}" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="{{ $company->facebook }}" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="{{ $company->instagram }}" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="{{ $company->gmail }}" target="_blank" class="google-plus"><i class="fa fa-google-plus"></i></a>
             </div>
 
           </div>
 
           <div class="col-lg-3 col-md-6 footer-newsletter">
             <h4>Nuestro boletín</h4>
-            <p>&nbsp</p>
+            
+            <div class="social-links pull-right">
+              Intranet <a href="{{ $company->urlintranet }}" target="_blank"><i class="fa fa-user-circle"></i></a>
+            </div>
+            <br>
+            <hr>
+            <hr>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit"  value="Subscribe">
             </form>
@@ -103,8 +104,12 @@
 
     <div class="container">
       <div class="copyright">
+        <small>© Copyrights - Vicerectorado de investigación, 2018 Aviso legal - Política de cookies - Accesibilidad - Ayuda - Contacto
+
+Felipe IV, 4 - 28014 Madrid - Teléfono: (34) 91 420 14 78
+
         &copy; Copyright <strong></strong>. Todos los derechos reservados. <br>
-        Web Editor <a href="https://bootstrapmade.com/"><em><strong> - Espinoza Gonzales, ALexander R.</strong></em></a>
+        Web Editor <a href="https://bootstrapmade.com/"><em><strong> - Espinoza Gonzales, ALexander R.</strong></em></a></small>
       </div>
       <div class="credits">
         <!--

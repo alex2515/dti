@@ -26,6 +26,7 @@ class CreateCompaniesTable extends Migration
             $table->string('gmail')->nullable();
             $table->string('instagram')->nullable();
             $table->string('url')->nullable();
+            $table->sitrng('urlintranet')->nullable();
             $table->timestamps();
         });
     }

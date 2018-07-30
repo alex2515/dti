@@ -24,6 +24,7 @@ class CompaniesTableSeeder extends Seeder
             'gmail' 		=> 'dtiunheval@gmail.com',
             'instagram' 	=> '',
             'url' 			=> '',
+            'urlintranet'   => '',
         ]);
     }
 }

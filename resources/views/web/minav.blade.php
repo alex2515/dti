@@ -12,7 +12,7 @@
           <li><a href="{{ route('eventos') }}">Eventos</a></li>
           <li><a href="{{ route('servicios') }}">Servicios</a></li>
           <li><a href="{{ route('portafolios') }}">Portafolio</a></li>
-          <li><a href="{{ $company->url }}">Vigilancia Técnologica</a></li>
+          <li><a href="{{ $company->url }}" target="_blank">Vigilancia Técnologica</a></li>
           <li><a href="{{ route('contactos')}}">Contáctenos</a></li>
           <li class="menu-has-children"><a href=""><span class="ion ion-donwload"></span></a>
             <ul>

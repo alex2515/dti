@@ -35,6 +35,7 @@ class CompanyUpdateRequest extends FormRequest
             'gmail' => '', 
             'instagram' => '', 
             'url' => '',
+            'urlintranet' => '',
         ];
     }
 

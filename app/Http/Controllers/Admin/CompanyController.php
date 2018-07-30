@@ -79,7 +79,7 @@ class CompanyController extends Controller
         // $this->authorize('pass',$post);
         $company->fill($request->all())->save();
 
-        return redirect()->route('companies.edit', $company->id)
+        return redirect()->route('companies/1/edit', $company->id)
         ->with('info', 'Congfiguración general, actualizado con éxito');
     }
 

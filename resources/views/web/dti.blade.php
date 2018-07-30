@@ -17,7 +17,7 @@
           <li><a href="{{ route('eventos') }}">Eventos</a></li>
           <li><a href="{{ route('servicios') }}">Servicios</a></li>
           <li><a href="{{ route('portafolios') }}">Portafolio</a></li>
-          <li><a href="{{ $company->url }}">Vigilancia Técnologica</a></li>
+          <li><a href="{{ $company->url }}" target="_blank">Vigilancia Técnologica</a></li>
           <li><a href="{{ route('contactos')}}">Contáctenos</a></li>
           <li class="menu-has-children"><a href=""><span class="ion ion-donwload"></span></a>
             <ul>
@@ -162,7 +162,7 @@
           <li><a href="{{ route('eventos') }}">Eventos</a></li>
           <li><a href="{{ route('servicios') }}">Servicios</a></li>
           <li><a href="{{ route('portafolios') }}">Portafolio</a></li>
-          <li><a href="{{ $company->url }}">Vigilancia Técnologica</a></li>
+          <li><a href="{{ $company->url }}" target="_blank">Vigilancia Técnologica</a></li>
           <li><a href="{{ route('contactos')}}">Contáctenos</a></li>
           <li class="menu-has-children"><a href=""><span class="ion ion-donwload"></span></a>
             <ul>
@@ -435,14 +435,14 @@
       let texto = seleccionar.options[idx].text;
       
       if (texto == "Oferta Tecnológica") {
-        document.getElementById("body").placeholder = "Cuales son tus necesidaes"
+        document.getElementById("body").placeholder = "Estimado visitante ingrese las necesidades que requira su entidad."
       }
-      if (texto == "Patentes, Propiedad Intelectual y Publicaciones") {
-        document.getElementById("body").placeholder = "{{ $company->name }}"
-      }
-      if (texto == "Emprendimiento e Incubadora de Empresas") {
-        document.getElementById("body").placeholder = "Caul es tu duda respecto a emprendimiento"
-      }
+      // if (texto == "Patentes, Propiedad Intelectual y Publicaciones") {
+      //   document.getElementById("body").placeholder = " "
+      // }
+      // if (texto == "Emprendimiento e Incubadora de Empresas") {
+      //   document.getElementById("body").placeholder = "Caul es tu duda respecto a emprendimiento"
+      // }
       
     });
   </script>

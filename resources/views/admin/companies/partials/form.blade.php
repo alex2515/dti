@@ -48,8 +48,12 @@
 			</div>
 			<hr>
 			<div class="form-group has-success col-xs-12">
-				{{ Form::label('url', 'URL Sistema de Vigilancia Tec.') }}
+				{{ Form::label('url', 'URL Sistema de Vigilancia Tecnológica') }}
 				{{ Form::text('url', null, ['class' => 'form-control', 'id' =>'url']) }}
+			</div>
+			<div class="form-group has-success col-xs-12">
+				{{ Form::label('url', 'URL para vincular INTRANET') }}
+				{{ Form::text('urlintranet', null, ['class' => 'form-control', 'id' =>'urlintranet']) }}
 			</div>
 {{-- 			<div class="input-group has-success">
                 <input type="text" class="form-control">
