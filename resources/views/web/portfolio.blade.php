@@ -1,5 +1,6 @@
-@extends('web.welcome2')
+@extends('web.layouts')
 @section('content')
+@include('web.minav')
     <!--==========================
       Portfolio Section
     ============================-->

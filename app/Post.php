@@ -32,12 +32,12 @@ class Post extends Model
     {
         // Un Post "tiene" a un Portafolio
          return $this->hasOne(Portfolio::class);
-     }
+    }
 
      // Camel Case
-     public function getCreateAtAttribute($create_at)
+     public function getCreatedAtAttribute($created_at)
      {
-        return  new Date($create_at);
+        return  new Date($created_at);
      }
 
     // hasOne($related, $foreignKey = null, $localKey = null)

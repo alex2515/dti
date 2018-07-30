@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Log in</title>
+  <title>Dirección de Transferencia, Emprendimiento e Innovación | DTI</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -30,7 +30,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="index2.html"><b>Admin</b>LTE</a>
+    <a href="#"><b>Admin</b>DTI</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -63,29 +63,29 @@
         <div class="col-xs-6">
           <div class="checkbox icheck">
             <label>
-                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordarme
             </label>
           </div>
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <button type="submit" class="btn btn-primary ">Iniciar Sesión</button>
         </div>
         <!-- /.col -->
       </div>
     </form>
 
-    <div class="social-auth-links text-center">
+    {{-- <div class="social-auth-links text-center">
       <p>- OR -</p>
       <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
         Facebook</a>
       <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
         Google+</a>
-    </div>
+    </div> --}}
     <!-- /.social-auth-links -->
 
     {{-- <a class="btn btn-link" href="{{ route('password.request') }}">Forgot Your Password?</a><br> --}}
-    <a href="{{ route('register')}}" class="text-center">Register a new membership</a>
+    <a href="{{ route('register')}}" class="text-center">Registre un nuevo usuario</a>
 
   </div>
   <!-- /.login-box-body -->

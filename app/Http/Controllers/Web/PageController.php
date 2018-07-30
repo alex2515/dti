@@ -33,63 +33,77 @@ class PageController extends Controller
         $testimonies    = Testimony::all();
         $presentations  = Presentation::where('file','!=', '')->get();
 
-    	return view('web.welcome', compact('posts','servicios','company','unities', 'customers', 'teams', 'testimonies', 'presentations' )) ;
+    	return view('web.dti', compact('posts','servicios','company','unities', 'customers', 'teams', 'testimonies', 'presentations' )) ;
     }
     
     public function eventos(){
-        $posts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
-    	return view('web.eventos', compact('posts')) ;
+        $company = Company::first();
+        $posts   = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
+
+    	return view('web.eventos', compact('company','posts')) ;
     }
 
     public function evento($slug){
-        $post = Post::orderBy('id', 'DESC')->where('slug',$slug)->where('status', 'PUBLISHED')->first();
-        return view('web.evento', compact('post')) ;
+        $company = Company::first();
+        $post    = Post::orderBy('id', 'DESC')->where('slug',$slug)->where('status', 'PUBLISHED')->first();
+
+        return view('web.evento', compact('company','post')) ;
     }
 
     //FILTROS
-        public function category($slug){
+    public function category($slug){
+        $company  = Company::first();
         $category = Category::where('slug', $slug)->pluck('id')->first();
         $posts    = Post::where('category_id', $category)
             ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
-        return view('web.eventos', compact('posts')) ;
+
+        return view('web.eventos', compact('company','posts')) ;
     }
 
     public function tag($slug){
-        $posts = Post::whereHas('tags', function($query) use ($slug){
+        $company = Company::first();
+        $posts   = Post::whereHas('tags', function($query) use ($slug){
             $query->where('slug', $slug);
         })
         ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
         
-        return view('web.eventos', compact('posts')) ;
+        return view('web.eventos', compact('company','posts')) ;
     }
 
     // SERVICE
     public function servicios(){
+        $company   = Company::first();
         $servicios = Category::orderBy('id', 'DESC')->where('type', 'SERVICE')->get();
-    	return view('web.servicios', compact('servicios'));
+
+    	return view('web.servicios', compact('company','servicios'));
     }
 
     public function servicio($slug){
+        $company    = Company::first();
         $category   = Category::where('slug', $slug)->pluck('id')->first();
-        $servicio    = Service::where('category_id', $category)
+        $servicio   = Service::where('category_id', $category)
             ->orderBy('id', 'DESC')->paginate(5);
-        return view('web.servicio', compact('slug','servicio')) ;
 
+        return view('web.servicio', compact('company','slug','servicio')) ;
     }
 
     public function nosotros(){
         $company        = Company::first();
         $unities        = Unity::all();
-    	return view('web.about', compact('company','unities'));
+
+    	return view('web.about', compact('company','company','unities'));
     }
 
     public function contactos(){
+        $company        = Company::first();
         $unities        = Unity::all();
         $company        = Company::first();
-    	return view('web.contact',compact('unities','company'));
+        
+    	return view('web.contact',compact('company','unities','company'));
     }
 
     public function portafolios(){
+        $company        = Company::first();
         // $portfolios = DB::select("select p.id, (select po.name from posts as po where po.id=p.post_id ) as 'name',(select po.file from posts as po where po.id=p.post_id ) as 'img',  p.film, p.body from portfolios as p");
         $portfolios = DB::table('posts as po')->join('portfolios as p','p.post_id','=','po.id')->select('p.id','po.name','po.file as img','p.film','p.body')->paginate(5);
         // $post = Post::has('portfolio')->pluck('id','name')->each()->values();
@@ -98,7 +112,7 @@ class PageController extends Controller
         // $portfolios = Portfolio::whereHas('post')->get();
         
         // dd($portfolios);
-        return view('web.portfolio', compact('portfolios'));
+        return view('web.portfolio', compact('company','portfolios'));
     }
 
     public function icons(){

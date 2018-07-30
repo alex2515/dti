@@ -1,5 +1,6 @@
-@extends('web.welcome2')
+@extends('web.layouts')
 @section('content')
+@include('web.minav')
     <!--==========================
       Events Section format('d-m-Y')
       format('D, M j, Y g:i A')
@@ -13,10 +14,11 @@
         
         <div class="row" style="background: #fff ">
           <div class="col-md-12">
-            Categoría: <a href="{{ route('category', $post->category->slug) }}">{{ $post->category->name }}</a>
+            <strong>Categoría:</strong>
+            <a class="badge badge-warning" href="{{ route('category', $post->category->slug) }}">{{ $post->category->name }}</a>
             <p class="text-muted pull-right">
               <em>
-                <small>Publicado: {{ $post->created_at->formatLocalized('%A %d %B %Y') }}</small>
+                Publicado: {{ $post->created_at->format('l, j \d\e F, \d\e\l Y g:i A') }}
               </em>
             </p>
           </div>
@@ -39,9 +41,9 @@
             <hr>
             {!! $post->body !!}
             <hr>
-            Etiquetas: 
+            <strong>Etiquetas:</strong> 
             @foreach($post->tags as $tag)
-            <a href="{{ route('tag', $tag->slug) }}">
+            <a class="badge badge-pill badge-info" href="{{ route('tag', $tag->slug) }}">
               {{ $tag->name }}
             </a>
           @endforeach

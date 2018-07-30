@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Registration Page</title>
+  <title>Dirección de Transferencia, Emprendimiento e Innovación | DTI</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -33,11 +33,11 @@
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href="index.html"><b>Admin</b>LTE</a>
+    <a href="#"><b>Admin</b>DTI</a>
   </div>
 
   <div class="register-box-body">
-    <p class="login-box-msg">Register a new membership</p>
+    <p class="login-box-msg">Registrar un nuevo usuario</p>
 
     <form method="POST" action="{{ route('register') }}">
         {{ csrf_field() }}
@@ -76,27 +76,28 @@
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
-              <input type="checkbox"> I agree to the <a href="#">terms</a>
+              {{-- <input type="checkbox"> Acepta todo los <a href="#">términos</a> --}}
+              <a href="{{ route('login') }}" class="text-center">Ya tengo una cuenta</a>
             </label>
           </div>
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+          <button type="submit" class="btn btn-primary">Registro</button>
         </div>
         <!-- /.col -->
       </div>
     </form>
 
-    <div class="social-auth-links text-center">
+    {{-- <div class="social-auth-links text-center">
       <p>- OR -</p>
       <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using
         Facebook</a>
       <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using
         Google+</a>
-    </div>
+    </div> --}}
 
-    <a href="{{ route('login') }}" class="text-center">I already have a membership</a>
+    {{-- <a href="{{ route('login') }}" class="text-center">I already have a membership</a> --}}
   </div>
   <!-- /.form-box -->
 </div>

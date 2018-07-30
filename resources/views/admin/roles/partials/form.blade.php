@@ -18,14 +18,15 @@
 				{{ Form::textarea('description', null, ['class' => 'form-control', 'rows' => '2']) }}
 				<p class="help-block pull-right">(máximo: 200 carácteres) </p>
 			</div>
-			<hr>
+			{{-- <hr>
 			<h3>Permiso especial</h3>
 			<div class="form-group">
 				<label>{{ Form::radio('special','all-access', null, ['class' => 'flat-red'] )}} Acceso total</label>
 				<label>{{ Form::radio('special','no-access', null, ['class' => 'flat-red'] )}} Ningun acceso</label>
-			</div>
+			</div> --}}
 			<hr>
 			<h3>Lista de Permisos</h3>
+			<label>{{ Form::checkbox('checkTodos', null, null, ['id' => 'checkTodos']) }} Marcar/Desmarcar Todos</label>
             <div class="table-responsive">
                 <table id="example1" class="table table-striped table-bordered table-hover table-condensed" style="width:100%">
                     <thead style="background: #3b4044; color: #fff;">
@@ -40,7 +41,7 @@
                     <tbody>
                         @foreach($permissions as $permission)
                         <tr>
-                        	<td style="text-align: center;">{{ Form::checkbox('permissions[]', $permission->id, null, ['class' => 'flat-red']) }}</td>
+                        	<td style="text-align: center;">{{ Form::checkbox('permissions[]', $permission->id, null) }}</td>
                             <td>{{ $permission->name }}</td>
                             <td>{{ $permission->description ? : 'Sin descripción'}}</td>
                             <td width="10px">
@@ -63,22 +64,6 @@
                     </tfoot>
                   </table>
             </div> 
-
-
-			{{-- <div class="form-group">
-
-				<ul class="list-unstyled">
-					@foreach($permissions as $permission)
-					<li>
-						<label>
-							{{ Form::checkbox('permissions[]', $permission->id, null, ['class' => 'flat-red']) }}
-							{{ $permission->name }}
-							<em> - ( {{ $permission->description ? : 'Sin descripción'}} )</em>
-						</label>
-					</li>
-					@endforeach
-				</ul>
-			</div> --}}
 		</div>
 		<div class="box-footer">
 			<div class="form-group" style="text-align: center;">
@@ -122,7 +107,6 @@
 		})
     // Select2
     $('.select2').select2()
-
     //iCheck for checkbox and radio inputs
     $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
       checkboxClass: 'icheckbox_minimal-blue',
@@ -138,8 +122,12 @@
       checkboxClass: 'icheckbox_flat-green',
       radioClass   : 'iradio_flat-green'
     })
+    $('#checkTodos').change(function () {
+		$("input:checkbox").prop('checked', $(this).prop("checked"));
+	});
 
 	});
+
 </script>
 @endsection
 
