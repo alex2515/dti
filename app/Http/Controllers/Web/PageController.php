@@ -32,7 +32,6 @@ class PageController extends Controller
         $teams          = Team::all();
         $testimonies    = Testimony::all();
         $presentations  = Presentation::where('file','!=', '')->get();
-
     	return view('web.dti', compact('posts','servicios','company','unities', 'customers', 'teams', 'testimonies', 'presentations' )) ;
     }
     

@@ -52,7 +52,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-3 footer-info">
-            <h1><a href="#intro"><img src="img/logo.png" alt="" title="" width="200px" height="50px"/></a></h1>
+            <a href="#intro"><img src="img/logo.png" alt="" title=""/></a>
             <h3><small><strong>{{ $company->name }}</strong></small></h3>
             {{-- <p>La Dirección de Transferencia e Innovación (DTI) es un órgano dependiente del Vicerrectorado de Investigación, encargado de promover y gestionar relaciones e interacciones entre la Universidad y su entorno.</p> --}}
           </div>

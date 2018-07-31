@@ -13,9 +13,9 @@
 	<!-- /.content-header -->
 	<section class="content">
 		<div class="row">
-			{!! Form::open(['route' => 'tags.store', 'files' => true]) !!}
+			{!! Form::open(['route' => 'companies.store', 'files' => true]) !!}
 			
-				@include('admin.tags.partials.form')
+				@include('admin.companies.partials.form')
 
 			{!! Form::close() !!}
 		</div>

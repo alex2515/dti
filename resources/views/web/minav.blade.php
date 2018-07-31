@@ -1,9 +1,9 @@
   <header id="minav">
     <div class="container-fluid">
       <div id="logo" class="pull-left">
-        <h1><a href="{{ route('dti') }}" class="scrollto">{{ $company->logo }}</a></h1>
+        {{-- <h1><a href="{{ route('dti') }}" class="scrollto">{{ $company->logo }}</a></h1> --}}
         <!-- Uncomment below if you prefer to use an image logo -->
-        {{-- <h1><a href="#intro"><img src="img/logo.png" alt="" title="" width="200px" height="50px"/></a></h1> --}}
+        <a href="#intro"><img src="{{ $company->file }}" alt="" title="" width="300px" height="38px"/></a>
       </div>
       <nav id="nav-menu-container">
         <ul class="nav-menu">

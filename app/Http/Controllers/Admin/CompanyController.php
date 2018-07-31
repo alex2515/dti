@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Company;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\CompanyUpdateRequest;
 
 class CompanyController extends Controller
@@ -57,10 +58,11 @@ class CompanyController extends Controller
      * @param  \App\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function edit(Company $company)
+    public function edit($id)
     {
         //
-        $company = Company::first();
+        // $company = Company::first();
+        $company = Company::findOrFail($id);
         //dd($company);
         return view('admin.companies.edit', compact('company'));
     }
@@ -72,12 +74,18 @@ class CompanyController extends Controller
      * @param  \App\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function update(CompanyUpdateRequest $request, Company $company)
+    public function update(Request $request, $id)
     {
         //
-        $company = Company::findOrFail($company->id);
+        $company = Company::find($id);
         // $this->authorize('pass',$post);
         $company->fill($request->all())->save();
+
+        //IMAGEN
+        if ($request->file('file')) {
+            $path = Storage::disk('public')->put('image', $request->file('file'));
+            $company->fill(['file' => asset($path)])->save();
+        }
 
         return redirect()->route('companies/1/edit', $company->id)
         ->with('info', 'Congfiguración general, actualizado con éxito');

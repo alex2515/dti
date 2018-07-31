@@ -133,10 +133,10 @@
     <!-- /.box-header -->
     <div class="box-body">
     	<div class="form-group">
-			{{ Form::label('file', 'Imagen') }}
-			{{ Form::file('file') }}
-      <p class="help-block">(Tamaño recomendado ancho: 1100px y alto 450px </p>
-		</div>
+  			{{ Form::label('file', 'Imagen') }}
+  			{{ Form::file('file') }}
+        <p class="help-block">(Tamaño recomendado ancho: 1100px y alto 450px </p>
+		  </div>
     </div>
     <!-- /.box-body -->
   </div>

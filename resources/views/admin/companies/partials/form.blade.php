@@ -14,11 +14,12 @@
 				{{ Form::textarea('description', null, ['class' => 'form-control', 'id' =>'description']) }}
 			</div>
 			<hr>
-			<div class="form-group has-success col-xs-2">
-				{{ Form::label('logo', 'Logo') }}
-				{{ Form::text('logo', null, ['class' => 'form-control', 'id' =>'logo']) }}
-			</div>
-			<div class="form-group has-success col-xs-10">
+	    	<div class="form-group has-success col-xs-12">
+	  			{{ Form::label('file', 'Imagen') }}
+	  			{{ Form::file('file') }}
+	        	<p class="help-block">(Tamaño recomendado ancho: 300px y alto 45px </p>
+		  	</div>
+			<div class="form-group has-success col-xs-12">
 				{{ Form::label('address', 'Dirección') }}
 				{{ Form::text('address', null, ['class' => 'form-control', 'id' =>'address']) }}
 			</div>

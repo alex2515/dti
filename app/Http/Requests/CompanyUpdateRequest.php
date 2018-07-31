@@ -23,9 +23,8 @@ class CompanyUpdateRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        $rules = [
             'name' => 'required|max:120', 
-            'logo' => 'required|max:3', 
             'description' => 'required', 
             'address' => 'required|max:120', 
             'phone' => 'required|max:9', 
@@ -37,6 +36,11 @@ class CompanyUpdateRequest extends FormRequest
             'url' => '',
             'urlintranet' => '',
         ];
+
+        if ($this->get('file')) {
+            $rules = array_merge($rules, ['file' => 'mimes:jpg,jpeg,png']);
+        }
+        return $rules;
     }
 
     public function messages(){
@@ -44,8 +48,8 @@ class CompanyUpdateRequest extends FormRequest
         return [
             'name.required' => 'El campo nombre es obligatorio',
             'name.max'      => 'El campo nombre no debe contener más de :max caracteres.',
-            'logo.required' => 'El campo logo es obligatorio',
-            'logo.max'      => 'El campo logo no debe contener más de :max caracteres.',
+            // 'logo.required' => 'El campo logo es obligatorio',
+            // 'logo.max'      => 'El campo logo no debe contener más de :max caracteres.',
             'description.required' => 'El campo descripción es obligatorio',
             // 'description.max'      => 'El campo description no debe contener más de :max caracteres.',
             'address.required' => 'El campo dirección es obligatorio',
