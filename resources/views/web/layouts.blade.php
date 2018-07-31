@@ -52,9 +52,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-3 footer-info">
-            <a href="#intro"><img src="img/logo.png" alt="" title=""/></a>
-            <h3><small><strong>{{ $company->name }}</strong></small></h3>
-            {{-- <p>La Dirección de Transferencia e Innovación (DTI) es un órgano dependiente del Vicerrectorado de Investigación, encargado de promover y gestionar relaciones e interacciones entre la Universidad y su entorno.</p> --}}
+            
+            <h2><small><strong>{{ $company->name }}</strong></small></h2>
+            <a href=""><img src="img/foo.png" alt="" title="" width="50%" /></a>
           </div>
 
           <div class="col-lg-3 col-md-3 footer-links">
@@ -104,12 +104,7 @@
 
     <div class="container">
       <div class="copyright">
-        <small>© Copyrights - Vicerectorado de investigación, 2018 Aviso legal - Política de cookies - Accesibilidad - Ayuda - Contacto
-
-Felipe IV, 4 - 28014 Madrid - Teléfono: (34) 91 420 14 78
-
-        &copy; Copyright <strong></strong>. Todos los derechos reservados. <br>
-        Web Editor <a href="https://bootstrapmade.com/"><em><strong> - Espinoza Gonzales, ALexander R.</strong></em></a></small>
+        <small>&copy; Copyright Todos los derechos reservados | <strong>Dirección de  Transferencia e Innovación Tecnológica | Vicerectorado de investigación</strong> | Web Editor -  <a href="">Espinoza G, ALexander</a> | Cel: 947 688 399</small>
       </div>
       <div class="credits">
         <!--

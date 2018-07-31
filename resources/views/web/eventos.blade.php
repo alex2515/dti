@@ -14,7 +14,7 @@
           <div class="col-md-12">
             <p class="text-muted pull-right">
               <em>
-                <small>Publicado: {{ $post->created_at->format('l, j \d\e F, \d\e\l Y g:i A') }}</small>
+                Publicado: {{ $post->created_at->format('l, j \d\e F, \d\e\l Y g:i A') }}
               </em>
             </p>
           </div>

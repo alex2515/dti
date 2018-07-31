@@ -17,7 +17,7 @@
 	    	<div class="form-group has-success col-xs-12">
 	  			{{ Form::label('file', 'Imagen') }}
 	  			{{ Form::file('file') }}
-	        	<p class="help-block">(Tamaño recomendado ancho: 300px y alto 45px </p>
+	        	<p class="help-block">(Tamaño recomendado ancho: 300px y alto 38px </p>
 		  	</div>
 			<div class="form-group has-success col-xs-12">
 				{{ Form::label('address', 'Dirección') }}

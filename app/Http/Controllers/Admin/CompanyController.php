@@ -58,11 +58,11 @@ class CompanyController extends Controller
      * @param  \App\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Company $company)
     {
         //
         // $company = Company::first();
-        $company = Company::findOrFail($id);
+        $company = Company::findOrFail($company->id);
         //dd($company);
         return view('admin.companies.edit', compact('company'));
     }
@@ -74,10 +74,10 @@ class CompanyController extends Controller
      * @param  \App\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CompanyUpdateRequest $request, Company $company)
     {
         //
-        $company = Company::find($id);
+        $company = Company::findOrFail($company->id);
         // $this->authorize('pass',$post);
         $company->fill($request->all())->save();
 
