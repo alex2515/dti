@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
+use App\User;
 use App\Company;
+use App\Service;
+use App\Portfolio;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,6 +28,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $posts      = Post::count();
+        $services   = Service::count();
+        $users      = User::count();
+        $portfolios = Portfolio::count();
+        return view('home', compact('posts', 'services', 'users', 'portfolios'));
     }
 }

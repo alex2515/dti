@@ -34,6 +34,7 @@
         </div>
       </div>
       
+    @if ($unities->isNotEmpty())
       <div class="form">
         <div id="sendmessage">Your message has been sent. Thank you!</div>
         <div id="errormessage"></div>
@@ -79,6 +80,7 @@
           </div>
         </form>
       </div>
+    @endif
 
     </div>
   </section><!-- #contact -->

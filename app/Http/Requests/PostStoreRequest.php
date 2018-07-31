@@ -59,6 +59,7 @@ class PostStoreRequest extends FormRequest
             'time.max'          => 'El campo hora no debe contener más de :max caracteres.',
             'place.required'    => 'El campo lugar es obligatorio',
             'place.max'         => 'El campo lugar no debe contener más de :max caracteres.',
+            'category_id.required'       => 'Debes de tener registrado almenos una categoria del tipo Evento',
         ];
     }
 }
