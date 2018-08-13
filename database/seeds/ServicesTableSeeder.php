@@ -19,6 +19,6 @@ class ServicesTableSeeder extends Seeder
         //         rand(15,20),
         //     ]);
         // });
-        factory(App\Service::class,50)->create();
+        // factory(App\Service::class,50)->create();
     }
 }

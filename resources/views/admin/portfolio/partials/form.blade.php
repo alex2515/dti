@@ -37,8 +37,8 @@
 @section('scripts')
 
 <!-- CK Editor -->
-<script src="{{ asset('admin/bower_components/ckeditor/ckeditor.js') }}"></script>
-{{-- <script src="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script> --}}
+<script src="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script>
+
 <script>
 	$(document).ready(function(){
     $('.select2').select2()
@@ -48,5 +48,6 @@
 	CKEDITOR.config.height = 100;
 	CKEDITOR.config.width = 'auto';
 	CKEDITOR.replace('body');
+	CKEDITOR.config.removeButtons = 'Flash,Smiley,PageBreak,Templates,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,CreateDiv,Blockquote,Language,BidiRtl,BidiLtr,Subscript,Superscript,Indent,Outdent';
 </script>
 @endsection

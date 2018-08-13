@@ -185,8 +185,7 @@
 <!-- StringToSlug -->
 <script src="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
 <!-- CK Editor -->
-<script src="{{ asset('admin/bower_components/ckeditor/ckeditor.js') }}"></script>
-
+<script src="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script>
 <script>
 	$(document).ready(function(){
 		$("#name, #slug").stringToSlug({
@@ -219,6 +218,7 @@
   // instance, using default configuration.
 	CKEDITOR.config.height = 400;
 	CKEDITOR.config.width = 'auto';
-	CKEDITOR.replace('body');
+  CKEDITOR.replace('body');
+  CKEDITOR.config.removeButtons = 'Flash,Smiley,PageBreak,Templates,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,CreateDiv,Blockquote,Language,BidiRtl,BidiLtr,Subscript,Superscript,Indent,Outdent';
 </script>
 @endsection

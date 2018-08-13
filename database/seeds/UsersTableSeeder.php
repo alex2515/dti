@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-    	factory(User::class, 29)->create();
+    	// factory(User::class, 29)->create();
 
     	Role::create([
     		'name' 		=> 'Administrador',
@@ -23,15 +23,15 @@ class UsersTableSeeder extends Seeder
     	]);
 
         factory(User::class)->create([
-            'name' => 'Alexander Espinoza G.',
-            'email' => 'a@espinoza.com',
-            'password' => bcrypt('123456'),
+            'name' => 'DTI Web Administrador',
+            'email' => 'dtiunheval@gmail.com',
+            'password' => bcrypt('TransFerencia2018'),
         ]);
 
-        factory(User::class)->create([
-            'name' => 'Prueba Prueba G.',
-            'email' => 'prueba@prueba.com',
-            'password' => bcrypt('123456'),
-        ]);
+        // factory(User::class)->create([
+        //     'name' => 'Prueba Prueba G.',
+        //     'email' => 'prueba@prueba.com',
+        //     'password' => bcrypt('123456'),
+        // ]);
     }
 }

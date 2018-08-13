@@ -54,7 +54,7 @@
           <div class="col-lg-3 col-md-3 footer-info">
             
             <h2><small><strong>{{ $company->name }}</strong></small></h2>
-            <a href=""><img src="img/foo.png" alt="" title="" width="50%" /></a>
+            <a href=""><img src="{{ asset('img/foo.png') }}" alt="" title="" width="50%" /></a>
           </div>
 
           <div class="col-lg-3 col-md-3 footer-links">

@@ -440,12 +440,12 @@
       if (texto == "Oferta Tecnológica") {
         document.getElementById("body").placeholder = "Estimado visitante ingrese las necesidades que requira su entidad."
       }
-      // if (texto == "Patentes, Propiedad Intelectual y Publicaciones") {
-      //   document.getElementById("body").placeholder = " "
-      // }
-      // if (texto == "Emprendimiento e Incubadora de Empresas") {
-      //   document.getElementById("body").placeholder = "Caul es tu duda respecto a emprendimiento"
-      // }
+      if (texto == "Patentes, Propiedad Intelectual y Publicaciones") {
+        document.getElementById("body").placeholder = "Escribe tu mensaje"
+      }
+      if (texto == "Emprendimiento e Incubadora de Empresas") {
+        document.getElementById("body").placeholder = "Escribe tu mensaje"
+      }
       
     });
   </script>

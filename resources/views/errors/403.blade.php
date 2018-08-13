@@ -68,11 +68,11 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    403 - Acción no autorizada
+                    <h3>403 - Acción no autorizada</h3>
                 </div>
 
                 <div class="links">
-                    <a href="{{route('home')}}">Ir al Home</a>
+                    <a href="{{route('dti')}}">Ir al Home</a>
                 </div>
             </div>
         </div>
