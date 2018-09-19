@@ -11,7 +11,7 @@ class ServicesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        
         // factory(App\Service::class, 300)->create()->each(function(App\Post $service){
         //     $service->category()->attach([
         //         rand(1,5),
@@ -19,6 +19,6 @@ class ServicesTableSeeder extends Seeder
         //         rand(15,20),
         //     ]);
         // });
-        // factory(App\Service::class,50)->create();
+        factory(App\Service::class,50)->create();
     }
 }

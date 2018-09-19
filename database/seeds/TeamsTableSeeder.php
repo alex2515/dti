@@ -43,7 +43,7 @@ class TeamsTableSeeder extends Seeder
 
     	factory(App\Team::Class)->create([
             'name' 			=> 'Ing. Carlos Ventura Matos',
-            'occupation' 	=> 'Especilista en emprendimiento',
+            'occupation' 	=> 'Especialista en emprendimiento',
             'file' 		=> 'https://lorempixel.com/400/400/?56955',
             'twitter'       => '#',
             'facebook'      => '#',

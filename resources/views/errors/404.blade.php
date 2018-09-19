@@ -73,7 +73,7 @@
                 <p>Lo sentimos, pero la página que buscas no esta disponible</p>
 
                 <div class="links">
-                    <a href="{{route('dti')}}">Regresar a la Pagina principal</a>
+                    <a href="{{ url()->previous() }}">Regresar</a>
                 </div>
             </div>
         </div>

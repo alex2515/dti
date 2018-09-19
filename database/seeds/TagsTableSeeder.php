@@ -13,7 +13,7 @@ class TagsTableSeeder extends Seeder
     {
         //
 
-        // factory(App\Tag::class, 20)->create();
+        factory(App\Tag::class, 20)->create();
 
     }
 }

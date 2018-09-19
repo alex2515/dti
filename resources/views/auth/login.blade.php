@@ -30,6 +30,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
+  <!-- <img src="/img/logo.png" alt="dti" class="img-responsive"> -->
     <a href="#"><b>Admin</b>DTI</a>
   </div>
   <!-- /.login-logo -->

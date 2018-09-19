@@ -12,6 +12,6 @@ class PortfoliosTableSeeder extends Seeder
     public function run()
     {
         //
-        // factory(App\Portfolio::class, 20)->create();
+        factory(App\Portfolio::class, 20)->create();
     }
 }

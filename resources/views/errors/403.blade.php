@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{route('dti')}}">Ir al Home</a>
+                    <a href="{{ url()->previous() }}">Regresar</a>
                 </div>
             </div>
         </div>
