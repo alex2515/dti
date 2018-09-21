@@ -6,6 +6,9 @@ use App\User;
 use App\Category;
 use Tests\TestCase;
 use Illuminate\Support\Facades\DB;
+use Caffeinated\Shinobi\Models\Role;
+use Illuminate\Support\Facades\Auth;
+use Caffeinated\Shinobi\Models\Permission;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -15,7 +18,21 @@ class CategoryModuleTest extends TestCase
 
     public function login()
     {
-        $user = factory(User::class)->create();
+        $user = factory(User::class)->create([
+            'name' => 'Alexander E. G.',
+            'email' => 'a@espinoza.com',
+            'password' => bcrypt('123123'),
+        ]);
+        $permission = Permission::all();
+        $role = Role::create([
+            'name' 		=> 'Administrador',
+            'slug' 		=> 'administrador',
+            'description' => 'Acceso a todas las opciones',
+            'special' 	=> 'all-access'
+        ]);
+
+        $role->permissions()->sync($permission);
+        $user->roles()->sync($role);
         $this->actingAs($user);
     }
 
@@ -36,7 +53,7 @@ class CategoryModuleTest extends TestCase
     {
         $this->login();
         $category = factory(Category::class)->create(['name' => 'CATI']);
-        $this->get("/categories/{$category->id}") // categoria/5
+        $this->get("/categories/{$category->id}") // categoria/2
             ->assertStatus(200)
             ->assertSee('CATI');
     }
@@ -62,7 +79,6 @@ class CategoryModuleTest extends TestCase
             'type' => 'EVENT',
             'icon' => 'fa fa-plus'
             ])->assertRedirect('/categories/3/edit');
-
         $this->assertDatabaseHas('categories',[
             'name' => 'CATI',
             'slug' => 'cati',
@@ -83,9 +99,10 @@ class CategoryModuleTest extends TestCase
             ->assertStatus(200)
             ->assertViewIs('admin.categories.edit')
             ->assertSee('Agregar nueva categoria')
-            ->assertViewHas('category', function ($viewCategory) use ($category) {
-                return $viewCategory->id === $category->id;
-            });
+            ->assertViewHas('category', 
+                        function ($viewCategory) use ($category) { 
+                            return $viewCategory->id === $category->id;
+                        });
     }
 
     /** @test */
@@ -126,5 +143,5 @@ class CategoryModuleTest extends TestCase
            'id' => $category->id
         ]);
     }
-    
+
 }

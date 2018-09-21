@@ -28,9 +28,9 @@ class ServiceStoreRequest extends FormRequest
             'user_id'     => 'required|integer',
             'category_id' => 'required|integer',
             'name'        => 'required',
-            'excerpt'        => 'required',
+            'excerpt'     => 'required',
             'slug'        => 'unique:services,slug',
-            'filepdf'        => 'required',
+            'filepdf'     => 'required',
             // 'status'      => 'required|in:DRAFT,PUBLISHED'
         ];
 

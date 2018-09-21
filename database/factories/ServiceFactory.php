@@ -13,6 +13,5 @@ $factory->define(App\Service::class, function (Faker $faker) {
         'filepdf' => $faker->text(100),
         'excerpt' => $faker->text(200),
         'file' => $faker->imageUrl($width = 800, $height = 600),
-        // 'status' => $faker->randomElement(['PUBLISHED']),
     ];
 });
