@@ -18,7 +18,7 @@ class UnitiesTableSeeder extends Seeder
             'file' 		   => 'https://lorempixel.com/768/450/?56925',
             // 'email'			=> 'asparram@hotmail.com',
             'email'         => 'alexander-310@hotmail.com',
-            'icon'			=> 'ion-ios-list-outline',
+            'icon'			=> 'ion-university',
         ]);
         factory(App\Unity::class)->create([
             'name'          => 'Oferta Tecnológica',
@@ -34,7 +34,7 @@ class UnitiesTableSeeder extends Seeder
             'file' 	    	=> 'https://lorempixel.com/768/450/?56956',
             // 'email'			=> 'oeie.vri@unheval.edu.pe',
             'email'         => 'alexander-310@hotmail.com',
-            'icon'			=> 'ion-ios-eye-outline',
+            'icon'			=> 'ion-ios-lightbulb',
         ]);
     }
 }

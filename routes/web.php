@@ -1,7 +1,10 @@
 <?php
 
 // Web -> Rutas en español
-Route::get('/', 				'Web\PageController@dti')->name('dti');
+Route::get('/', function () {
+    return redirect()->route('dti');
+});
+Route::get('/inicio', 				'Web\PageController@dti')->name('dti');
 Route::get('portafolios',		'Web\PageController@portafolios')->name('portafolios');
 Route::get('servicios',			'Web\PageController@servicios')->name('servicios');
 Route::get('servicio/{slug}',	'Web\PageController@servicio')->name('servicio');

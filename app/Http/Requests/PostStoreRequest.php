@@ -33,9 +33,9 @@ class PostStoreRequest extends FormRequest
             'tags'        => 'array',
             'body'        => 'required',
             'status'      => 'required|in:DRAFT,PUBLISHED',
-            'date'        => 'required|max:120',
-            'time'        => 'required|max:120',
-            'place'       => 'required|max:120',
+            'date'        => 'max:120',
+            'time'        => 'max:120',
+            'place'       => 'max:120',
         ];
 
         if ($this->get('file')) {

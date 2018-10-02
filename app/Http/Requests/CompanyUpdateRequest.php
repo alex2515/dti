@@ -27,7 +27,7 @@ class CompanyUpdateRequest extends FormRequest
             'name' => 'required|max:120', 
             'description' => 'required', 
             'address' => 'required|max:120', 
-            'phone' => 'required|max:9', 
+            'phone' => 'required|max:50', 
             'email' => 'required|max:120', 
             'twitter' => '', 
             'facebook' => '', 

@@ -39,35 +39,12 @@
   <!-- DataTables -->
   <link rel="stylesheet" href="{{ asset('admin/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
 
-
-
-  <!-- Morris chart -->
-  {{-- <link rel="stylesheet" href="{{ asset('admin/bower_components/morris.js/morris.css') }}"> --}}
-  <!-- jvectormap -->
-  {{-- <link rel="stylesheet" href="{{ asset('admin/bower_components/jvectormap/jquery-jvectormap.css') }}"> --}}
-  <!-- Date Picker -->
-  {{-- <link rel="stylesheet" href="{{ asset('admin/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}"> --}}
-  <!-- Daterange picker -->
-  {{-- <link rel="stylesheet" href="{{ asset('admin/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}"> --}}
-  <!-- bootstrap wysihtml5 - text editor -->
-  {{-- <link rel="stylesheet" href="{{ asset('admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}"> --}}
-
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
-
   <div class="wrapper">
-
     <header class="main-header">
       <!-- Logo -->
       <a href="{{ route('home')}}" class="logo">
@@ -139,16 +116,6 @@
           </div>
         </div>
         <!-- search form -->
-        {{-- <form action="#" method="get" class="sidebar-form">
-          <div class="input-group">
-            <input type="text" name="q" class="form-control" placeholder="Search...">
-            <span class="input-group-btn">
-                  <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                  </button>
-                </span>
-          </div>
-        </form> --}}
-        <!-- /.search form -->
 
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
@@ -195,85 +162,6 @@
             <li class="{{ active('teams') }}"><a href="{{ route('teams.index') }}"><i class="glyphicon glyphicon-globe"></i><span>Equipo de Trabajo</span></a></li>
           @endcan
         </ul>
-
-        {{-- <ul class="sidebar-menu" data-widget="tree">
-          <li class="{{ active('home') }} "><a href="{{ route('home') }}"><i class="fa fa-dashboard"></i><span>Panel</span></a></li>
-          <li class="header">NAVEGACIÓN PRINCIPAL</li>
-          <li><a href=" {{ route('categories.index') }}"><i class="glyphicon glyphicon-bookmark"></i> <span>Categorías</span></a></li>
-          <li><a href=" {{ route('tags.index') }}"><i class="glyphicon glyphicon-tags"></i> <span>Etiquetas</span></a></li>
-          <li><a href=" {{ route('posts.index') }}"><i class="glyphicon glyphicon-fire"></i> <span>Eventos</span></a></li>
-          <li><a href=" {{ route('services.index') }}"><i class="glyphicon glyphicon-education"></i> <span>Servicios</span></a></li>
-          <li><a href=" {{ route('portfolios.index') }}"><i class="glyphicon glyphicon-folder-open"></i> <span>Portafolios</span></a></li>
-          <li><a href=" {{ route('testimonies.index') }}"><i class="glyphicon glyphicon-pushpin"></i> <span>Testimonios</span></a></li>
-          <li><a href=" {{ route('customers.index') }}"><i class="fa fa-users"></i> <span>Clientes</span></a></li>
-          <li><a href=" {{ route('presentations.index') }}"><i class="glyphicon glyphicon-picture"></i> <span>Presentaciónes</span></a></li>
-          <li class="header">CONFIGURACIÓN</li>
-          <li><a href=" {{ route('companies.index') }}"><i class="glyphicon glyphicon-tent"></i> <span>Compañía</span></a></li>
-          <li><a href=" {{ route('roles.index') }}"><i class="glyphicon glyphicon-queen"></i> <span>Roles</span></a></li>
-          <li><a href=" {{ route('unities.index') }}"><i class="glyphicon glyphicon-modal-window"></i> <span>Unidades</span></a></li>
-          <li><a href=" {{ route('users.index') }}"><i class="glyphicon glyphicon-user"></i> <span>Usuarios</span></a></li>
-          
-          
-
-          <li class="header"></li>
-          @can('categories.index')
-            <li class=" {{ active('categories') }} "><a href="{{ route('categories.index') }}"><i class="glyphicon glyphicon-tag"></i><span>Categorias</span></a></li>     
-          @endcan
-          <li class=" {{ active('posts') }} treeview">
-            @can('posts.index')
-              <a href="#"><i class="glyphicon glyphicon-pushpin"></i><span>Eventos</span><span class="pull-right-container"></span></a>
-            @endcan
-              <ul class="treeview-menu">
-                @can('posts.index')
-                  <li><a href="{{ route('posts.index') }}"><i class="fa fa-circle-o"></i><span>Todas las entradas</span></a></li>
-                @endcan
-                @can('posts.create')
-                  <li><a href="{{ route('posts.create') }}"><i class="fa fa-circle-o"></i><span>Agregar nueva</span></a></li>
-                @endcan
-                @can('tags.index')
-                  <li><a href="{{ route('tags.index') }}"><i class="fa fa-circle-o"></i><span>Etiquetas</span></a></li>
-                @endcan
-              </ul>
-          </li>
-          @can('services.index')
-            <li class=" {{ active('services') }} "><a href="{{ route('services.index') }}"><i class="glyphicon glyphicon-fire"></i><span>Servicios</span></a></li>
-          @endcan
-          @can('portfolios.index')
-            <li class=" {{ active('portfolios') }} "><a href="{{ route('portfolios.index') }}"><i class="glyphicon glyphicon-briefcase"></i><span>Portafolio</span></a></li>
-          @endcan          
-          @can('users.index')
-            <li class=" {{ active('users') }} "><a href="{{ route('users.index') }}"><i class="glyphicon glyphicon-user"></i><span>Usuario</span></a></li>
-          @endcan
-          @can('roles.index')
-            <li class=" {{ active('roles') }} "><a href="{{ route('roles.index') }}"><i class="glyphicon glyphicon-tower"></i><span>Roles</span></a></li>
-          @endcan
-
-          <li class="treeview">
-            @can('roles.index')
-              <a href="#"><i class="glyphicon glyphicon-cog"></i><span>Configuracion General</span><span class="pull-right-container"></span></a>
-            @endcan
-              <ul class="treeview-menu">
-                @can('companies.edit')
-                  <li><a href="{{ route('companies.edit', 1) }}"><i class="fa fa-circle-o"></i><span>Datos de Empresa</span></a></li>
-                @endcan
-                @can('presentations.index')
-                <li><a href="{{ route('presentations.index') }}"><i class="fa fa-circle-o"></i><span>Foto de Inicio</span></a></li>
-                @endcan
-                @can('unities.index')
-                  <li><a href="{{ route('unities.index') }}"><i class="fa fa-circle-o"></i><span>Unidades</span></a></li>
-                @endcan
-                @can('customers.index')
-                  <li><a href="{{ route('customers.index') }}"><i class="fa fa-circle-o"></i><span>Clientes</span></a></li>
-                @endcan
-                @can('teams.index')
-                <li><a href="{{ route('teams.index') }}"><i class="fa fa-circle-o"></i><span>Equipo de Trabajo</span></a></li>
-                @endcan
-                @can('testimonies.index')
-                <li><a href="{{ route('testimonies.index') }}"><i class="fa fa-circle-o"></i><span>Testimonios</span></a></li>
-                @endcan
-              </ul>
-          </li>
-        </ul> --}}
       </section>
       <!-- /.sidebar -->
     </aside>
@@ -316,7 +204,7 @@
       <div class="pull-right hidden-xs">
         <b>Version</b> 2.4.0
       </div>
-      <strong>Copyright &copy; 2014-2018 <a href="https://adminlte.io">a@systems</a>.</strong> All rights
+      <strong>Copyright &copy; 2018 <a href="#">areg2809@gmail.com</a>.</strong> All rights
       reserved.
     </footer>
 
@@ -391,5 +279,12 @@
   <script src="{{ asset('admin/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
   <script src="{{ asset('admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
   @yield('scripts')
+  <script>
+            window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove(); 
+            });
+        }, 4000);
+  </script>
 </body>
 </html>

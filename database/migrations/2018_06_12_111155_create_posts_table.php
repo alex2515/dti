@@ -28,9 +28,9 @@ class CreatePostsTable extends Migration
 
             $table->string('file', 128)->nullable();
             
-            $table->string('date', 128);
-            $table->string('time', 128);
-            $table->string('place', 128);
+            $table->string('date', 128)->nullable();
+            $table->string('time', 128)->nullable();
+            $table->string('place', 128)->nullable();
 
             //Relation
             $table->foreign('user_id')->references('id')->on('users')
