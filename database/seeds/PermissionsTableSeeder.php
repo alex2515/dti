@@ -339,6 +339,22 @@ class PermissionsTableSeeder extends Seeder
         ]);
 
         // Homestead ofrece una máquina virtual completa de Ubuntu con configuración automatizada de Nginx. Homestead es una elección maravillosa si desea un entorno de desarrollo de Linux completamente virtualizado o está en Windows / Linux.
+        // Galeria
+        Permission::create([
+            'name' => 'Navegar galeria de fotos',
+            'slug' => 'galleries.index',
+            'description' => ''
+        ]);
+        Permission::create([
+            'name' => 'Subir galeria de fotos',
+            'slug' => 'galleries.create',
+            'description' => ''
+        ]);
+        Permission::create([
+            'name' => 'Eliminar fotos de galeria',
+            'slug' => 'galleries.destroy',
+            'description' => ''
+        ]);
 
     }
 }

@@ -63,7 +63,7 @@
                         </tr>
                     </tfoot>
                   </table>
-            </div> 
+            </div>
 		</div>
 		<div class="box-footer">
 			<div class="form-group" style="text-align: center;">
@@ -75,7 +75,7 @@
 	</div>
 </div>
 @section('scripts')
-<script src="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
+<script src="{{ asset('adminlib/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
 <script>
         $(document).ready( function() {
             $('#example1').dataTable( {

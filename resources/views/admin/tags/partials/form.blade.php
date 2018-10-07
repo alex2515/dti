@@ -25,7 +25,7 @@
 	</div>
 </div>
 @section('scripts')
-<script src="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
+<script src="{{ asset('adminlib/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
 <script>
 	$(document).ready(function(){
 		$("#name, #slug").stringToSlug({

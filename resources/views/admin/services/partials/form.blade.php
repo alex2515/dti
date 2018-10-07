@@ -75,14 +75,13 @@
     <!-- /.box-body -->
   </div>
   <!-- /.box -->
-    
+
 </div>
 
 @section('scripts')
-<script src="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
+<script src="{{ asset('adminlib/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
 <!-- CK Editor -->
-<script src="{{ asset('admin/bower_components/ckeditor/ckeditor.js') }}"></script>
-{{-- <script src="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script> --}}
+<script src="{{ asset('adminlib/ckeditor/ckeditor.js') }}"></script>
 <script>
 	$(document).ready(function(){
 		$("#name, #slug").stringToSlug({

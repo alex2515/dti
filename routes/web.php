@@ -88,6 +88,14 @@ Route::group([
 	Route::get('posts/{post}/edit', 'PostController@edit')->name('posts.edit')
 		->middleware('permission:posts.edit');
 
+	//Galeria de imagenes
+	Route::get('image-gallery', 'ImageGalleryController@index')->name('galleries.index')
+		->middleware('permission:galleries.index');
+	Route::post('image-gallery', 'ImageGalleryController@upload')->name('galleries.store')
+		->middleware('permission:galleries.create');
+	Route::delete('image-galleries/{id}', 'ImageGalleryController@destroy')->name('galleries.destroy')
+		->middleware('permission:galleries.destroy');
+
 	// Service
 	Route::post('services/store', 'ServiceController@store')->name('services.store')
 		->middleware('permission:services.create');
@@ -205,5 +213,6 @@ Route::group([
 		->middleware('permission:presentations.destroy');
 	Route::get('presentations/{presentation}/edit', 'PresentationController@edit')->name('presentations.edit')
 		->middleware('permission:presentations.edit');
+
+
 });
-	

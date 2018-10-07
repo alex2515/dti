@@ -23,14 +23,14 @@
 				{{ Form::hidden('slug', null, ['class' => 'form-control', 'id' =>'slug']) }}
 			</div>
 			<div class="form-group">
-				
+
 				{{ Form::label('icono', 'Buscar Icono (*)') }}
 				<button type="button" class="btn btn-link pull-right" data-toggle="modal" data-target=".bs-example-modal-lg">Ver iconos disponibles</button>
 				{{ Form::text('icon', null, ['class' => 'form-control', 'id' =>'icon', 'placeholder' => 'Icono ...']) }}
 				<p class="help-block">(Ejem: fa fa-gg-circle) </p>
 			</div>
 			<div class="form-group">
-				{{ Form::label('body', 'Descripción (*)') }} 
+				{{ Form::label('body', 'Descripción (*)') }}
 				{{ Form::textarea('body', null, ['class' => 'form-control', 'rows' => '2']) }}
 				<p class="help-block pull-right">(máximo: 200 carácteres) </p>
 			</div>
@@ -62,7 +62,7 @@
 </div>
 
 @section('scripts')
-<script src="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
+<script src="{{ asset('adminlib/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
 <script>
 	$(document).ready(function(){
 		$("#name, #slug").stringToSlug({

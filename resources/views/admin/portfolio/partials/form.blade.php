@@ -37,7 +37,7 @@
 @section('scripts')
 
 <!-- CK Editor -->
-<script src="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script>
+<script src="{{ asset('adminlib/ckeditor/ckeditor.js') }}"></script>
 
 <script>
 	$(document).ready(function(){

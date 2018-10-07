@@ -5,7 +5,7 @@
 			<h3 class="box-title">Agregar nueva entrada</h3><a href="{{ route('posts.index') }}" class="badge bg-orange pull-right"><< Ver Lista</a>
 		</div>
 		<div class="box-body">
-			{{  Form::hidden('user_id', auth()->user()->id) }}			
+			{{  Form::hidden('user_id', auth()->user()->id) }}
 			<div class="form-group">
 				{{-- {{ Form::label('name', 'Nombre del Evento') }} --}}
 				{{ Form::text('name', null, ['class' => 'form-control input-lg', 'id' =>'name', 'placeholder' => 'Ingrese el título aquí']) }}
@@ -26,11 +26,13 @@
 
 		</div>
 		<div class="box-footer">
-			
+
 		</div>
 	</div>
 </div>
-
+<div class="col-md-4">
+  <a href="{{ route('galleries.index') }}" target="_blank" class="btn btn-success btn-block" style="margin-bottom: 15px;">Galería de imágenes</a>
+</div>
 <div class="col-md-4">
   <div class="box box-primary collapsed-box">
     <div class="box-header with-border">
@@ -181,11 +183,10 @@
 
 
 @section('scripts')
-
 <!-- StringToSlug -->
-<script src="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
+<script src="{{ asset('adminlib/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
 <!-- CK Editor -->
-<script src="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script>
+<script src="{{ asset('adminlib/ckeditor/ckeditor.js') }}"></script>
 <script>
 	$(document).ready(function(){
 		$("#name, #slug").stringToSlug({
@@ -213,7 +214,7 @@
     })
 
 	});
-  
+
   // Replace the <textarea id="body"> with a CKEditor
   // instance, using default configuration.
 	CKEDITOR.config.height = 400;

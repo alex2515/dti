@@ -3,7 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{ config('app.name', 'Laravel') }}</title>
+  <title>La Dirección de Transferencia e Innovación | DTI</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="title" content="{{ config('app.name', 'Laravel') }}" />
+  <meta name="robots" content="index,follow" />
+  <meta name="description" content="La Dirección de Transferencia e Innovación | DTI es un órgano dependiente del Vicerrectorado de Investigación, encargado de promover y gestionar relaciones e interacciones entre la Universidad y su entorno.">
+  <meta name="keywords" content="DTI,Oferta Tecnologica,startup,unheval,investigacion,patentes">
+  <meta name="author" content="Alexander">
     <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Favicons -->
@@ -38,6 +44,8 @@
   <link rel="stylesheet" href="{{ asset('admin/plugins/iCheck/all.css') }}">
   <!-- DataTables -->
   <link rel="stylesheet" href="{{ asset('admin/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
+  <!-- Fancybox -->
+  <link rel="stylesheet" href="{{ asset('adminlib/galeria/jquery.fancybox.min.css') }}" media="screen">
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -117,51 +125,7 @@
         </div>
         <!-- search form -->
 
-        <!-- sidebar menu: : style can be found in sidebar.less -->
-        <ul class="sidebar-menu" data-widget="tree">
-          <li class="header">NAVEGACIÓN PRINCIPAL</li>
-          <li class="{{ active('home') }}"><a href="{{ route('home') }}"><i class="fa fa-dashboard"></i><span>Panel</span></a></li>
-          @can('categories.index')
-            <li class="{{ active('categories') }}"><a href="{{ route('categories.index') }}"><i class="glyphicon glyphicon-bookmark"></i> <span>Categorías</span></a></li>
-          @endcan
-          @can('tags.index')
-            <li class="{{ active('tags') }}"><a href="{{ route('tags.index') }}"><i class="glyphicon glyphicon-tags"></i> <span>Etiquetas</span></a></li>
-          @endcan
-          @can('posts.index')
-            <li class="{{ active('posts') }}"><a href="{{ route('posts.index') }}"><i class="glyphicon glyphicon-fire"></i> <span>Eventos</span></a></li>
-          @endcan
-          @can('services.index')
-            <li class="{{ active('services') }}"><a href="{{ route('services.index') }}"><i class="glyphicon glyphicon-education"></i> <span>Servicios</span></a></li>
-          @endcan
-          @can('portfolios.index')
-            <li class="{{ active('portfolios') }}"><a href="{{ route('portfolios.index') }}"><i class="glyphicon glyphicon-folder-open"></i> <span>Portafolios</span></a></li>
-          @endcan
-          @can('testimonies.index')
-            <li class="{{ active('testimonies') }}"><a href="{{ route('testimonies.index') }}"><i class="glyphicon glyphicon-pushpin"></i> <span>Testimonios</span></a></li>
-          @endcan
-          @can('customers.index')
-            <li class="{{ active('customers') }}"><a href="{{ route('customers.index') }}"><i class="fa fa-users"></i> <span>Clientes</span></a></li>
-          @endcan
-          @can('presentations.index')
-            <li class="{{ active('presentations') }}"><a href="{{ route('presentations.index') }}"><i class="glyphicon glyphicon-picture"></i> <span>Presentaciónes</span></a></li>
-          @endcan
-          @can('companies/1/edit')
-            <li class="header">CONFIGURACIÓN</li>
-            <li class="{{ active('companies/1/edit') }}"><a href="{{ route('companies/1/edit', 1) }}"><i class="glyphicon glyphicon-tent"></i><span>Datos de Empresa</span></a></li>
-          @endcan
-          @can('roles.index')
-            <li class="{{ active('roles') }}"><a href="{{ route('roles.index') }}"><i class="glyphicon glyphicon-queen"></i> <span>Roles</span></a></li>
-          @endcan
-          @can('unities.index')
-            <li class="{{ active('unities') }}"><a href="{{ route('unities.index') }}"><i class="glyphicon glyphicon-modal-window"></i> <span>Unidades</span></a></li>
-          @endcan
-          @can('users.index')
-            <li class="{{ active('users') }}"><a href="{{ route('users.index') }}"><i class="glyphicon glyphicon-user"></i> <span>Usuarios</span></a></li>
-          @endcan
-          @can('teams.index')
-            <li class="{{ active('teams') }}"><a href="{{ route('teams.index') }}"><i class="glyphicon glyphicon-globe"></i><span>Equipo de Trabajo</span></a></li>
-          @endcan
-        </ul>
+      @include('layouts.navbar')
       </section>
       <!-- /.sidebar -->
     </aside>
@@ -282,7 +246,7 @@
   <script>
             window.setTimeout(function() {
             $(".alert").fadeTo(500, 0).slideUp(500, function(){
-                $(this).remove(); 
+                $(this).remove();
             });
         }, 4000);
   </script>

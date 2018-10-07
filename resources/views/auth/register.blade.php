@@ -1,12 +1,17 @@
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Dirección de Transferencia, Emprendimiento e Innovación | DTI</title>
+  <title>La Dirección de Transferencia e Innovación (DTI)</title>
+  <meta name="title" content="{{ config('app.name', 'Laravel') }}" />
+  <meta name="robots" content="index,follow" />
+  <meta name="description" content="La Dirección de Transferencia e Innovación (DTI) es un órgano dependiente del Vicerrectorado de Investigación, encargado de promover y gestionar relaciones e interacciones entre la Universidad y su entorno.">
+  <meta name="keywords" content="DTI,Oferta Tecnologica,startup,unheval,investigacion,patentes">
+  <meta name="author" content="Alexander">
+    <!-- Favicons -->
+  <link href="{{ asset('img/icon.png') }}" rel="icon">
+  <link href="{{ asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
